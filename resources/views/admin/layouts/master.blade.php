@@ -393,17 +393,15 @@
 
 
 <script>
-    function isNumber(evt) {
-        var charCode = (evt.which) ? evt.which : evt.keyCode;
-        if ((charCode > 47 && charCode < 58)) {
-            return true;
-        }
-        evt.preventDefault()
-        return false;
-    }
 
     $(".number-filter").keydown(function (e) {
-        isNumber(e)
+        var charCode = (e.which) ? e.which : e.keyCode;
+        console.log(charCode);
+        if ((charCode > 47 && charCode < 58) || (charCode > 95 && charCode < 106) || charCode === 8) {
+            return true;
+        }
+        e.preventDefault()
+        return false;
     })
 </script>
 
