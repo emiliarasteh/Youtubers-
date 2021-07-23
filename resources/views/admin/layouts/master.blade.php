@@ -395,14 +395,16 @@
 <script>
     function isNumber(evt) {
         var charCode = (evt.which) ? evt.which : evt.keyCode;
-        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-            return false;
+        if ((charCode > 47 && charCode < 58)) {
+            return true;
         }
-        return true;
+        evt.preventDefault()
+        return false;
     }
-        $("#extra7").keydown(function (evt) {
-            isNumber(evt)
-        }
+
+    $(".number-filter").keydown(function (e) {
+        isNumber(e)
+    })
 </script>
 
 </body>

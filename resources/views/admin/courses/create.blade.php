@@ -38,7 +38,7 @@
         <div class="form-group row">
             <label class="control-label col-md-3 col-sm-3 ">Price</label>
             <div class="col-md-9 col-sm-9 ">
-                <input name="price" type="text" class="form-control" id="extra7" value="{{old('price')}}">
+                <input name="price" type="text" class="form-control number-filter" id="price" value="{{old('price')}}">
             </div>
         </div>
 
