@@ -4,7 +4,7 @@
         <div class="x_title">
             <h2>Basic Tables <small>basic table subtitle</small> </h2>
             <ul class="nav navbar-right panel_toolbox">
-                <a href="{{route('admin.create')}}" class="btn btn-round btn-primary">Create</a>
+                <a href="{{route('admin.lessons.create')}}" class="btn btn-round btn-primary">Create</a>
             </ul>
             <div class="clearfix"></div>
         </div>
@@ -16,19 +16,21 @@
                     <th>#</th>
                     <th>Title</th>
                     <th>Description</th>
-                    <th>Price</th>
                     <th>Duration</th>
+                    <th>Video</th>
+                    <th>Order</th>
                 </tr>
                 </thead>
                 <tbody>
 
-                @foreach($courses as $value)
+                @foreach($lessons as $value)
                     <tr>
                         <th scope="row">{{$value->id}}</th>
                         <td> {{$value->title}} </td>
                         <td>{{$value->description}}</td>
-                        <td>{{$value->price}}</td>
                         <td>{{$value->duration}}</td>
+                        <td>{{$value->video}}</td>
+                        <td>{{$value->order}}</td>
                         <td>
 
                             <!-- modals -->
@@ -47,7 +49,7 @@
                                         <div class="modal-body">
 
 
-                                            <form class="form-label-left input_mask" method="post" action="{{route('admin.update', $value->id)}}"
+                                            <form class="form-label-left input_mask" method="post" action="{{route('admin.lessons.update', $value->id)}}"
                                                   enctype="multipart/form-data">
                                                 @method('put')
                                                 @csrf
@@ -64,17 +66,27 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-3 col-sm-3 ">Price</label>
-                                                    <div class="col-md-9 col-sm-9 ">
-                                                        <input value="{{$value->price}}" name="price" type="text" class="form-control number-filter">
-                                                    </div>
-                                                </div>
 
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-md-3 col-sm-3 ">Duration </label>
                                                     <div class="col-md-9 col-sm-9 ">
                                                         <input value="{{$value->duration}}" name="duration" type="text" class="form-control number-filter">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="control-label col-md-3 col-sm-3 ">Video</label>
+                                                    <div class="col-md-9 col-sm-9 ">
+                                                        <input value="{{$value->video}}" name="video" type="file" class="form-control">
+                                                        <img src="/{{$value->video}}"  alt="Video" class="img-responsive mt-2">
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-md-3 col-sm-3 ">Order</label>
+                                                    <div class="col-md-9 col-sm-9 ">
+                                                        <input value="{{$value->order}}" name="order" type="text" class="form-control number-filter">
                                                     </div>
                                                 </div>
 
@@ -103,7 +115,7 @@
     </div>
 
 
-    <a href="{{route('admin.destroy', $value->id)}}" class="btn btn-round btn-primary">Delete</a>
+    <a href="{{route('admin.lessons.destroy', $value->id)}}" class="btn btn-round btn-primary">Delete</a>
     </td>
     </tr>
 
@@ -113,7 +125,7 @@
 
     </div>
     </div>
-    {{ $courses->links() }}
+    {{ $lessons->links() }}
 
 
 

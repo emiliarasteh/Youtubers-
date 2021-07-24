@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('content')
-
+    
 
 <div class="x_panel">
     <div class="x_title">
@@ -45,6 +45,7 @@
         <div class="form-group row">
             <label class="control-label col-md-3 col-sm-3 ">Duration</label>
             <div class="col-md-9 col-sm-9 ">
+                <input name="duration" type="text" class="form-control number-filter" id="duration" value="{{old('duration')}}">
             </div>
         </div>
 

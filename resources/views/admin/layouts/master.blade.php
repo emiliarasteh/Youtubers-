@@ -396,7 +396,7 @@
 
     $(".number-filter").keydown(function (e) {
         var charCode = (e.which) ? e.which : e.keyCode;
-        console.log(charCode);
+        //console.log(charCode);
         if ((charCode > 47 && charCode < 58) || (charCode > 95 && charCode < 106) || charCode === 8) {
             return true;
         }

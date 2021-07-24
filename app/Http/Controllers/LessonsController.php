@@ -6,7 +6,7 @@ use App\Models\Course;
 use App\Models\Lesson;
 use Illuminate\Http\Request;
 
-class CoursesController extends Controller
+class LessonsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        $courses = Course::orderBy('id','desc')->paginate(4);
-        return view ('admin.courses.index', compact('courses'));
+        $lessons = Lesson::orderBy('id','desc')->paginate(4);
+        return view ('admin.lessons.index', compact('lessons'));
     }
 
     /**
@@ -26,7 +26,8 @@ class CoursesController extends Controller
      */
     public function create()
     {
-        return view('admin.courses.create');
+        return view('admin.lessons.create');
+
     }
 
     /**
@@ -40,14 +41,19 @@ class CoursesController extends Controller
         $request->validate([
             'title'=>'required',
             'description'=>'required',
-            'price'=>'required|numeric',
-            'duration'=>'required|numeric'
+            'duration'=>'required|numeric',
+            'order'=>'required'
         ]);
 
+        $fileName = time().'.'.$request->file('video')->extension();
+//        dd(public_path('assets/images'));
+        $request->video->move(public_path('assets/videos'), $fileName);
         $data=($request->toArray());
+        $data['video'] = "assets/videos/".$fileName;
 
         Lesson::create($data);
-        return redirect('courses/index');
+        return redirect('lessons/index');
+
     }
 
     /**
@@ -69,8 +75,8 @@ class CoursesController extends Controller
      */
     public function edit($id)
     {
-        $courses = Course::find($id);
-        return view('admin.courses.edit', compact('courses'));
+        $lessons = Lesson::find($id);
+        return view('admin.lessons.edit', compact('lessons'));
     }
 
     /**
@@ -83,9 +89,9 @@ class CoursesController extends Controller
     public function update(Request $request, $id)
     {
         $data=($request->toArray());
-        $courses = Course::find($id);
-        $courses->update($data);
-        return redirect('courses/index');
+        $lessons = Lesson::find($id);
+        $lessons->update($data);
+        return redirect('lessons/index');
     }
 
     /**
@@ -96,7 +102,7 @@ class CoursesController extends Controller
      */
     public function destroy($id)
     {
-        Course::where('id', $id)->delete();
-        return redirect('courses/index');
+        Lesson::where('id', $id)->delete();
+        return redirect('lessons/index');
     }
 }
