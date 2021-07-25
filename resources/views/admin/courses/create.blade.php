@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('content')
-    
+
 
 <div class="x_panel">
     <div class="x_title">
@@ -22,6 +22,13 @@
                 </ul>
             </div>
         @endif
+        <div class="form-group row">
+            <label class="control-label col-md-3 col-sm-3 ">Image</label>
+            <div class="col-md-9 col-sm-9 ">
+                <input name="image" type="file" class="form-control">
+
+            </div>
+        </div>
         <div class="form-group row">
             <label class="control-label col-md-3 col-sm-3 ">Title</label>
             <div class="col-md-9 col-sm-9 ">

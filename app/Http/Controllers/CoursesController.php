@@ -38,16 +38,24 @@ class CoursesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'image'=>'required',
             'title'=>'required',
             'description'=>'required',
             'price'=>'required|numeric',
             'duration'=>'required|numeric'
         ]);
 
+        $fileName = time().'.'.$request->file('image')->extension();
+//        dd(public_path('assets/images'));
+        $request->image->move(public_path('assets/images'), $fileName);
         $data=($request->toArray());
+        $data['image'] = "assets/images/".$fileName;
 
-        Lesson::create($data);
+        Course::create($data);
         return redirect('courses/index');
+
+
+
     }
 
     /**

@@ -14,6 +14,7 @@
                 <thead>
                 <tr>
                     <th>#</th>
+                    <th>Image</th>
                     <th>Title</th>
                     <th>Description</th>
                     <th>Price</th>
@@ -25,6 +26,7 @@
                 @foreach($courses as $value)
                     <tr>
                         <th scope="row">{{$value->id}}</th>
+                        <td> {{$value->image}} </td>
                         <td> {{$value->title}} </td>
                         <td>{{$value->description}}</td>
                         <td>{{$value->price}}</td>
@@ -51,6 +53,16 @@
                                                   enctype="multipart/form-data">
                                                 @method('put')
                                                 @csrf
+
+                                                <div class="form-group row">
+                                                    <label class="control-label col-md-3 col-sm-3 ">Image</label>
+                                                    <div class="col-md-9 col-sm-9 ">
+                                                        <input value="{{$value->image}}" name="image" type="file" class="form-control">
+                                                        <img src="/{{$value->image}}"  alt="Image" class="img-responsive mt-2">
+
+                                                    </div>
+                                                </div>
+
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-md-3 col-sm-3 ">Title </label>
                                                     <div class="col-md-9 col-sm-9 ">
