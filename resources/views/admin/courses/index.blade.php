@@ -27,7 +27,8 @@
                 @foreach($courses as $value)
                     <tr>
                         <th scope="row">{{$value->id}}</th>
-                        <td> {{$value->image}} </td>
+                        <td> <img src="/{{$value->image}}" alt="Image"
+                                  class="img-responsive mt-2" width="100" height="100"> </td>
                         <td> {{$value->title}} </td>
                         <td>{{$value->description}}</td>
                         <td>{{$value->price}}</td>

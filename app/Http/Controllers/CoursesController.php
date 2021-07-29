@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Lesson;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CoursesController extends Controller
@@ -37,21 +38,50 @@ class CoursesController extends Controller
      */
     public function store(Request $request)
     {
+//        $test = 'ali';
+//        $test2 = 'emilia';
+//        dd($test.'&'.$test2);
         $request->validate([
             'image'=>'required',
             'title'=>'required',
             'description'=>'required',
             'price'=>'required|numeric',
-            'duration'=>'required|numeric'
+            'duration'=>'required|numeric',
         ]);
+
+//        12312546543.jpg
 
         $fileName = time().'.'.$request->file('image')->extension();
 //        dd(public_path('assets/images'));
         $request->image->move(public_path('assets/images'), $fileName);
-        $data=($request->toArray());
-        $data['image'] = "assets/images/".$fileName;
 
-        Course::create($data);
+        $data=($request->toArray());
+//        dd($data);
+        $data['image'] = "assets/images/".$fileName;
+//        $data['duration'] = "1111";
+//        $data['jadid'] = "pooo";
+//        dd($data);
+//$file_path = 'assets/images/'.$fileName;
+//        dd($request->toArray());
+//        $users = Course::create([
+//            'image'=>$data['image'],
+////            'image'=>'assets/images/'.$fileName,
+////            'image'=>$file_path,
+//            'title'=>$data['title'],
+//            'description'=>$data['description'],
+//            'price'=>$data['price'],
+//            'duration'=>$data['duration'],
+//        ]);
+
+       $course = Course::create($data);
+
+       //mishe dakhele sync yek array az id ha dad
+        // vaya mishe yek object dad
+//        $course->users()->sync(
+//            User::where('id', 1)->get(),
+//        );
+        $course->users()->sync($request->users);
+
         return redirect('courses/index');
 
 

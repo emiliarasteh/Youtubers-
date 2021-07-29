@@ -23,6 +23,10 @@ class User extends Authenticatable
         'is_admin'
     ];
 
+    public function courses()
+    {
+        return $this->belongsToMany(Course::class);
+    }
     /**
      * The attributes that should be hidden for arrays.
      *

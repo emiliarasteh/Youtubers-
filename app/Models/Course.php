@@ -15,4 +15,11 @@ class Course extends Model
         'price',
         'duration'
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+
 }
