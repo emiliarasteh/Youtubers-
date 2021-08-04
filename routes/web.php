@@ -17,8 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
-Route::middleware(['auth'])->group(function() {
 
+
+
+Route::middleware(['auth'])->group(function() {
+    Route::get('/courses/show', [App\Http\Controllers\front\CoursesController::class, 'show'])->name('courses.show');
+
+    Route::get('/lessons/show', [App\Http\Controllers\front\LessonsController::class, 'show'])->name('lessons.show');
 
     Route::middleware(['isAdmin'])->group(function() {
         Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
@@ -36,6 +41,8 @@ Route::middleware(['auth'])->group(function() {
 //        💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋
 //        ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️ 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗
         Route::get('/users/index', [App\Http\Controllers\UserController::class, 'index'])->name('admin.users');
+
+        Route::post('/users/courses', [App\Http\Controllers\VideoController::class, 'userCourseSync'])->name('users.courses');
 
 
 

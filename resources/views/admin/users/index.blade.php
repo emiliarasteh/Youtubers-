@@ -53,21 +53,37 @@
                                 </div>
 
                                 <div class="modal-body">
-                                    <form>
+                                    <form method="post" action="{{route('users.courses')}}">
+                                        @csrf
                                         <div class="form-group row">
                                             <label class="col-md-3 col-sm-3  control-label">Courses
                                                 <br>
                                             </label>
                                         </div>
 
+                                        <input name="user_id" value="{{$value->id}}" type="hidden">
+
                                         <div class="col-md-9 col-sm-9">
-                                            @foreach($courses as $value)
-                                                {{$value->id}}
-                                                {{$value->title}}
-                                                <img src="/{{$value->image}}" alt="Image"
+                                            @foreach($courses as $course)
+                                                {{--    {{dd($value->courses)}}--}}
+                                                {{--    @foreach($value->courses as $userCourse)--}}
+                                                {{--   {{dd($userCourse->id)}}--}}
+                                                {{--   @endforeach--}}
+                                                {{$course->id}}
+                                                {{$course->title}}
+                                                <img src="/{{$course->image}}" alt="Image"
                                                      class="img-responsive mt-2" width="70" height="70">
                                                 <div>
-                                                    <input class="flat" name="course" id="course" type="checkbox"  style="position: absolute; opacity: 0;">
+                                                    <input class=""
+                                                           @foreach($value->courses as $course_user)
+                                                           @if($course_user->id === $course->id) checked
+                                                           @endif
+                                                           @endforeach
+
+
+
+                                                           name="course[]" id="{{$course->id}}" type="checkbox"
+                                                           value="{{$course->id}}">
                                                 </div>
                                             @endforeach
                                         </div>
@@ -75,27 +91,27 @@
                                         <div class="ln_solid"></div>
                                         <div class="form-group row">
                                             <div class="col-md-9 col-sm-9  offset-md-3">
-                                                <button type="submit" class="btn btn-primary" >Submit</button>
+                                                <button type="submit" class="btn btn-primary">Submit</button>
                                                 <button type="button" class="btn btn-warning"
                                                         data-dismiss="modal">Cancel
                                                 </button>
                                             </div>
                                         </div>
                                     </form>
+                                </div>
+
+
                             </div>
-
-
                         </div>
+
                     </div>
 
+
+                @endforeach
+                </tbody>
+            </table>
+
         </div>
-
-
-        @endforeach
-        </tbody>
-        </table>
-
-    </div>
     </div>
 
 

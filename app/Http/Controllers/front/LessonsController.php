@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\front;
 
+use App\Http\Controllers\Controller;
 use App\Models\Course;
-use App\Models\User;
+use App\Models\Lesson;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class LessonsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
-        $users = User::with('courses')->orderBy('id','desc')->paginate(4);
-        $courses = Course::all();
-        return view ('admin.users.index', compact('users', 'courses'));
 
     }
 
@@ -28,7 +28,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+
+
     }
 
     /**
@@ -39,7 +40,8 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
     }
 
     /**
@@ -48,9 +50,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return view ('lessons');
     }
 
     /**
@@ -61,7 +63,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -73,7 +75,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -84,6 +86,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class VideoController extends Controller
@@ -14,9 +15,14 @@ class VideoController extends Controller
      *
      */
 
-    public function usercoursesync(Request $request)
+    public function userCourseSync(Request $request)
     {
+        $user = User::where('id', $request->user_id)->first();
 
+        $user->courses()->sync($request->course);
+//        dd($user->courses);
+
+        return redirect()->back()->with('success', 'General mission completed');
     }
 
     public function index()

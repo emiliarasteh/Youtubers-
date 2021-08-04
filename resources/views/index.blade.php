@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 
     <section class="hero--area section-padding-80">
@@ -345,8 +344,11 @@
                 </div>
             </div>
 
+
             <div class="row">
                 <!-- Single Blog Post -->
+                @foreach($courses as $course)
+
                 <div class="col-12 col-md-4">
                     <div class="single-post-area mb-80">
                         <!-- Post Thumbnail -->
@@ -359,8 +361,8 @@
 
                         <!-- Post Content -->
                         <div class="post-content">
-                            <a href="#" class="post-cata cata-sm cata-success">Sports</a>
-                            <a href="single-post.html" class="post-title">Warner Bros. Developing ‘The accountant’
+                            <a href="{{route('courses.show')}}" class="post-cata cata-sm cata-success">Play</a>
+                            <a href="{{route('courses.show')}}" class="post-title">Warner Bros. Developing ‘The accountant’
                                 Sequel</a>
                             <div class="post-meta d-flex">
                                 <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 22</a>
@@ -370,56 +372,12 @@
                         </div>
                     </div>
                 </div>
+            @endforeach
+                <!-- Single Blog Post -->
+
 
                 <!-- Single Blog Post -->
-                <div class="col-12 col-md-4">
-                    <div class="single-post-area mb-80">
-                        <!-- Post Thumbnail -->
-                        <div class="post-thumbnail">
-                            <img src="/assets/vizew-master/img/bg-img/12.jpg" alt="">
 
-                            <!-- Video Duration -->
-                            <span class="video-duration">05.03</span>
-                        </div>
-
-                        <!-- Post Content -->
-                        <div class="post-content">
-                            <a href="#" class="post-cata cata-sm cata-danger">Game</a>
-                            <a href="single-post.html" class="post-title">Searching for the 'angel' who held me on
-                                Westminste Bridge</a>
-                            <div class="post-meta d-flex">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 28</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 17</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="col-12 col-md-4">
-                    <div class="single-post-area mb-80">
-                        <!-- Post Thumbnail -->
-                        <div class="post-thumbnail">
-                            <img src="/assets/vizew-master/img/bg-img/13.jpg" alt="">
-
-                            <!-- Video Duration -->
-                            <span class="video-duration">05.03</span>
-                        </div>
-
-                        <!-- Post Content -->
-                        <div class="post-content">
-                            <a href="#" class="post-cata cata-sm cata-primary">Business</a>
-                            <a href="single-post.html" class="post-title">Love Island star's boyfriend found dead after
-                                her funeral</a>
-                            <div class="post-meta d-flex">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
