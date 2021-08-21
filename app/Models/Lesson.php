@@ -15,4 +15,10 @@ class Lesson extends Model
         'video',
         'order'
     ];
+
+
+    public function course()
+    {
+        return $this->hasOne(Course::class);
+    }
 }

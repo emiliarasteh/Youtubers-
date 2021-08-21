@@ -83,8 +83,17 @@
 
                         <!-- Post Content -->
                         <div class="post-content mt-0">
-                            <a  href="{{route('lessons.show')}}" class="post-cata cata-sm cata-danger">ورود</a>
-                            <a  href="{{route('lessons.show')}}" class="post-title mb-2">Reunification of migrant toddlers, parents should be completed Thursday</a>
+{{--                            <a  href="{{route('lessons.show')}}" class="post-cata cata-sm cata-danger">ورود</a>--}}
+{{--                            <a  href="{{route('lessons.show')}}" class="post-title mb-2">Reunification of migrant toddlers, parents should be completed Thursday</a>--}}
+                            <div class="post-content">
+                                <a href={{route('lessons.show')}} class="post-title"> درس اول</a>
+                            </div>
+                            <div class="post-content">
+                                <a href={{route('lessons.show')}} class="post-title"> درس دوم</a>
+                            </div>
+                            <div class="post-content">
+                                <a href={{route('lessons.show')}} class="post-title"> درس سوم</a>
+                            </div>
 
                             <div class="d-flex justify-content-between mb-30">
                                 <div class="post-meta d-flex align-items-center">

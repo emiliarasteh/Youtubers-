@@ -75,7 +75,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="post-details-thumb mb-50">
-                        <img src="/assets/vizew-master/img/bg-img/34.jpg" alt="">
+                            <video width="1100" height="500" controls>
+                                <source src="movie.mp4" type="video/mp4">
+                                <source src="movie.ogg" type="video/ogg">
+                                Your browser does not support the video tag.
+                            </video>
                     </div>
                 </div>
             </div>
@@ -84,76 +88,13 @@
                 <!-- Single Blog Post -->
 
                 <div class="col-12 col-md-4">
-                    <div class="single-post-area mb-80">
-                        <!-- Post Thumbnail -->
-                        <div class="post-thumbnail">
-                            <img src="/assets/vizew-master/img/bg-img/11.jpg" alt="">
-
-                            <!-- Video Duration -->
-                            <span class="video-duration">05.03</span>
-                        </div>
-
-                        <!-- Post Content -->
-                        <div class="post-content">
-                            <a href="#" class="post-cata cata-sm cata-success">Play</a>
-                            <a href="#" class="post-title">درس اول</a>
-                            <div class="post-meta d-flex">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 22</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 16</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15</a>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="single-post-area mb-80">درس اول</div>
                 </div>
 
-                <div class="col-12 col-md-4">
-                    <div class="single-post-area mb-80">
-                        <!-- Post Thumbnail -->
-                        <div class="post-thumbnail">
-                            <img src="/assets/vizew-master/img/bg-img/11.jpg" alt="">
 
-                            <!-- Video Duration -->
-                            <span class="video-duration">05.03</span>
-                        </div>
 
                         <!-- Post Content -->
-                        <div class="post-content">
-                            <a href="#" class="post-cata cata-sm cata-success">Play</a>
-                            <a href="#" class="post-title">درس دوم</a>
-                            <div class="post-meta d-flex">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 22</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 16</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-12 col-md-4">
-                    <div class="single-post-area mb-80">
-                        <!-- Post Thumbnail -->
-                        <div class="post-thumbnail">
-                            <img src="/assets/vizew-master/img/bg-img/11.jpg" alt="">
-
-                            <!-- Video Duration -->
-                            <span class="video-duration">05.03</span>
-                        </div>
-
-                        <!-- Post Content -->
-                        <div class="post-content">
-                            <a href="#" class="post-cata cata-sm cata-success">Play</a>
-                            <a href="#" class="post-title">درس سوم</a>
-                            <div class="post-meta d-flex">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 22</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 16</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Sidebar Widget -->
-
-            </div>
         </div>
     </section>
 
