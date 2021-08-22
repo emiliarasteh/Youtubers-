@@ -9,10 +9,10 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Vizew - Blog &amp; Magazine HTML Template</title>
+    <title>آموزش فارکس</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="/assets/vizew-master/img/core-img/favicon.ico">
+    <link rel="icon" href="/assets/vizew-master/img/core-img/img.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/vizew-master/style.css">
@@ -41,13 +41,13 @@
                     <!-- Breaking News Widget -->
                     <div class="breaking-news-area d-flex align-items-center">
                         <div class="news-title">
-                            <p>Breaking News:</p>
+                            <p>درس های جدید</p>
                         </div>
                         <div id="breakingNewsTicker" class="ticker">
                             <ul>
-                                <li><a href="single-post.html">10 Things Amazon Echo Can Do</a></li>
-                                <li><a href="single-post.html">Welcome to Colorlib Family.</a></li>
-                                <li><a href="single-post.html">Boys 'doing well' after Thai</a></li>
+                                <li><a href="single-post.html">فارکس</a></li>
+                                <li><a href="single-post.html">تریدینگ</a></li>
+                                <li><a href="single-post.html">آموزش بورس</a></li>
                             </ul>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                         <!-- Top Search Area -->
                         <div class="top-search-area">
                             <form action="index.html" method="post">
-                                <input type="search" name="top-search" id="topSearch" placeholder="Search...">
+                                <input type="search" name="top-search" id="topSearch" placeholder="جستجو...">
                                 <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </form>
                         </div>
@@ -98,7 +98,7 @@
                 <nav class="classy-navbar justify-content-between" id="vizewNav">
 
                     <!-- Nav brand -->
-                    <a href="index.html" class="nav-brand"><img src="/assets/vizew-master/img/core-img/logo.png" alt=""></a>
+                    <a href="index.html" class="nav-brand"><img src="/assets/vizew-master/img/core-img/img.png" width="70" height="70" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -115,7 +115,9 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li><a href="contact.html">تماس با ما</a></li>
+                                <li class="active"><a  href="{{route('question')}}">سوالات متداول</a></li>
+
+                                <li><a href="{{route('contact')}}">تماس با ما</a></li>
 
                                 <!-- <li><a href="archive-list.html">Archives</a></li>
                                  <li><a href="#">Pages</a>
@@ -174,7 +176,8 @@
                                          </ul>
                                      </div>
                                  </li>
-                                <li class="active"><a href="index.html">خانه</a></li>
+                                <li class="active"><a href="{{route('about')}}">درباره ما</a></li>
+                                <li class="active"><a href="{{route('home')}}">خانه</a></li>
 
                             </ul>
                          </div>

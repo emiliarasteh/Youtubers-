@@ -30,8 +30,23 @@ class HomeController extends Controller
         return view('index', compact('courses'));
     }
 
+    public function about()
+    {
 
+        return view('others.about');
+    }
 
+    public function contact()
+    {
+
+        return view('others.contact');
+    }
+
+    public function question()
+    {
+
+        return view('others.question');
+    }
     public function show()
     {
 
