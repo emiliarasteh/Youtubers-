@@ -13,7 +13,8 @@ class Course extends Model
         'title',
         'description',
         'price',
-        'duration'
+        'duration',
+        'course_id'
     ];
 
     public function users()
@@ -23,6 +24,6 @@ class Course extends Model
 
     public function lessons()
     {
-        return $this->hasMany(Lesson::class);
+        return $this->hasMany(Lesson::class, 'course_id', 'id')->orderBy('order');
     }
 }

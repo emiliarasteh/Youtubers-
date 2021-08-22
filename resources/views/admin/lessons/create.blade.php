@@ -57,6 +57,17 @@
                 </div>
             </div>
 
+            <div class="form-group row">
+                <label class="control-label col-md-3 col-sm-3 ">Course</label>
+                <div class="col-md-9 col-sm-9 ">
+                    <select name="course_id" class="form-control">
+                        @foreach($courses as $course)
+                        <option value="{{$course->id}}">{{$course->title}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+
             <button type="submit" class="btn btn-round btn-primary">Save</button>
         </form>
     </div>

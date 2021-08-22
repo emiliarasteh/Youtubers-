@@ -16,6 +16,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/vizew-master/style.css">
+    @yield('header')
 
 </head>
 
@@ -368,6 +369,8 @@
         })
     </script>
 @endif
+
+@yield('footer')
 
 </body>
 

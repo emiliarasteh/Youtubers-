@@ -21,9 +21,13 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('in
 
 
 Route::middleware(['auth'])->group(function() {
-    Route::get('/courses/show', [App\Http\Controllers\front\CoursesController::class, 'show'])->name('courses.show');
+    Route::get('/courses/show/{id}', [App\Http\Controllers\front\CoursesController::class, 'show'])->name('courses.show');
 
-    Route::get('/lessons/show', [App\Http\Controllers\front\LessonsController::class, 'show'])->name('lessons.show');
+    Route::get('/lessons/show/{id}', [App\Http\Controllers\front\LessonsController::class, 'show'])->name('lessons.show');
+
+
+    Route::get('/lessons/video-loader/{playlist}', [App\Http\Controllers\LessonsController::class, 'video'])->name('lessons.video');
+    Route::get('/lessons/secrets-loader/{key}', [App\Http\Controllers\LessonsController::class, 'secret'])->name('lessons.secrets');
 
     Route::middleware(['isAdmin'])->group(function() {
         Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');

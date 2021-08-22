@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\VideoMaker;
 use App\Models\Course;
 use App\Models\Lesson;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
 
 class LessonsController extends Controller
 {
@@ -22,12 +26,12 @@ class LessonsController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        return view('admin.lessons.create');
-
+        $courses = Course::get();
+        return view('admin.lessons.create', compact('courses'));
     }
 
     /**
@@ -46,14 +50,37 @@ class LessonsController extends Controller
         ]);
 
         $fileName = time().'.'.$request->file('video')->extension();
-//        dd(public_path('assets/images'));
-        $request->video->move(public_path('assets/videos'), $fileName);
+        $fileNameWithoutExt = time().'.m3u8';
+//        dd($fileNameWithoutExt);
+        $request->video->move(storage_path('uploads'), $fileName);
         $data=($request->toArray());
-        $data['video'] = "assets/videos/".$fileName;
-
+        $data['video'] = "videos/".$fileNameWithoutExt;
+        VideoMaker::dispatch($data, $fileName, $fileNameWithoutExt);
         Lesson::create($data);
         return redirect('lessons/index');
 
+    }
+
+    public function video($playlist)
+    {
+//        dd($playlist);
+        return FFMpeg::dynamicHLSPlaylist()
+            ->fromDisk('public')
+            ->open("videos/$playlist")
+            ->setKeyUrlResolver(function($key){
+                return route('lessons.secrets',['key' => $key]);
+            })
+            ->setPlaylistUrlResolver(function($playlist) {
+                return route('lessons.video',['playlist' => $playlist]);
+            })
+            ->setMediaUrlResolver(function($media){
+                return Storage::disk('public')->url("videos/{$media}");
+            });
+    }
+
+    public function secret($key)
+    {
+        return Storage::disk('secrets')->download($key);
     }
 
     /**

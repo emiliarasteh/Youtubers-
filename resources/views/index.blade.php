@@ -353,22 +353,25 @@
                     <div class="single-post-area mb-80">
                         <!-- Post Thumbnail -->
                         <div class="post-thumbnail">
-                            <img src="/assets/vizew-master/img/bg-img/11.jpg" alt="">
-
+                            <a href="{{route('courses.show', $course->id)}}">
+                            <img src="{{ asset($course->image) }}" alt="">
+                            </a>
                             <!-- Video Duration -->
                             <span class="video-duration">05.03</span>
                         </div>
 
                         <!-- Post Content -->
+
                         <div class="post-content">
-                            <a href="{{route('courses.show')}}" class="post-cata cata-sm cata-success">Play</a>
-                            <a href="{{route('courses.show')}}" class="post-title">Warner Bros. Developing ‘The accountant’
-                                Sequel</a>
-                            <div class="post-meta d-flex">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 22</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 16</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15</a>
-                            </div>
+                            <a href="{{route('courses.show', $course->id)}}" class="post-cata cata-sm cata-success">مشاهده</a>
+                            <a href="{{route('courses.show', $course->id)}}" class="post-title">
+                                {{ \Illuminate\Support\Str::of($course->description)->limit(47, ' (...)')}}
+                            </a>
+{{--                            <div class="post-meta d-flex">--}}
+{{--                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 22</a>--}}
+{{--                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 16</a>--}}
+{{--                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15</a>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 </div>
