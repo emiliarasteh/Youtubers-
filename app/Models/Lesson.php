@@ -13,7 +13,8 @@ class Lesson extends Model
         'description',
         'duration',
         'video',
-        'order'
+        'order',
+        'course_id'
     ];
 
 
