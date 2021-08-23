@@ -186,8 +186,8 @@
 
                         @foreach($last_videos['items'] as $video)
                         <li class="nav-item">
-                            <a class="nav-link active" id="post-1-tab" data-toggle="pill" href="#post-1" role="tab"
-                               aria-controls="post-1" aria-selected="true">
+                            <a class="nav-link active" id="post-1-tab"  href="https://www.youtube.com/watch?v={{$video['contentDetails']['upload']['videoId']}}" role="tab" target="_blank"
+                               >
                                 <!-- Single Blog Post -->
                                 <div class="single-blog-post style-2 d-flex align-items-center">
                                     <div class="post-thumbnail">
