@@ -9,69 +9,20 @@
                         <div class="tab-pane fade show active" id="post-1" role="tabpanel" aria-labelledby="post-1-tab">
                             <!-- Single Feature Post -->
                             <div class="single-feature-post video-post bg-img"
-                                 style="background-image: url(img/bg-img/7.jpg);">
+                                 style="background-image: url({{$more_viewed_video['snippet']['thumbnails']['high']['url']}});">
                                 <!-- Play Button -->
-                                <a href="video-post.html" class="btn play-btn"><i class="fa fa-play"
+                                <a href="https://www.youtube.com/watch?v={{$more_viewed_video['id']['videoId']}}" target="_blank" class="btn play-btn"><i class="fa fa-play"
                                                                                   aria-hidden="true"></i></a>
 
                                 <!-- Post Content -->
                                 <div class="post-content">
-                                    <a href="#" class="post-cata">Sports</a>
-                                    <a href="single-post.html" class="post-title">Reunification of migrant toddlers,
-                                        parents should be completed Thursday</a>
-                                    <div class="post-meta d-flex">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>
-                                    </div>
-                                </div>
-
-                                <!-- Video Duration -->
-                                <span class="video-duration">05.03</span>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="post-2" role="tabpanel" aria-labelledby="post-2-tab">
-                            <!-- Single Feature Post -->
-                            <div class="single-feature-post video-post bg-img"
-                                 style="background-image: url(img/bg-img/8.jpg);">
-                                <!-- Play Button -->
-                                <a href="video-post.html" class="btn play-btn"><i class="fa fa-play"
-                                                                                  aria-hidden="true"></i></a>
-
-                                <!-- Post Content -->
-                                <div class="post-content">
-                                    <a href="#" class="post-cata">Sports</a>
-                                    <a href="single-post.html" class="post-title">Reunification of migrant toddlers,
-                                        parents should be completed Thursday</a>
-                                    <div class="post-meta d-flex">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>
-                                    </div>
-                                </div>
-
-                                <!-- Video Duration -->
-                                <span class="video-duration">05.03</span>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="post-3" role="tabpanel" aria-labelledby="post-3-tab">
-                            <!-- Single Feature Post -->
-                            <div class="single-feature-post video-post bg-img"
-                                 style="background-image: url(img/bg-img/9.jpg);">
-                                <!-- Play Button -->
-                                <a href="video-post.html" class="btn play-btn"><i class="fa fa-play"
-                                                                                  aria-hidden="true"></i></a>
-
-                                <!-- Post Content -->
-                                <div class="post-content">
-                                    <a href="#" class="post-cata">Sports</a>
-                                    <a href="single-post.html" class="post-title">Reunification of migrant toddlers,
-                                        parents should be completed Thursday</a>
-                                    <div class="post-meta d-flex">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>
-                                    </div>
+{{--                                    <a href="#" class="post-cata">Sports</a>--}}
+                                    <a href="https://www.youtube.com/watch?v={{$more_viewed_video['id']['videoId']}}" target="_blank" class="post-title">{{$more_viewed_video['snippet']['title']}}</a>
+{{--                                    <div class="post-meta d-flex">--}}
+{{--                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>--}}
+{{--                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>--}}
+{{--                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>--}}
+{{--                                    </div>--}}
                                 </div>
 
                                 <!-- Video Duration -->
@@ -79,105 +30,6 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="post-4" role="tabpanel" aria-labelledby="post-4-tab">
-                            <!-- Single Feature Post -->
-                            <div class="single-feature-post video-post bg-img"
-                                 style="background-image: url(img/bg-img/10.jpg);">
-                                <!-- Play Button -->
-                                <a href="video-post.html" class="btn play-btn"><i class="fa fa-play"
-                                                                                  aria-hidden="true"></i></a>
-
-                                <!-- Post Content -->
-                                <div class="post-content">
-                                    <a href="#" class="post-cata">Sports</a>
-                                    <a href="single-post.html" class="post-title">Reunification of migrant toddlers,
-                                        parents should be completed Thursday</a>
-                                    <div class="post-meta d-flex">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>
-                                    </div>
-                                </div>
-
-                                <!-- Video Duration -->
-                                <span class="video-duration">05.03</span>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade" id="post-5" role="tabpanel" aria-labelledby="post-5-tab">
-                            <!-- Single Feature Post -->
-                            <div class="single-feature-post video-post bg-img"
-                                 style="background-image: url(img/bg-img/7.jpg);">
-                                <!-- Play Button -->
-                                <a href="video-post.html" class="btn play-btn"><i class="fa fa-play"
-                                                                                  aria-hidden="true"></i></a>
-
-                                <!-- Post Content -->
-                                <div class="post-content">
-                                    <a href="#" class="post-cata">Sports</a>
-                                    <a href="single-post.html" class="post-title">Reunification of migrant toddlers,
-                                        parents should be completed Thursday</a>
-                                    <div class="post-meta d-flex">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>
-                                    </div>
-                                </div>
-
-                                <!-- Video Duration -->
-                                <span class="video-duration">05.03</span>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade" id="post-6" role="tabpanel" aria-labelledby="post-6-tab">
-                            <!-- Single Feature Post -->
-                            <div class="single-feature-post video-post bg-img"
-                                 style="background-image: url(img/bg-img/10.jpg);">
-                                <!-- Play Button -->
-                                <a href="video-post.html" class="btn play-btn"><i class="fa fa-play"
-                                                                                  aria-hidden="true"></i></a>
-
-                                <!-- Post Content -->
-                                <div class="post-content">
-                                    <a href="#" class="post-cata">Sports</a>
-                                    <a href="single-post.html" class="post-title">Reunification of migrant toddlers,
-                                        parents should be completed Thursday</a>
-                                    <div class="post-meta d-flex">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>
-                                    </div>
-                                </div>
-
-                                <!-- Video Duration -->
-                                <span class="video-duration">05.03</span>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade" id="post-7" role="tabpanel" aria-labelledby="post-7-tab">
-                            <!-- Single Feature Post -->
-                            <div class="single-feature-post video-post bg-img"
-                                 style="background-image: url(img/bg-img/7.jpg);">
-                                <!-- Play Button -->
-                                <a href="video-post.html" class="btn play-btn"><i class="fa fa-play"
-                                                                                  aria-hidden="true"></i></a>
-
-                                <!-- Post Content -->
-                                <div class="post-content">
-                                    <a href="#" class="post-cata">Sports</a>
-                                    <a href="single-post.html" class="post-title">Reunification of migrant toddlers,
-                                        parents should be completed Thursday</a>
-                                    <div class="post-meta d-flex">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>
-                                    </div>
-                                </div>
-
-                                <!-- Video Duration -->
-                                <span class="video-duration">05.03</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -196,9 +48,9 @@
                                     <div class="post-content">
                                         <h6 class="post-title">{{$video['snippet']['title']}}</h6>
                                         <div class="post-meta d-flex justify-content-between">
-                                            <span><i class="fa fa-comments-o" aria-hidden="true"></i> 25</span>
-                                            <span><i class="fa fa-eye" aria-hidden="true"></i> 11</span>
-                                            <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 19</span>
+{{--                                            <span><i class="fa fa-comments-o" aria-hidden="true"></i> 25</span>--}}
+{{--                                            <span><i class="fa fa-eye" aria-hidden="true"></i> 11</span>--}}
+{{--                                            <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 19</span>--}}
                                         </div>
                                     </div>
                                 </div>
@@ -285,50 +137,31 @@
                         <!-- Featured Post Slides -->
                         <div class="featured-post-slides owl-carousel mb-30">
                             <!-- Single Feature Post -->
-                            <div class="single-feature-post video-post bg-img"
-                                 style="background-image: url(img/bg-img/14.jpg);">
-                                <!-- Play Button -->
-                                <a href="video-post.html" class="btn play-btn"><i class="fa fa-play"
-                                                                                  aria-hidden="true"></i></a>
+                            @foreach($relevance_videos['items'] as $video)
+                                @if(array_key_exists('videoId',$video['id']))
+                                    <div class="single-feature-post video-post bg-img"
+                                         style="background-image: url({{$video['snippet']['thumbnails']['high']['url']}});">
+                                        <!-- Play Button -->
+                                        {{--                                {{dd($video['id']['videoId'])}}--}}
+                                        <a href="https://www.youtube.com/watch?v={{$video['id']['videoId']}}" class="btn play-btn" target="_blank"><i class="fa fa-play"
+                                                                                                                                                      aria-hidden="true"></i></a>
 
-                                <!-- Post Content -->
-                                <div class="post-content">
-                                    <a href="#" class="post-cata">Sports</a>
-                                    <a href="single-post.html" class="post-title">Reunification of migrant toddlers,
-                                        parents should be completed Thursday</a>
-                                    <div class="post-meta d-flex">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>
+                                        <!-- Post Content -->
+                                        <div class="post-content">
+                                            {{--                                    <a href="#" class="post-cata">Sports</a>--}}
+                                            <a href="https://www.youtube.com/watch?v={{$video['id']['videoId']}}" class="post-title" target="_blank">{{$video['snippet']['title']}}</a>
+                                            {{--                                    <div class="post-meta d-flex">--}}
+                                            {{--                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>--}}
+                                            {{--                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>--}}
+                                            {{--                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>--}}
+                                            {{--                                    </div>--}}
+                                        </div>
+
+                                        <!-- Video Duration -->
+                                        {{--                                <span class="video-duration">05.03</span>--}}
                                     </div>
-                                </div>
-
-                                <!-- Video Duration -->
-                                <span class="video-duration">05.03</span>
-                            </div>
-
-                            <!-- Single Feature Post -->
-                            <div class="single-feature-post video-post bg-img"
-                                 style="background-image: url(img/bg-img/7.jpg);">
-                                <!-- Play Button -->
-                                <a href="video-post.html" class="btn play-btn"><i class="fa fa-play"
-                                                                                  aria-hidden="true"></i></a>
-
-                                <!-- Post Content -->
-                                <div class="post-content">
-                                    <a href="#" class="post-cata">Sports</a>
-                                    <a href="single-post.html" class="post-title">Reunification of migrant toddlers,
-                                        parents should be completed Thursday</a>
-                                    <div class="post-meta d-flex">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>
-                                    </div>
-                                </div>
-
-                                <!-- Video Duration -->
-                                <span class="video-duration">05.03</span>
-                            </div>
+                                @endif
+                            @endforeach
                         </div>
 
                         <div class="row">
@@ -796,70 +629,43 @@
                             <div class="single-post-area mb-30">
                                 <!-- Post Thumbnail -->
                                 <div class="post-thumbnail">
-                                    <img src="/assets/vizew-master/img/bg-img/13.jpg" alt="">
+                                    <img src="{{$last_videos_down['items'][0]['snippet']['thumbnails']['medium']['url']}}" alt="">
 
                                     <!-- Video Duration -->
-                                    <span class="video-duration">05.03</span>
+{{--                                    <span class="video-duration">05.03</span>--}}
                                 </div>
 
                                 <!-- Post Content -->
                                 <div class="post-content">
-                                    <a href="#" class="post-cata cata-sm cata-success">Sports</a>
-                                    <a href="single-post.html" class="post-title">Full article Prince Charles's 'urgent'
-                                        global research</a>
-                                    <div class="post-meta d-flex">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>
-                                    </div>
+{{--                                    <a href="#" class="post-cata cata-sm cata-success">Sports</a>--}}
+                                    <a href="https://www.youtube.com/watch?v={{$last_videos_down['items'][0]['id']['videoId']}}" class="post-title">{{$last_videos_down['items'][0]['snippet']['title']}}</a>
+{{--                                    <div class="post-meta d-flex">--}}
+{{--                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>--}}
+{{--                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>--}}
+{{--                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
 
                             <!-- Single Blog Post -->
-                            <div class="single-blog-post d-flex">
-                                <div class="post-thumbnail">
-                                    <img src="/assets/vizew-master/img/bg-img/1.jpg" alt="">
-                                </div>
-                                <div class="post-content">
-                                    <a href="single-post.html" class="post-title">DC Shoes: gymkhana five; the making
-                                        of</a>
-                                    <div class="post-meta d-flex justify-content-between">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 29</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 08</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 23</a>
+                            @foreach($last_videos_down['items'] as $key => $value)
+                                @if($key !== 0 && array_key_exists('videoId',$value['id']))
+                                    <div class="single-blog-post d-flex">
+                                        <div class="post-thumbnail">
+                                            <img src="{{$value['snippet']['thumbnails']['default']['url']}}" alt="">
+                                        </div>
+                                        <div class="post-content">
+                                            <a href="https://www.youtube.com/watch?v={{$value['id']['videoId']}}" class="post-title">{{$value['snippet']['title']}}</a>
+{{--                                            <div class="post-meta d-flex justify-content-between">--}}
+{{--                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 29</a>--}}
+{{--                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 08</a>--}}
+{{--                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 23</a>--}}
+{{--                                            </div>--}}
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                @endif
+                            @endforeach
 
-                            <!-- Single Blog Post -->
-                            <div class="single-blog-post d-flex">
-                                <div class="post-thumbnail">
-                                    <img src="/assets/vizew-master/img/bg-img/2.jpg" alt="">
-                                </div>
-                                <div class="post-content">
-                                    <a href="single-post.html" class="post-title">Sweet Yummy Chocolatea Tea</a>
-                                    <div class="post-meta d-flex justify-content-between">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 17</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 33</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 26</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Blog Post -->
-                            <div class="single-blog-post d-flex">
-                                <div class="post-thumbnail">
-                                    <img src="/assets/vizew-master/img/bg-img/35.jpg" alt="">
-                                </div>
-                                <div class="post-content">
-                                    <a href="single-post.html" class="post-title">How To Make Orange Chicken Recipe?</a>
-                                    <div class="post-meta d-flex justify-content-between">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 11</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 42</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 21</a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
                         <!-- ***** Single Widget ***** -->

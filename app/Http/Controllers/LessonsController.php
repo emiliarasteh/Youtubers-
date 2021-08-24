@@ -54,7 +54,7 @@ class LessonsController extends Controller
 //        dd($fileNameWithoutExt);
         $request->video->move(storage_path('uploads'), $fileName);
         $data=($request->toArray());
-        $data['video'] = "videos/".$fileNameWithoutExt;
+        $data['video'] = $fileNameWithoutExt;
         VideoMaker::dispatch($data, $fileName, $fileNameWithoutExt);
         Lesson::create($data);
         return redirect('lessons/index');

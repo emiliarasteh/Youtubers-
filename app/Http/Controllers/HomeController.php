@@ -28,15 +28,26 @@ class HomeController extends Controller
     {
         $courses = Course::orderBy('id','desc')->get();
         $key = config('youtube.key');
-        $base_url = config('youtube.base_url');
         $channel_id = config('youtube.channel_id');
-        $maxResult = 10;
-        $last_videos_url = "activities?order=date&part=snippet&part=contentDetails&channelId=$channel_id&maxResults=$maxResult&key=$key";
-        $last_videos = Http::get(  $base_url.$last_videos_url)->json();
-//        order=viewCount
-//dd($last_videos);
+        $last_videos_url = "activities?order=date&part=snippet&part=contentDetails&channelId=$channel_id&maxResults=10&key=$key";
+        $last_videos = $this->getData($last_videos_url);
+        $more_viewed_video_url = "search?order=viewCount&part=snippet&channelId=$channel_id&maxResults=10&key=$key";
+        $more_viewed_video = $this->getData($more_viewed_video_url)['items'][0];
 
-        return view('index', compact('courses', 'last_videos'));
+        $last_videos_down_url = "search?order=date&part=snippet&channelId=$channel_id&maxResults=4&key=$key";
+        $last_videos_down = $this->getData($last_videos_down_url);
+
+        $relevance_video_url = "search?order=relevance&part=snippet&channelId=$channel_id&maxResults=10&key=$key";
+        $relevance_videos = $this->getData($relevance_video_url);
+//        dd($relevance_videos);
+//        &part=contentDetails
+        return view('index', compact('courses', 'last_videos', 'more_viewed_video', 'relevance_videos', 'last_videos_down'));
+    }
+
+    public function getData($last_videos_url)
+    {
+        $base_url = config('youtube.base_url');
+        return Http::get(  $base_url.$last_videos_url)->json();
     }
 
     public function about()

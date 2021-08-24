@@ -5,17 +5,10 @@
 <!-- Video.js base CSS -->
 <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
 
-<!-- City -->
-<link href="https://unpkg.com/@videojs/themes@1/dist/city/index.css" rel="stylesheet">
-
-<!-- Fantasy -->
-<link href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css" rel="stylesheet">
-
 <!-- Forest -->
 <link href="https://unpkg.com/@videojs/themes@1/dist/forest/index.css" rel="stylesheet">
 
-<!-- Sea -->
-<link href="https://unpkg.com/@videojs/themes@1/dist/sea/index.css" rel="stylesheet">
+
 @endsection
 @section('content')
 
@@ -136,6 +129,8 @@
 @section('footer')
 {{--    <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>--}}
 <script src="{{mix('js/app.js')}}"></script>
+
+
 @endsection
 
 <!-- Sidebar Widget -->

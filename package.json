@@ -28,6 +28,12 @@
     "dependencies": {
         "@videojs/http-streaming": "^2.10.1",
         "@videojs/themes": "^1.0.1",
-        "node-sass": "^6.0.1"
+        "node-sass": "^6.0.1",
+        "videojs-contrib-hls.js": "^3.2.0",
+        "videojs-contrib-quality-levels": "^2.1.0",
+        "videojs-hls-quality-selector": "^1.1.4",
+        "videojs-hotkeys": "^0.2.27",
+        "videojs-qualityselector": "0.0.4",
+        "videojs-resolution-switcher": "^0.4.2"
     }
 }
