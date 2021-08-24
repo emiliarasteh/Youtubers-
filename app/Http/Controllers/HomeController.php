@@ -35,7 +35,6 @@ class HomeController extends Controller
         $last_videos = Http::get(  $base_url.$last_videos_url)->json();
 //        order=viewCount
 //dd($last_videos);
-
         return view('index', compact('courses', 'last_videos'));
     }
 
