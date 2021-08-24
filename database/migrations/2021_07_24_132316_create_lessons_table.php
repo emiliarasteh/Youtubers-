@@ -20,6 +20,7 @@ class CreateLessonsTable extends Migration
             $table->longText('description');
             $table->integer('duration');
             $table->string('video');
+            $table->string('image');
             $table->integer('order');
             $table->timestamps();
         });

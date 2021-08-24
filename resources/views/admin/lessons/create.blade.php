@@ -50,6 +50,15 @@
                 </div>
             </div>
 
+
+            <div class="form-group row">
+                <label class="control-label col-md-3 col-sm-3 ">Image</label>
+                <div class="col-md-9 col-sm-9 ">
+                    <input name="image" type="file" class="form-control">
+
+                </div>
+            </div>
+
             <div class="form-group row">
                 <label class="control-label col-md-3 col-sm-3 ">Order</label>
                 <div class="col-md-9 col-sm-9 ">

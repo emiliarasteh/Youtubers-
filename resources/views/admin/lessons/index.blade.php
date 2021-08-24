@@ -18,6 +18,7 @@
                     <th>Description</th>
                     <th>Duration</th>
                     <th>Video</th>
+                    <th>image</th>
                     <th>Order</th>
                 </tr>
                 </thead>
@@ -34,6 +35,8 @@
                                     data-target=".video-example-modal-lg{{$value->id}}">Play
                             </button>
                         </td>
+                        <td> <img src="/{{$value->image}}" alt="Image"
+                                  class="img-responsive mt-2" width="100" height="100"> </td>
                         <td>{{$value->order}}</td>
 
                         <td>
@@ -144,6 +147,16 @@
                                                 <input value="{{$value->video}}" name="video" type="file"
                                                        class="form-control">
                                                 <img src="/{{$value->video}}" alt="Video"
+                                                     class="img-responsive mt-2">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3 ">image</label>
+                                            <div class="col-md-9 col-sm-9 ">
+                                                <input value="{{$value->image}}" name="image" type="file"
+                                                       class="form-control">
+                                                <img src="/{{$value->image}}" alt="image"
                                                      class="img-responsive mt-2">
                                             </div>
                                         </div>

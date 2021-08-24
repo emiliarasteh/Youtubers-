@@ -49,12 +49,19 @@ class LessonsController extends Controller
             'order'=>'required'
         ]);
 
+        $imagefileName = time().'.'.$request->file('image')->extension();
+//        dd(public_path('assets/images'));
+        $request->image->move(public_path('assets/images'), $imagefileName);
+
+        $data=($request->toArray());
+//        dd($data);
+        $data['image'] = "assets/images/".$imagefileName;
+
         $fileName = time().'.'.$request->file('video')->extension();
         $fileNameWithoutExt = time().'.m3u8';
 //        dd($fileNameWithoutExt);
         $request->video->move(storage_path('uploads'), $fileName);
-        $data=($request->toArray());
-        $data['video'] = $fileNameWithoutExt;
+        $data['video'] = "videos/".$fileNameWithoutExt;
         VideoMaker::dispatch($data, $fileName, $fileNameWithoutExt);
         Lesson::create($data);
         return redirect('lessons/index');
