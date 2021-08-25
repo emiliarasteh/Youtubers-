@@ -61,7 +61,7 @@ class LessonsController extends Controller
         $fileNameWithoutExt = time().'.m3u8';
 //        dd($fileNameWithoutExt);
         $request->video->move(storage_path('uploads'), $fileName);
-        $data['video'] = "videos/".$fileNameWithoutExt;
+        $data['video'] = $fileNameWithoutExt;
         VideoMaker::dispatch($data, $fileName, $fileNameWithoutExt);
         Lesson::create($data);
         return redirect('lessons/index');
