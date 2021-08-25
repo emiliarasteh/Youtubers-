@@ -11,18 +11,20 @@
                             <div class="single-feature-post video-post bg-img"
                                  style="background-image: url({{$more_viewed_video['snippet']['thumbnails']['high']['url']}});">
                                 <!-- Play Button -->
-                                <a href="https://www.youtube.com/watch?v={{$more_viewed_video['id']['videoId']}}" target="_blank" class="btn play-btn"><i class="fa fa-play"
-                                                                                  aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/watch?v={{$more_viewed_video['id']['videoId']}}"
+                                   target="_blank" class="btn play-btn"><i class="fa fa-play"
+                                                                           aria-hidden="true"></i></a>
 
                                 <!-- Post Content -->
                                 <div class="post-content">
-{{--                                    <a href="#" class="post-cata">Sports</a>--}}
-                                    <a href="https://www.youtube.com/watch?v={{$more_viewed_video['id']['videoId']}}" target="_blank" class="post-title">{{$more_viewed_video['snippet']['title']}}</a>
-{{--                                    <div class="post-meta d-flex">--}}
-{{--                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>--}}
-{{--                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>--}}
-{{--                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>--}}
-{{--                                    </div>--}}
+                                    {{--                                    <a href="#" class="post-cata">Sports</a>--}}
+                                    <a href="https://www.youtube.com/watch?v={{$more_viewed_video['id']['videoId']}}"
+                                       target="_blank" class="post-title">{{$more_viewed_video['snippet']['title']}}</a>
+                                    {{--                                    <div class="post-meta d-flex">--}}
+                                    {{--                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>--}}
+                                    {{--                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>--}}
+                                    {{--                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>--}}
+                                    {{--                                    </div>--}}
                                 </div>
 
                                 <!-- Video Duration -->
@@ -37,25 +39,27 @@
                     <ul class="nav vizew-nav-tab" role="tablist">
 
                         @foreach($last_videos['items'] as $video)
-                        <li class="nav-item">
-                            <a class="nav-link active" id="post-1-tab"  href="https://www.youtube.com/watch?v={{$video['contentDetails']['upload']['videoId']}}" role="tab" target="_blank"
-                               >
-                                <!-- Single Blog Post -->
-                                <div class="single-blog-post style-2 d-flex align-items-center">
-                                    <div class="post-thumbnail">
-                                        <img src="{{$video['snippet']['thumbnails']['default']['url']}}" alt="">
-                                    </div>
-                                    <div class="post-content">
-                                        <h6 class="post-title">{{$video['snippet']['title']}}</h6>
-                                        <div class="post-meta d-flex justify-content-between">
-{{--                                            <span><i class="fa fa-comments-o" aria-hidden="true"></i> 25</span>--}}
-{{--                                            <span><i class="fa fa-eye" aria-hidden="true"></i> 11</span>--}}
-{{--                                            <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 19</span>--}}
+                            <li class="nav-item">
+                                <a class="nav-link active" id="post-1-tab"
+                                   href="https://www.youtube.com/watch?v={{$video['contentDetails']['upload']['videoId']}}"
+                                   role="tab" target="_blank"
+                                >
+                                    <!-- Single Blog Post -->
+                                    <div class="single-blog-post style-2 d-flex align-items-center">
+                                        <div class="post-thumbnail">
+                                            <img src="{{$video['snippet']['thumbnails']['default']['url']}}" alt="">
+                                        </div>
+                                        <div class="post-content">
+                                            <h6 class="post-title">{{$video['snippet']['title']}}</h6>
+                                            <div class="post-meta d-flex justify-content-between">
+                                                {{--                                            <span><i class="fa fa-comments-o" aria-hidden="true"></i> 25</span>--}}
+                                                {{--                                            <span><i class="fa fa-eye" aria-hidden="true"></i> 11</span>--}}
+                                                {{--                                            <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 19</span>--}}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
+                                </a>
+                            </li>
                         @endforeach
 
 
@@ -73,7 +77,7 @@
                 <div class="col-12">
                     <!-- Section Heading -->
                     <div class="section-heading">
-                        <h4>Trending Videos</h4>
+                        <h4>دروس پرفروش</h4>
                         <div class="line"></div>
                     </div>
                 </div>
@@ -84,34 +88,34 @@
                 <!-- Single Blog Post -->
                 @foreach($courses as $course)
 
-                <div class="col-12 col-md-4">
-                    <div class="single-post-area mb-80">
-                        <!-- Post Thumbnail -->
-                        <div class="post-thumbnail">
-                            <a href="{{route('courses.show', $course->id)}}">
-                            <img src="{{ asset($course->image) }}" alt="">
-                            </a>
-                            <!-- Video Duration -->
-                            <span class="video-duration">05.03</span>
-                        </div>
+                    <div class="col-12 col-md-4">
+                        <div class="single-post-area mb-80">
+                            <!-- Post Thumbnail -->
+                            <div class="post-thumbnail">
+                                <a href="{{route('courses.show', $course->id)}}">
+                                    <img src="{{ asset($course->image) }}" alt="">
+                                </a>
+                                <!-- Video Duration -->
+                                <span class="video-duration">05.03</span>
+                            </div>
 
-                        <!-- Post Content -->
+                            <!-- Post Content -->
 
-                        <div class="post-content">
-                            <a href="{{route('courses.show', $course->id)}}" class="post-cata cata-sm cata-success">مشاهده</a>
-                            <a href="{{route('courses.show', $course->id)}}" class="post-title">
-                                {{ \Illuminate\Support\Str::of($course->description)->limit(47, ' (...)')}}
-                            </a>
-{{--                            <div class="post-meta d-flex">--}}
-{{--                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 22</a>--}}
-{{--                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 16</a>--}}
-{{--                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15</a>--}}
-{{--                            </div>--}}
+                            <div class="post-content">
+                                <a href="{{route('courses.show', $course->id)}}" class="post-cata cata-sm cata-success">مشاهده</a>
+                                <a href="{{route('courses.show', $course->id)}}" class="post-title">
+                                    {{ \Illuminate\Support\Str::of($course->description)->limit(47, ' (...)')}}
+                                </a>
+                                {{--                            <div class="post-meta d-flex">--}}
+                                {{--                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 22</a>--}}
+                                {{--                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 16</a>--}}
+                                {{--                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15</a>--}}
+                                {{--                            </div>--}}
+                            </div>
                         </div>
                     </div>
-                </div>
             @endforeach
-                <!-- Single Blog Post -->
+            <!-- Single Blog Post -->
 
 
                 <!-- Single Blog Post -->
@@ -143,13 +147,15 @@
                                          style="background-image: url({{$video['snippet']['thumbnails']['high']['url']}});">
                                         <!-- Play Button -->
                                         {{--                                {{dd($video['id']['videoId'])}}--}}
-                                        <a href="https://www.youtube.com/watch?v={{$video['id']['videoId']}}" class="btn play-btn" target="_blank"><i class="fa fa-play"
-                                                                                                                                                      aria-hidden="true"></i></a>
+                                        <a href="https://www.youtube.com/watch?v={{$video['id']['videoId']}}"
+                                           class="btn play-btn" target="_blank"><i class="fa fa-play"
+                                                                                   aria-hidden="true"></i></a>
 
                                         <!-- Post Content -->
                                         <div class="post-content">
                                             {{--                                    <a href="#" class="post-cata">Sports</a>--}}
-                                            <a href="https://www.youtube.com/watch?v={{$video['id']['videoId']}}" class="post-title" target="_blank">{{$video['snippet']['title']}}</a>
+                                            <a href="https://www.youtube.com/watch?v={{$video['id']['videoId']}}"
+                                               class="post-title" target="_blank">{{$video['snippet']['title']}}</a>
                                             {{--                                    <div class="post-meta d-flex">--}}
                                             {{--                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>--}}
                                             {{--                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>--}}
@@ -164,251 +170,64 @@
                             @endforeach
                         </div>
 
-                        <div class="row">
-                            <!-- Single Blog Post -->
-                            <div class="col-12 col-md-6">
-                                <div class="single-post-area mb-80">
-                                    <!-- Post Thumbnail -->
-                                    <div class="post-thumbnail">
-                                        <img src="/assets/vizew-master/img/bg-img/12.jpg" alt="">
-
-                                        <!-- Video Duration -->
-                                        <span class="video-duration">05.03</span>
-                                    </div>
-
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <a href="#" class="post-cata cata-sm cata-danger">Game</a>
-                                        <a href="single-post.html" class="post-title">Searching for the 'angel' who held
-                                            me on Westminste Bridge</a>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 28</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 17</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Blog Post -->
-                            <div class="col-12 col-md-6">
-                                <div class="single-post-area mb-80">
-                                    <!-- Post Thumbnail -->
-                                    <div class="post-thumbnail">
-                                        <img src="/assets/vizew-master/img/bg-img/13.jpg" alt="">
-
-                                        <!-- Video Duration -->
-                                        <span class="video-duration">05.03</span>
-                                    </div>
-
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <a href="#" class="post-cata cata-sm cata-primary">Business</a>
-                                        <a href="single-post.html" class="post-title">Love Island star's boyfriend found
-                                            dead after her funeral</a>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="row">
-                            <div class="col-12 col-lg-6">
-                                <!-- Section Heading -->
-                                <div class="section-heading style-2">
-                                    <h4>Sport Videos</h4>
-                                    <div class="line"></div>
-                                </div>
-
-                                <!-- Sports Video Slides -->
-                                <div class="sport-video-slides owl-carousel mb-50">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-post-area">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="/assets/vizew-master/img/bg-img/15.jpg" alt="">
-
-                                            <!-- Video Duration -->
-                                            <span class="video-duration">05.03</span>
-                                        </div>
-
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="post-cata cata-sm cata-success">Sports</a>
-                                            <a href="single-post.html" class="post-title">Searching for the 'angel' who
-                                                held me on Westminster Bridge</a>
-                                            <div class="post-meta d-flex">
-                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>
-                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>
-                                            </div>
-                                        </div>
+                            @foreach($playlists['items'] as $playlist)
+                                <div class="col-12 col-lg-6">
+                                    <!-- Section Heading -->
+                                    <div class="section-heading style-2">
+                                        <h4>{{$playlist['snippet']['title']}}</h4>
+                                        <div class="line"></div>
                                     </div>
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-post-area">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="/assets/vizew-master/img/bg-img/13.jpg" alt="">
+                                @foreach($playlists_videos as $playlist_videos)
+                                    @if($playlist_videos['playlist_id'] === $playlist['id'])
+                                        <!-- Sports Video Slides -->
+                                            <div class="sport-video-slides owl-carousel mb-50">
+                                            @foreach($playlist_videos['items'] as $video)
+                                                <!-- Single Blog Post -->
+                                                    <div class="single-post-area">
+                                                        <!-- Post Thumbnail -->
+                                                        <div class="post-thumbnail">
+                                                            <a target="_blank" href="https://www.youtube.com/watch?v={{$video['snippet']['resourceId']['videoId']}}&list={{$video['snippet']['playlistId']}}">
+                                                                <img
+                                                                    src="{{$video['snippet']['thumbnails']['medium']['url']}}"
+                                                                    alt="">
+                                                            </a>
 
-                                            <!-- Video Duration -->
-                                            <span class="video-duration">05.03</span>
-                                        </div>
 
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="post-cata cata-sm cata-success">Sports</a>
-                                            <a href="single-post.html" class="post-title">Searching for the 'angel' who
-                                                held me on Westminster Bridge</a>
-                                            <div class="post-meta d-flex">
-                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>
-                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>
+                                                            <!-- Video Duration -->
+                                                            {{--                                                            <span class="video-duration">05.03</span>--}}
+                                                        </div>
+
+                                                        <!-- Post Content -->
+                                                        <div class="post-content">
+{{--                                                            <a href="#"--}}
+{{--                                                               class="post-cata cata-sm cata-success">Sports</a>--}}
+                                                            <a href="https://www.youtube.com/watch?v={{$video['snippet']['resourceId']['videoId']}}&list={{$video['snippet']['playlistId']}}"
+                                                               class="post-title" target="_blank">{{$video['snippet']['title']}}</a>
+                                                            {{--                                                            <div class="post-meta d-flex">--}}
+                                                            {{--                                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>--}}
+                                                            {{--                                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>--}}
+                                                            {{--                                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>--}}
+                                                            {{--                                                            </div>--}}
+                                                        </div>
+                                                    </div>
+
+                                                @endforeach
                                             </div>
-                                        </div>
-                                    </div>
+
+                                        @endif
+                                    @endforeach
+
                                 </div>
-                            </div>
-
-                            <div class="col-12 col-lg-6">
-                                <!-- Section Heading -->
-                                <div class="section-heading style-2">
-                                    <h4>Business Videos</h4>
-                                    <div class="line"></div>
-                                </div>
-
-                                <!-- Business Video Slides -->
-                                <div class="business-video-slides owl-carousel mb-50">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-post-area">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="/assets/vizew-master/img/bg-img/17.jpg" alt="">
-
-                                            <!-- Video Duration -->
-                                            <span class="video-duration">05.03</span>
-                                        </div>
-
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="post-cata cata-sm cata-primary">Business</a>
-                                            <a href="single-post.html" class="post-title">Full article Prince Charles's
-                                                'urgent' global research</a>
-                                            <div class="post-meta d-flex">
-                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>
-                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Blog Post -->
-                                    <div class="single-post-area">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="/assets/vizew-master/img/bg-img/13.jpg" alt="">
-
-                                            <!-- Video Duration -->
-                                            <span class="video-duration">05.03</span>
-                                        </div>
-
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="post-cata cata-sm cata-primary">Business</a>
-                                            <a href="single-post.html" class="post-title">Full article Prince Charles's
-                                                'urgent' global research</a>
-                                            <div class="post-meta d-flex">
-                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>
-                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
 
-                        <div class="row mb-30">
-                            <!-- Single Blog Post -->
-                            <div class="col-12 col-lg-6">
-                                <div class="single-blog-post style-3 d-flex mb-50">
-                                    <div class="post-thumbnail">
-                                        <img src="/assets/vizew-master/img/bg-img/16.jpg" alt="">
-                                    </div>
-                                    <div class="post-content">
-                                        <a href="single-post.html" class="post-title">Epileptic boy's cannabis let
-                                            through border</a>
-                                        <div class="post-meta d-flex justify-content-between">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 16</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 26</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 17</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Blog Post -->
-                            <div class="col-12 col-lg-6">
-                                <div class="single-blog-post style-3 d-flex mb-50">
-                                    <div class="post-thumbnail">
-                                        <img src="/assets/vizew-master/img/bg-img/18.jpg" alt="">
-                                    </div>
-                                    <div class="post-content">
-                                        <a href="single-post.html" class="post-title">Paramedics 'drilled into boat
-                                            death woman'</a>
-                                        <div class="post-meta d-flex justify-content-between">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 16</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 26</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 17</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Blog Post -->
-                            <div class="col-12 col-lg-6">
-                                <div class="single-blog-post style-3 d-flex mb-50">
-                                    <div class="post-thumbnail">
-                                        <img src="/assets/vizew-master/img/bg-img/19.jpg" alt="">
-                                    </div>
-                                    <div class="post-content">
-                                        <a href="single-post.html" class="post-title">Tory vice-chairs quit over PM's
-                                            Brexit plan</a>
-                                        <div class="post-meta d-flex justify-content-between">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 16</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 26</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 17</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Blog Post -->
-                            <div class="col-12 col-lg-6">
-                                <div class="single-blog-post style-3 d-flex mb-50">
-                                    <div class="post-thumbnail">
-                                        <img src="/assets/vizew-master/img/bg-img/20.jpg" alt="">
-                                    </div>
-                                    <div class="post-content">
-                                        <a href="single-post.html" class="post-title">Do This One Simple Action for an
-                                            Absolutely</a>
-                                        <div class="post-meta d-flex justify-content-between">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 16</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 26</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 17</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <!-- Section Heading -->
                         <div class="section-heading style-2">
-                            <h4>Latest News</h4>
+                            <h4>جدید ترین دروس</h4>
                             <div class="line"></div>
                         </div>
 
@@ -461,146 +280,6 @@
                             </div>
                         </div>
 
-                        <!-- Single Post Area -->
-                        <div class="single-post-area mb-30">
-                            <div class="row align-items-center">
-                                <div class="col-12 col-lg-6">
-                                    <!-- Post Thumbnail -->
-                                    <div class="post-thumbnail">
-                                        <img src="/assets/vizew-master/img/bg-img/21.jpg" alt="">
-
-                                        <!-- Video Duration -->
-                                        <span class="video-duration">05.03</span>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <!-- Post Content -->
-                                    <div class="post-content mt-0">
-                                        <a href="#" class="post-cata cata-sm cata-success">Sports</a>
-                                        <a href="single-post.html" class="post-title mb-2">May fights on after Johnson
-                                            savages Brexit approach</a>
-                                        <div class="post-meta d-flex align-items-center mb-2">
-                                            <a href="#" class="post-author">By Jane</a>
-                                            <i class="fa fa-circle" aria-hidden="true"></i>
-                                            <a href="#" class="post-date">Sep 08, 2018</a>
-                                        </div>
-                                        <p class="mb-2">Quisque mollis tristique ante. Proin ligula eros, varius id
-                                            tristique sit amet, rutrum non ligula.</p>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 32</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 42</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 7</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Post Area -->
-                        <div class="single-post-area mb-30">
-                            <div class="row align-items-center">
-                                <div class="col-12 col-lg-6">
-                                    <!-- Post Thumbnail -->
-                                    <div class="post-thumbnail">
-                                        <img src="/assets/vizew-master/img/bg-img/22.jpg" alt="">
-
-                                        <!-- Video Duration -->
-                                        <span class="video-duration">05.03</span>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <!-- Post Content -->
-                                    <div class="post-content mt-0">
-                                        <a href="#" class="post-cata cata-sm cata-danger">Game</a>
-                                        <a href="single-post.html" class="post-title mb-2">Thailand cave rescue: Boys
-                                            'doing well' after spending night</a>
-                                        <div class="post-meta d-flex align-items-center mb-2">
-                                            <a href="#" class="post-author">By Jane</a>
-                                            <i class="fa fa-circle" aria-hidden="true"></i>
-                                            <a href="#" class="post-date">Sep 08, 2018</a>
-                                        </div>
-                                        <p class="mb-2">Quisque mollis tristique ante. Proin ligula eros, varius id
-                                            tristique sit amet, rutrum non ligula.</p>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 32</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 42</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 7</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Post Area -->
-                        <div class="single-post-area mb-30">
-                            <div class="row align-items-center">
-                                <div class="col-12 col-lg-6">
-                                    <!-- Post Thumbnail -->
-                                    <div class="post-thumbnail">
-                                        <img src="/assets/vizew-master/img/bg-img/23.jpg" alt="">
-
-                                        <!-- Video Duration -->
-                                        <span class="video-duration">05.03</span>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <!-- Post Content -->
-                                    <div class="post-content mt-0">
-                                        <a href="#" class="post-cata cata-sm cata-primary">Business</a>
-                                        <a href="single-post.html" class="post-title mb-2">Theresa May battles Brexiteer
-                                            backlash amid disquiet</a>
-                                        <div class="post-meta d-flex align-items-center mb-2">
-                                            <a href="#" class="post-author">By Jane</a>
-                                            <i class="fa fa-circle" aria-hidden="true"></i>
-                                            <a href="#" class="post-date">Sep 08, 2018</a>
-                                        </div>
-                                        <p class="mb-2">Quisque mollis tristique ante. Proin ligula eros, varius id
-                                            tristique sit amet, rutrum non ligula.</p>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 32</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 42</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 7</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Post Area -->
-                        <div class="single-post-area mb-30">
-                            <div class="row align-items-center">
-                                <div class="col-12 col-lg-6">
-                                    <!-- Post Thumbnail -->
-                                    <div class="post-thumbnail">
-                                        <img src="/assets/vizew-master/img/bg-img/24.jpg" alt="">
-
-                                        <!-- Video Duration -->
-                                        <span class="video-duration">05.03</span>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <!-- Post Content -->
-                                    <div class="post-content mt-0">
-                                        <a href="#" class="post-cata cata-sm cata-danger">Game</a>
-                                        <a href="single-post.html" class="post-title mb-2">Theresa May warned Brexit
-                                            strategy 'risks putting Jeremy Corbyn</a>
-                                        <div class="post-meta d-flex align-items-center mb-2">
-                                            <a href="#" class="post-author">By Jane</a>
-                                            <i class="fa fa-circle" aria-hidden="true"></i>
-                                            <a href="#" class="post-date">Sep 08, 2018</a>
-                                        </div>
-                                        <p class="mb-2">Quisque mollis tristique ante. Proin ligula eros, varius id
-                                            tristique sit amet, rutrum non ligula.</p>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 32</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 42</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 7</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 
@@ -629,21 +308,24 @@
                             <div class="single-post-area mb-30">
                                 <!-- Post Thumbnail -->
                                 <div class="post-thumbnail">
-                                    <img src="{{$last_videos_down['items'][0]['snippet']['thumbnails']['medium']['url']}}" alt="">
+                                    <img
+                                        src="{{$last_videos_down['items'][0]['snippet']['thumbnails']['medium']['url']}}"
+                                        alt="">
 
                                     <!-- Video Duration -->
-{{--                                    <span class="video-duration">05.03</span>--}}
+                                    {{--                                    <span class="video-duration">05.03</span>--}}
                                 </div>
 
                                 <!-- Post Content -->
                                 <div class="post-content">
-{{--                                    <a href="#" class="post-cata cata-sm cata-success">Sports</a>--}}
-                                    <a href="https://www.youtube.com/watch?v={{$last_videos_down['items'][0]['id']['videoId']}}" class="post-title">{{$last_videos_down['items'][0]['snippet']['title']}}</a>
-{{--                                    <div class="post-meta d-flex">--}}
-{{--                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>--}}
-{{--                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>--}}
-{{--                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>--}}
-{{--                                    </div>--}}
+                                    {{--                                    <a href="#" class="post-cata cata-sm cata-success">Sports</a>--}}
+                                    <a href="https://www.youtube.com/watch?v={{$last_videos_down['items'][0]['id']['videoId']}}"
+                                       class="post-title">{{$last_videos_down['items'][0]['snippet']['title']}}</a>
+                                    {{--                                    <div class="post-meta d-flex">--}}
+                                    {{--                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>--}}
+                                    {{--                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>--}}
+                                    {{--                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>--}}
+                                    {{--                                    </div>--}}
                                 </div>
                             </div>
 
@@ -655,12 +337,13 @@
                                             <img src="{{$value['snippet']['thumbnails']['default']['url']}}" alt="">
                                         </div>
                                         <div class="post-content">
-                                            <a href="https://www.youtube.com/watch?v={{$value['id']['videoId']}}" class="post-title">{{$value['snippet']['title']}}</a>
-{{--                                            <div class="post-meta d-flex justify-content-between">--}}
-{{--                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 29</a>--}}
-{{--                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 08</a>--}}
-{{--                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 23</a>--}}
-{{--                                            </div>--}}
+                                            <a href="https://www.youtube.com/watch?v={{$value['id']['videoId']}}"
+                                               class="post-title">{{$value['snippet']['title']}}</a>
+                                            {{--                                            <div class="post-meta d-flex justify-content-between">--}}
+                                            {{--                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 29</a>--}}
+                                            {{--                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 08</a>--}}
+                                            {{--                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 23</a>--}}
+                                            {{--                                            </div>--}}
                                         </div>
                                     </div>
                                 @endif
@@ -673,179 +356,7 @@
                             <a href="#"><img src="/assets/vizew-master/img/bg-img/add.png" alt=""></a>
                         </div>
 
-                        <!-- ***** Sidebar Widget ***** -->
-                        <div class="single-widget youtube-channel-widget mb-50">
-                            <!-- Section Heading -->
-                            <div class="section-heading style-2 mb-30">
-                                <h4>Hot Channels</h4>
-                                <div class="line"></div>
-                            </div>
 
-                            <!-- Single YouTube Channel -->
-                            <div class="single-youtube-channel d-flex align-items-center">
-                                <div class="youtube-channel-thumbnail">
-                                    <img src="/assets/vizew-master/img/bg-img/25.jpg" alt="">
-                                </div>
-                                <div class="youtube-channel-content">
-                                    <a href="single-post.html" class="channel-title">Music Channel</a>
-                                    <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o"
-                                                                             aria-hidden="true"></i> Subscribe</a>
-                                </div>
-                            </div>
-
-                            <!-- Single YouTube Channel -->
-                            <div class="single-youtube-channel d-flex align-items-center">
-                                <div class="youtube-channel-thumbnail">
-                                    <img src="/assets/vizew-master/img/bg-img/26.jpg" alt="">
-                                </div>
-                                <div class="youtube-channel-content">
-                                    <a href="single-post.html" class="channel-title">Trending Channel</a>
-                                    <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o"
-                                                                             aria-hidden="true"></i> Subscribe</a>
-                                </div>
-                            </div>
-
-                            <!-- Single YouTube Channel -->
-                            <div class="single-youtube-channel d-flex align-items-center">
-                                <div class="youtube-channel-thumbnail">
-                                    <img src="/assets/vizew-master/img/bg-img/27.jpg" alt="">
-                                </div>
-                                <div class="youtube-channel-content">
-                                    <a href="single-post.html" class="channel-title">Travel Channel</a>
-                                    <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o"
-                                                                             aria-hidden="true"></i> Subscribe</a>
-                                </div>
-                            </div>
-
-                            <!-- Single YouTube Channel -->
-                            <div class="single-youtube-channel d-flex align-items-center">
-                                <div class="youtube-channel-thumbnail">
-                                    <img src="/assets/vizew-master/img/bg-img/28.jpg" alt="">
-                                </div>
-                                <div class="youtube-channel-content">
-                                    <a href="single-post.html" class="channel-title">Sport Channel</a>
-                                    <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o"
-                                                                             aria-hidden="true"></i> Subscribe</a>
-                                </div>
-                            </div>
-
-                            <!-- Single YouTube Channel -->
-                            <div class="single-youtube-channel d-flex align-items-center">
-                                <div class="youtube-channel-thumbnail">
-                                    <img src="/assets/vizew-master/img/bg-img/29.jpg" alt="">
-                                </div>
-                                <div class="youtube-channel-content">
-                                    <a href="single-post.html" class="channel-title">TV Show Channel</a>
-                                    <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o"
-                                                                             aria-hidden="true"></i> Subscribe</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ***** Single Widget ***** -->
-                        <div class="single-widget newsletter-widget mb-50">
-                            <!-- Section Heading -->
-                            <div class="section-heading style-2 mb-30">
-                                <h4>Newsletter</h4>
-                                <div class="line"></div>
-                            </div>
-                            <p>Subscribe our newsletter gor get notification about new updates, information discount,
-                                etc.</p>
-                            <!-- Newsletter Form -->
-                            <div class="newsletter-form">
-                                <form action="#" method="post">
-                                    <input type="email" name="nl-email" class="form-control mb-15" id="emailnl"
-                                           placeholder="Enter your email">
-                                    <button type="submit" class="btn vizew-btn w-100">Subscribe</button>
-                                </form>
-                            </div>
-                        </div>
-
-                        <!-- ***** Single Widget ***** -->
-                        <div class="single-widget mb-50">
-                            <!-- Section Heading -->
-                            <div class="section-heading style-2 mb-30">
-                                <h4>Most Viewed Playlist</h4>
-                                <div class="line"></div>
-                            </div>
-
-                            <!-- Single Blog Post -->
-                            <div class="single-blog-post d-flex">
-                                <div class="post-thumbnail">
-                                    <img src="/assets/vizew-master/img/bg-img/1.jpg" alt="">
-                                </div>
-                                <div class="post-content">
-                                    <a href="single-post.html" class="post-title">DC Shoes: gymkhana five; the making
-                                        of</a>
-                                    <div class="post-meta d-flex justify-content-between">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Blog Post -->
-                            <div class="single-blog-post d-flex">
-                                <div class="post-thumbnail">
-                                    <img src="/assets/vizew-master/img/bg-img/2.jpg" alt="">
-                                </div>
-                                <div class="post-content">
-                                    <a href="single-post.html" class="post-title">How To Make Orange Chicken Recipe?</a>
-                                    <div class="post-meta d-flex justify-content-between">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Blog Post -->
-                            <div class="single-blog-post d-flex">
-                                <div class="post-thumbnail">
-                                    <img src="/assets/vizew-master/img/bg-img/36.jpg" alt="">
-                                </div>
-                                <div class="post-content">
-                                    <a href="single-post.html" class="post-title">Sweet Yummy Chocolate in the</a>
-                                    <div class="post-meta d-flex justify-content-between">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Blog Post -->
-                            <div class="single-blog-post d-flex">
-                                <div class="post-thumbnail">
-                                    <img src="/assets/vizew-master/img/bg-img/37.jpg" alt="">
-                                </div>
-                                <div class="post-content">
-                                    <a href="single-post.html" class="post-title">DC Shoes: gymkhana five; the making
-                                        of</a>
-                                    <div class="post-meta d-flex justify-content-between">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Blog Post -->
-                            <div class="single-blog-post d-flex">
-                                <div class="post-thumbnail">
-                                    <img src="/assets/vizew-master/img/bg-img/38.jpg" alt="">
-                                </div>
-                                <div class="post-content">
-                                    <a href="single-post.html" class="post-title">How To Make Orange Chicken Recipe?</a>
-                                    <div class="post-meta d-flex justify-content-between">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                     </div>
                 </div>

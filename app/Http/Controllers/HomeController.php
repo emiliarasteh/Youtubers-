@@ -39,9 +39,21 @@ class HomeController extends Controller
 
         $relevance_video_url = "search?order=relevance&part=snippet&channelId=$channel_id&maxResults=10&key=$key";
         $relevance_videos = $this->getData($relevance_video_url);
-//        dd($relevance_videos);
+
+        $playlists_url = "playlists?order=relevance&part=snippet&channelId=$channel_id&maxResults=4&key=$key";
+        $playlists = $this->getData($playlists_url);
+
+        $playlists_videos = [];
+        foreach ($playlists['items'] as $playlist){
+            $playlists_videos_url = "playlistItems?order=date&part=snippet&channelId=$channel_id&playlistId={$playlist['id']}&maxResults=100&key=$key";
+            $data = $this->getData($playlists_videos_url);
+            $data['playlist_id'] = $playlist['id'];
+            $playlists_videos[] = $data;
+        }
+//        dd($playlists);
 //        &part=contentDetails
-        return view('index', compact('courses', 'last_videos', 'more_viewed_video', 'relevance_videos', 'last_videos_down'));
+        return view('index', compact('courses', 'last_videos', 'more_viewed_video', 'relevance_videos', 'last_videos_down',
+        'playlists', 'playlists_videos'));
     }
 
     public function getData($last_videos_url)
