@@ -24,38 +24,38 @@
                     <!-- Typography Content -->
                     <div class="typography-content mb-50">
                         <!-- Title -->
-                        <h4 class="mb-3">1. Headings</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h4 class="mb-3">{{getSetting('Topic1')}}</h4>
+                        <p>{{getSetting('explain1')}}</p>
 
                         <!-- Heading 1 -->
-                        <h1>Headings level 1</h1>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
+                        <h1>{{getSetting('Topic2')}}</h1>
+                        <p>{{getSetting('explain2')}}</p>
 
                         <!-- Heading 2 -->
-                        <h2>Headings level 2</h2>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
+                        <h2>{{getSetting('Topic3')}}</h2>
+                        <p>{{getSetting('explain3')}}</p>
 
                         <!-- Heading 3 -->
-                        <h3>Headings level 3</h3>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
+                        <h3>{{getSetting('Topic4')}}</h3>
+                        <p>{{getSetting('explain4')}}</p>
 
                         <!-- Heading 4 -->
-                        <h4>Headings level 4</h4>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
+                        <h4>{{getSetting('Topic5')}}</h4>
+                        <p>{{getSetting('explain5')}}</p>
 
                         <!-- Heading 5 -->
-                        <h5>Headings level 5</h5>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
+                        <h5>{{getSetting('Topic6')}}</h5>
+                        <p>{{getSetting('explain6')}}</p>
 
                         <!-- Heading 6 -->
-                        <h6>Headings level 6</h6>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
+                        <h6>{{getSetting('Topic7')}}</h6>
+                        <p>{{getSetting('explain7')}}</p>
                     </div>
 
                     <!-- Typography Content -->
                     <div class="typography-content mb-50">
                         <!-- Title -->
-                        <h4 class="mb-3">2. Videos</h4>
+                        <h4 class="mb-3">{{getSetting('Topic8')}}</h4>
 
                         <!-- Single Feature Post -->
                         <div class="single-feature-post video-post bg-img mb-30" style="background-image: url(img/bg-img/14.jpg);">
@@ -64,8 +64,8 @@
 
                             <!-- Post Content -->
                             <div class="post-content">
-                                <a href="#" class="post-cata">Sports</a>
-                                <a href="single-post.html" class="post-title">Reunification of migrant toddlers, parents should be completed Thursday</a>
+                                <a href="#" class="post-cata">{{getSetting('Topic9')}}</a>
+                                <a href="single-post.html" class="post-title">{{getSetting('explain9')}}</a>
                                 <div class="post-meta d-flex">
                                     <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>
                                     <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>
@@ -74,57 +74,57 @@
                             </div>
 
                             <!-- Video Duration -->
-                            <span class="video-duration">05.03</span>
+                            <span class="video-duration">{{getSetting('explain10')}}</span>
                         </div>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>{{getSetting('explain11')}}</p>
                     </div>
 
                     <!-- Typography Content -->
                     <div class="typography-content mb-50">
                         <!-- Title -->
-                        <h4 class="mb-3">3. Blockquote</h4>
+                        <h4 class="mb-3">{{getSetting('Topic10')}}</h4>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>{{getSetting('explain12')}}</p>
 
                         <blockquote class="vizew-blockquote mb-15">
-                            <h5 class="blockquote-text">“If you’re going to try, go all the way. There is no other feeling like that. You will be alone with the gods.”</h5>
-                            <h6>Ollie Schneider - CEO Deercreative</h6>
+                            <h5 class="blockquote-text">{{getSetting('explain13')}}</h5>
+                            <h6>{{getSetting('explain14')}}</h6>
                         </blockquote>
 
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>{{getSetting('explain15')}}</p>
                     </div>
 
                     <!-- Typography Content -->
                     <div class="typography-content mb-50">
                         <!-- Title -->
-                        <h4 class="mb-3">4. Unordered List</h4>
+                        <h4 class="mb-3">{{getSetting('Topic11')}}</h4>
 
                         <ul class="unordered-list mb-0">
-                            <li>Lorem ipsum dosectetur adipisicing elit</li>
-                            <li>Mauris elementum accumsan leo vel tempor.</li>
-                            <li>Nulla fringilla purus at leo dignissim congue.</li>
-                            <li>Mauris elementum accumsan leo vel tempor.</li>
+                            <li>{{getSetting('explain16')}}</li>
+                            <li>{{getSetting('explain17')}}</li>
+                            <li>{{getSetting('explain18')}}</li>
+                            <li>{{getSetting('explain19')}}</li>
                         </ul>
                     </div>
 
                     <!-- Typography Content -->
                     <div class="typography-content mb-50">
                         <!-- Title -->
-                        <h4 class="mb-3">5. Ordered List</h4>
+                        <h4 class="mb-3">{{getSetting('Topic12')}}</h4>
 
                         <ol class="ordered-list mb-0">
-                            <li>Lorem ipsum dosectetur adipisicing elit</li>
-                            <li>Mauris elementum accumsan leo vel tempor.</li>
-                            <li>Nulla fringilla purus at leo dignissim congue.</li>
-                            <li>Mauris elementum accumsan leo vel tempor.</li>
+                            <li>{{getSetting('explain20')}}</li>
+                            <li>{{getSetting('explain21')}}</li>
+                            <li>{{getSetting('explain22')}}</li>
+                            <li>{{getSetting('explain23')}}</li>
                         </ol>
                     </div>
 
                     <!-- Typography Content -->
                     <div class="typography-content mb-50">
                         <!-- Title -->
-                        <h4 class="mb-3">6. Form &amp; Button</h4>
+                        <h4 class="mb-3">{{getSetting('Topic13')}}</h4>
 
                         <!-- Contact Form Area -->
                         <div class="contact-form-area">
