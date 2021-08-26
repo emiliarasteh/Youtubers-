@@ -78,8 +78,10 @@
                             </li>
 
                            <li><a href="{{route('admin.users')}}"> <i class="fa fa-user"></i>کاربران</a></li>
+                           <li><a href="{{route('admin.setting')}}"> <i class="fa fa-user"></i>تنظیمات</a></li>
 
-                        </ul>
+
+                       </ul>
                     </div>
                 </div>
 

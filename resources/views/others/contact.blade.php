@@ -6,11 +6,11 @@
                 <div class="col-12 col-md-7 col-lg-8">
                     <!-- Section Heading -->
                     <div class="section-heading style-2">
-                        <h4>Contact</h4>
+                        <h4>{{getSetting('Topic14')}}</h4>
                         <div class="line"></div>
                     </div>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <p>{{getSetting('explain24')}}</p>
 
                     <!-- Contact Form Area -->
                     <div class="contact-form-area mt-50">
@@ -38,10 +38,10 @@
                         <div class="single-widget newsletter-widget mb-50">
                             <!-- Section Heading -->
                             <div class="section-heading style-2 mb-30">
-                                <h4>Newsletter</h4>
+                                <h4>{{getSetting('Topic15')}}</h4>
                                 <div class="line"></div>
                             </div>
-                            <p>Subscribe our newsletter gor get notification about new updates, information discount, etc.</p>
+                            <p>{{getSetting('explain25')}}</p>
                             <!-- Newsletter Form -->
                             <div class="newsletter-form">
                                 <form action="#" method="post">

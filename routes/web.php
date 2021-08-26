@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
-Route::get('/question', [App\Http\Controllers\HomeController::class, 'question'])->name('question');
 
 
 
@@ -45,9 +44,14 @@ Route::middleware(['auth'])->group(function() {
         Route::post('/lessons/store', [App\Http\Controllers\LessonsController::class, 'store'])->name('admin.lessons.store');
         Route::put('/lessons/update/{id}', [App\Http\Controllers\LessonsController::class, 'update'])->name('admin.lessons.update');
         Route::get('/lessons/delete/{id}', [App\Http\Controllers\LessonsController::class, 'destroy'])->name('admin.lessons.destroy');
+
+
 //        💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋
 //        ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️ 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗
         Route::get('/users/index', [App\Http\Controllers\UserController::class, 'index'])->name('admin.users');
+        Route::get('/setting/index', [App\Http\Controllers\SettingController::class, 'index'])->name('admin.setting');
+
+
 
         Route::post('/users/courses', [App\Http\Controllers\VideoController::class, 'userCourseSync'])->name('users.courses');
 

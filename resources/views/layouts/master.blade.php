@@ -115,7 +115,7 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li class="active"><a  href="{{route('question')}}">سوالات متداول</a></li>
+
 
                                 <li><a href="{{route('contact')}}">تماس با ما</a></li>
 
