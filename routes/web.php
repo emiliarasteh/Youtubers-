@@ -50,6 +50,16 @@ Route::middleware(['auth'])->group(function() {
 //        ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️ 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗
         Route::get('/users/index', [App\Http\Controllers\UserController::class, 'index'])->name('admin.users');
         Route::get('/setting/index', [App\Http\Controllers\SettingController::class, 'index'])->name('admin.setting');
+        Route::put('/setting/update/{id}', [App\Http\Controllers\SettingController::class, 'update'])->name('admin.setting.update');
+
+
+
+        Route::get('/pages/index', [App\Http\Controllers\PageController::class, 'index'])->name('admin.pages');
+        Route::get('/pages/create', [App\Http\Controllers\PageController::class, 'create'])->name('admin.pages.create');
+        Route::post('/pages/store', [App\Http\Controllers\PageController::class, 'store'])->name('admin.pages.store');
+        Route::post('/pages/update', [App\Http\Controllers\PageController::class, 'update'])->name('admin.pages.update');
+        Route::post('/pages/delete/{id}', [App\Http\Controllers\PageController::class, 'destroy'])->name('admin.pages.destroy');
+
 
 
 
