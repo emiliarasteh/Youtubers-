@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Core\DataService;
 use App\Core\Youtube;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -28,5 +29,6 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         $this->app->bind(DataService::class, Youtube::class);
+        Paginator::useBootstrap();
     }
 }

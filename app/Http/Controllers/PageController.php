@@ -75,8 +75,8 @@ class PageController extends Controller
      */
     public function edit($id)
     {
-        $pages = Page::find($id);
-        return view('admin.pages.update', compact('pages'));
+        $page = Page::find($id);
+        return view('admin.pages.update', compact('page'));
     }
 
     /**

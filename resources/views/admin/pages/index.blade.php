@@ -36,7 +36,7 @@
                         <td>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <a href="{{route('admin.pages.update' ,$value->id)}}" class="btn btn-round btn-primary">Update</a>
+                                    <a href="{{route('admin.pages.edit' ,$value->id)}}" class="btn btn-round btn-primary">Update</a>
                                 </div>
                             </div>
                         </td>

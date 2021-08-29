@@ -11,7 +11,9 @@
             <div class="clearfix"></div>
         </div>
 
-        <form action="{{route('admin.pages.edit')}}" method="get" enctype="multipart/form-data">
+        <form action="{{route('admin.pages.update', $page->id)}}" method="post" enctype="multipart/form-data">
+            @method('put')
+            @csrf
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -25,21 +27,21 @@
             <div class="form-group row">
                 <label class="control-label col-md-3 col-sm-3 ">Title</label>
                 <div class="col-md-9 col-sm-9 ">
-                    <input name="title" type="text" class="form-control" value="{{$pages->title}}" >
+                    <input name="title" type="text" class="form-control" value="{{$page->title}}" >
                 </div>
             </div>
             <div class="form-group row">
                 <label class="control-label col-md-3 col-sm-3 ">Description</label>
                 <div class="col-md-9 col-sm-9 ">
-                    <textarea name="description" class="form-control" rows="3">{{$pages->description}}</textarea>
+                    <textarea name="description" class="form-control" rows="3">{{$page->description}}</textarea>
                 </div>
             </div>
 
             <div class="form-group row">
                 <label class="control-label col-md-3 col-sm-3 ">Image</label>
                 <div class="col-md-9 col-sm-9 ">
-                    <input name="image" type="file" class="form-control" value="{{$pages->image}}" >
-                    <img src="/{{$pages->image}}" alt="Image"
+                    <input name="image" type="file" class="form-control" value="{{$page->image}}" >
+                    <img src="/{{$page->image}}" alt="Image"
                          class="img-responsive mt-2">
                 </div>
             </div>
@@ -47,7 +49,7 @@
             <div class="form-group row">
                 <label class="control-label col-md-3 col-sm-3 ">key</label>
                 <div class="col-md-9 col-sm-9 ">
-                    <input value="{{$pages->key}}" name="key" type="text" class="form-control number-filter" id="price" value="{{old('price')}}">
+                    <input value="{{$page->key}}" name="key" type="text" class="form-control number-filter" id="price" value="{{old('price')}}">
                 </div>
             </div>
 
