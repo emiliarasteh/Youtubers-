@@ -18,6 +18,7 @@
                     <th>Description</th>
                     <th>Image</th>
                     <th>key</th>
+                    <th>operation</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,16 +32,11 @@
                                  class="img-responsive mt-2" width="100" height="100"></td>
                         <td>{{$value->key}}</td>
 
+
                         <td>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <button type="button" class="btn btn-round btn-info btn-sm" data-toggle="modal"
-                                            data-target=".bs-example-modal-lg{{$value->id}}">Edit
-                                    </button>
-                                </div>
-                                <div class="col-sm-3">
-                                    <a href="{{route('admin.pages.destroy', $value->id)}}"
-                                       class="btn btn-round btn-danger btn-sm">Delete</a>
+                                    <a href="{{route('admin.pages.update' ,$value->id)}}" class="btn btn-round btn-primary">Update</a>
                                 </div>
                             </div>
                         </td>

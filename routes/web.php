@@ -13,12 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
-
 
 
 
@@ -57,8 +54,9 @@ Route::middleware(['auth'])->group(function() {
         Route::get('/pages/index', [App\Http\Controllers\PageController::class, 'index'])->name('admin.pages');
         Route::get('/pages/create', [App\Http\Controllers\PageController::class, 'create'])->name('admin.pages.create');
         Route::post('/pages/store', [App\Http\Controllers\PageController::class, 'store'])->name('admin.pages.store');
-        Route::post('/pages/update', [App\Http\Controllers\PageController::class, 'update'])->name('admin.pages.update');
-        Route::post('/pages/delete/{id}', [App\Http\Controllers\PageController::class, 'destroy'])->name('admin.pages.destroy');
+        Route::get('/pages/edit/{id}', [App\Http\Controllers\PageController::class, 'edit'])->name('admin.pages.edit');
+        Route::put('/pages/update/{id}', [App\Http\Controllers\PageController::class, 'update'])->name('admin.pages.update');
+        Route::get('/pages/delete/{id}', [App\Http\Controllers\PageController::class, 'destroy'])->name('admin.pages.destroy');
 
 
 

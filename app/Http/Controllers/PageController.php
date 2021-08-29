@@ -43,15 +43,26 @@ class PageController extends Controller
             'image'=>'required',
             'key'=>'required'
         ]);
+
+        $fileName = time().'.'.$request->file('image')->extension();
+//        dd(public_path('assets/images'));
+        $request->image->move(public_path('assets/images'), $fileName);
+
+        $data=($request->toArray());
+//        dd($data);
+        $data['image'] = "assets/images/".$fileName;
+
+        $pages = Page::create($data);
+        return redirect('pages/index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Page  $page
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Page $page)
+    public function show($id)
     {
         //
     }
@@ -59,33 +70,37 @@ class PageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Page  $page
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Page $page)
+    public function edit($id)
     {
-        //
+        $pages = Page::find($id);
+        return view('admin.pages.update', compact('pages'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Page  $page
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Page $page)
+    public function update(Request $request, $id)
     {
-        //
+        $data=($request->toArray());
+        $pages = Page::find($id);
+        $pages->update($data);
+        return redirect('pages/index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Page  $page
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Page $page)
+    public function destroy($id)
     {
         //
     }
