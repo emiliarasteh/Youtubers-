@@ -74,6 +74,7 @@ class HomeController extends Controller
         return view('others.about');
     }
 
+
     public function contact()
     {
 

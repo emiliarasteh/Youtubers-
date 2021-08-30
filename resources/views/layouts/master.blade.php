@@ -176,6 +176,7 @@
                                          </ul>
                                      </div>
                                  </li>
+                                <li class="active"><a href="{{route('pages')}}">مطالب</a></li>
                                 <li class="active"><a href="{{route('about')}}">درباره ما</a></li>
                                 <li class="active"><a href="{{route('home')}}">خانه</a></li>
 

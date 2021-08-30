@@ -44,6 +44,7 @@ class PageController extends Controller
             'key'=>'required'
         ]);
 
+
         $fileName = time().'.'.$request->file('image')->extension();
 //        dd(public_path('assets/images'));
         $request->image->move(public_path('assets/images'), $fileName);
@@ -88,8 +89,22 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data=($request->toArray());
         $pages = Page::find($id);
+
+        if ($request->hasFile('image'))
+        {
+            $fileName = time().'.'.$request->file('image')->extension();
+//        dd(public_path('assets/images'));
+            $request->image->move(public_path('assets/images'), $fileName);
+
+            $data=($request->toArray());
+//        dd($data);
+            $data['image'] = "assets/images/".$fileName;
+        }else{
+            $data['image'] = $pages->image;
+        }
+
+        $data=($request->toArray());
         $pages->update($data);
         return redirect('pages/index');
     }
