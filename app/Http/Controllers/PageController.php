@@ -105,6 +105,7 @@ class PageController extends Controller
         }
 
 
+        $pages->update($data);
         return redirect('pages/index');
     }
 
