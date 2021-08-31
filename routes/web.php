@@ -21,7 +21,7 @@ Route::get('/pages', [App\Http\Controllers\FrontPagesController::class, 'index']
 Route::get('/pages/show/{id}', [App\Http\Controllers\FrontPagesController::class, 'show'])->name('pages.show');
 
 
-Route::middleware(['auth'])->group(function() {
+Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/courses/show/{id}', [App\Http\Controllers\front\CoursesController::class, 'show'])->name('courses.show');
 
     Route::get('/lessons/show/{id}', [App\Http\Controllers\front\LessonsController::class, 'show'])->name('lessons.show');
@@ -71,6 +71,6 @@ Route::middleware(['auth'])->group(function() {
 
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
