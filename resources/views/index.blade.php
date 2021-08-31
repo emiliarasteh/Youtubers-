@@ -300,7 +300,7 @@
                         <div class="single-widget latest-video-widget mb-50">
                             <!-- Section Heading -->
                             <div class="section-heading style-2 mb-30">
-                                <h4>Latest Video</h4>
+                                <h4>ویدیوهای جدید</h4>
                                 <div class="line"></div>
                             </div>
 

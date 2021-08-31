@@ -154,26 +154,7 @@
                                              <li><a href="typography.html">- Typography</a></li>
                                              <li><a href="login.html">- Login</a></li>
                                          </ul>
-                                         <ul class="single-mega cn-col-4">
-                                             <li><a href="index.html">- Home</a></li>
-                                             <li><a href="archive-list.html">- Archive List</a></li>
-                                             <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                             <li><a href="single-post.html">- Single Post</a></li>
-                                             <li><a href="video-post.html">- Single Video Post</a></li>
-                                             <li><a href="contact.html">- Contact</a></li>
-                                             <li><a href="typography.html">- Typography</a></li>
-                                             <li><a href="login.html">- Login</a></li>
-                                         </ul>
-                                         <ul class="single-mega cn-col-4">
-                                             <li><a href="index.html">- Home</a></li>
-                                             <li><a href="archive-list.html">- Archive List</a></li>
-                                             <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                             <li><a href="single-post.html">- Single Post</a></li>
-                                             <li><a href="video-post.html">- Single Video Post</a></li>
-                                             <li><a href="contact.html">- Contact</a></li>
-                                             <li><a href="typography.html">- Typography</a></li>
-                                             <li><a href="login.html">- Login</a></li>
-                                         </ul>
+
                                      </div>
                                  </li>
                                 <li class="active"><a href="{{route('pages')}}">مطالب</a></li>

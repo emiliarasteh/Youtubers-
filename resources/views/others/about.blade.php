@@ -132,21 +132,21 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="name" placeholder="Name">
+                                            <input type="text" class="form-control" id="name" placeholder="نام">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" id="email" placeholder="Email">
+                                            <input type="email" class="form-control" id="email" placeholder="ایمیل">
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                            <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="پیام"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn vizew-btn mt-30" type="submit">Send Now</button>
+                                        <button class="btn vizew-btn mt-30" type="submit">ارسال</button>
                                     </div>
                                 </div>
                             </form>
@@ -168,7 +168,7 @@
                         <div class="single-widget latest-video-widget mb-50">
                             <!-- Section Heading -->
                             <div class="section-heading style-2 mb-30">
-                                <h4>Latest Video</h4>
+                                <h4>ویدیوهای جدید</h4>
                                 <div class="line"></div>
                             </div>
 
@@ -249,7 +249,7 @@
                         <div class="single-widget youtube-channel-widget mb-50">
                             <!-- Section Heading -->
                             <div class="section-heading style-2 mb-30">
-                                <h4>Hot Channels</h4>
+                                <h4>کانال های پر بازدید</h4>
                                 <div class="line"></div>
                             </div>
 
@@ -313,15 +313,15 @@
                         <div class="single-widget newsletter-widget mb-50">
                             <!-- Section Heading -->
                             <div class="section-heading style-2 mb-30">
-                                <h4>Newsletter</h4>
+                                <h4>خبرنامه</h4>
                                 <div class="line"></div>
                             </div>
                             <p>Subscribe our newsletter gor get notification about new updates, information discount, etc.</p>
                             <!-- Newsletter Form -->
                             <div class="newsletter-form">
                                 <form action="#" method="post">
-                                    <input type="email" name="nl-email" class="form-control mb-15" id="emailnl" placeholder="Enter your email">
-                                    <button type="submit" class="btn vizew-btn w-100">Subscribe</button>
+                                    <input type="email" name="nl-email" class="form-control mb-15" id="emailnl" placeholder="ایمیل خود را وارد کنید">
+                                    <button type="submit" class="btn vizew-btn w-100">تایید</button>
                                 </form>
                             </div>
                         </div>
@@ -330,7 +330,7 @@
                         <div class="single-widget">
                             <!-- Section Heading -->
                             <div class="section-heading style-2 mb-30">
-                                <h4>Most Viewed Playlist</h4>
+                                <h4>پر بیننده ترین ویدیوها</h4>
                                 <div class="line"></div>
                             </div>
 
