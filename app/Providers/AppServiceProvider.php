@@ -36,9 +36,9 @@ class AppServiceProvider extends ServiceProvider
         View::composer('layouts.master', function($view) {
 
 //            $course = Course::orderBy()->limit(16)->get();
-            $course = Course::orderBy('id', 'desc')->limit(16)->get();
+            $courses = Course::orderBy('id', 'desc')->limit(16)->get();
 
-            $view->with('course', $course);
+            $view->with('courses', $courses);
 
 
 

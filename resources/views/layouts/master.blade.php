@@ -66,7 +66,8 @@
                         <div class="top-search-area">
                             <form action="index.html" method="post">
                                 <input type="search" name="top-search" id="topSearch" placeholder="جستجو...">
-                                <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
                             </form>
                         </div>
                         <!-- Login -->
@@ -76,7 +77,8 @@
                         @else
                             <a class="login-btn" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();" ><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                                                     document.getElementById('logout-form').submit();"><i
+                                    class="fa fa-sign-out" aria-hidden="true"></i></a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
@@ -98,7 +100,8 @@
                 <nav class="classy-navbar justify-content-between" id="vizewNav">
 
                     <!-- Nav brand -->
-                    <a href="index.html" class="nav-brand"><img src="/assets/vizew-master/img/core-img/img.png" width="70" height="70" alt=""></a>
+                    <a href="index.html" class="nav-brand"><img src="/assets/vizew-master/img/core-img/img.png"
+                                                                width="70" height="70" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -132,38 +135,30 @@
                                          <li><a href="login.html">- Login</a></li>
                                      </ul>
                                  </li>-->
-                                 <li><a href="#">دوره ها</a>
-                                     <div class="megamenu">
-                                         <ul class="single-mega cn-col-4">
-                                             <li><a href="index.html">- Home</a></li>
-                                             <li><a href="archive-list.html">- Archive List</a></li>
-                                             <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                             <li><a href="single-post.html">- Single Post</a></li>
-                                             <li><a href="video-post.html">- Single Video Post</a></li>
-                                             <li><a href="contact.html">- Contact</a></li>
-                                             <li><a href="typography.html">- Typography</a></li>
-                                             <li><a href="login.html">- Login</a></li>
-                                         </ul>
-                                         <ul class="single-mega cn-col-4">
-                                             <li><a href="index.html">- Home</a></li>
-                                             <li><a href="archive-list.html">- Archive List</a></li>
-                                             <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                             <li><a href="single-post.html">- Single Post</a></li>
-                                             <li><a href="video-post.html">- Single Video Post</a></li>
-                                             <li><a href="contact.html">- Contact</a></li>
-                                             <li><a href="typography.html">- Typography</a></li>
-                                             <li><a href="login.html">- Login</a></li>
-                                         </ul>
+                                <li><a href="#">دوره ها</a>
+                                    <div class="megamenu">
 
-                                     </div>
-                                 </li>
+                                        @foreach($courses as $course)
+
+                                            <ul class="single-mega cn-col-4">
+                                                <li><a href="{{route('courses.show', $course->id)}}"> {{$course->title}} </a></li>
+                                            </ul>
+
+                                            <ul class="single-mega cn-col-4">
+                                                <li><a href="{{route('courses.show', $course->id)}}"> {{$course->title}} </a></li>
+                                            </ul>
+
+                                        @endforeach
+
+                                    </div>
+                                </li>
                                 <li class="active"><a href="{{route('pages')}}">مطالب</a></li>
                                 <li class="active"><a href="{{route('about')}}">درباره ما</a></li>
                                 <li class="active"><a href="{{route('home')}}">خانه</a></li>
 
                             </ul>
-                         </div>
-                         <!-- Nav End -->
+                        </div>
+                        <!-- Nav End -->
                     </div>
                 </nav>
             </div>
@@ -183,12 +178,17 @@
             <div class="col-12 col-sm-6 col-xl-3">
                 <div class="footer-widget mb-70">
                     <!-- Logo -->
-                    <a href="index.html" class="foo-logo d-block mb-4"><img src="/assets/vizew-master/img/core-img/logo2.png" alt=""></a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+                    <a class="widget-title" href="{{route('about')}}" class="foo-logo d-block mb-4"><img
+                            rel="icon" src="/assets/vizew-master/img/core-img/img.png" alt=""  width="50" height="50">درباره ما</a>
+
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna</p>
                     <!-- Footer Newsletter Area -->
                     <div class="footer-nl-area">
                         <form action="#" method="post">
-                            <input type="email" name="nl-email" class="form-control" id="nlEmail" placeholder="Your email">
+                            <input type="email" name="nl-email" class="form-control" id="nlEmail"
+                                   placeholder="ایمیل خود را وارد کنید">
                             <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                         </form>
                     </div>
@@ -198,7 +198,7 @@
             <!-- Footer Widget Area -->
             <div class="col-12 col-sm-6 col-xl-3">
                 <div class="footer-widget mb-70">
-                    <h6 class="widget-title">Latest Twister</h6>
+                    <h6 class="widget-title">دروس پرفروش</h6>
                     <!-- Twitter Slides -->
                     <div class="twitter-slides owl-carousel">
 
@@ -206,11 +206,13 @@
                         <div class="single--twitter-slide">
                             <!-- Single Twit -->
                             <div class="single-twit">
-                                <p><i class="fa fa-twitter"></i> <span>@Leonard</span> I am so happy because I found this magazine, and it just made Vizeweasier. Thanks for sharing</p>
+                                <p><i class="fa fa-twitter"></i> <span>@Leonard</span> I am so happy because I found
+                                    this magazine, and it just made Vizeweasier. Thanks for sharing</p>
                             </div>
                             <!-- Single Twit -->
                             <div class="single-twit">
-                                <p><i class="fa fa-twitter"></i> <span>@Leonard</span> I am so happy because I found this magazine, and it just made Vizeweasier. Thanks for sharing</p>
+                                <p><i class="fa fa-twitter"></i> <span>@Leonard</span> I am so happy because I found
+                                    this magazine, and it just made Vizeweasier. Thanks for sharing</p>
                             </div>
                         </div>
 
@@ -218,11 +220,13 @@
                         <div class="single--twitter-slide">
                             <!-- Single Twit -->
                             <div class="single-twit">
-                                <p><i class="fa fa-twitter"></i> <span>@Colorlib</span> I am so happy because I found this magazine, and it just made Vizeweasier. Thanks for sharing</p>
+                                <p><i class="fa fa-twitter"></i> <span>@Colorlib</span> I am so happy because I found
+                                    this magazine, and it just made Vizeweasier. Thanks for sharing</p>
                             </div>
                             <!-- Single Twit -->
                             <div class="single-twit">
-                                <p><i class="fa fa-twitter"></i> <span>@Colorlib</span> I am so happy because I found this magazine, and it just made Vizeweasier. Thanks for sharing</p>
+                                <p><i class="fa fa-twitter"></i> <span>@Colorlib</span> I am so happy because I found
+                                    this magazine, and it just made Vizeweasier. Thanks for sharing</p>
                             </div>
                         </div>
 
@@ -233,7 +237,7 @@
             <!-- Footer Widget Area -->
             <div class="col-12 col-sm-6 col-xl-3">
                 <div class="footer-widget mb-70">
-                    <h6 class="widget-title">Sport Videos</h6>
+                    <h6 class="widget-title">جدیدترین دروس</h6>
 
                     <!-- Single Blog Post -->
                     <div class="single-blog-post d-flex">
@@ -271,7 +275,9 @@
             <!-- Footer Widget Area -->
             <div class="col-12 col-sm-6 col-xl-3">
                 <div class="footer-widget mb-70">
-                    <h6 class="widget-title">Our Address</h6>
+
+                    <a class="widget-title" href="{{route('contact')}}" class="foo-logo d-block mb-4">تماس با ما</a>
+
                     <!-- Contact Address -->
                     <div class="contact-address">
                         <p>101 E 129th St, East Chicago, <br>IN 46312, US</p>
@@ -297,8 +303,12 @@
             <div class="row align-items-center">
                 <!-- Copywrite Text -->
                 <div class="col-12 col-sm-6">
-                    <p class="copywrite-text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <p class="copywrite-text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                                                            aria-hidden="true"></i> by <a
+                            href="https://colorlib.com" target="_blank">Colorlib</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
                 <div class="col-12 col-sm-6">
@@ -333,15 +343,15 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 @if(session()->has('error'))
-<script>
-    Swal.fire({
-        position: 'top-end',
-        icon: 'error',
-        title: '{{session()->get('error')}}',
-        showConfirmButton: false,
-        timer: 1500
-    })
-</script>
+    <script>
+        Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: '{{session()->get('error')}}',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    </script>
 @endif
 @if(session()->has('success'))
     <script>
