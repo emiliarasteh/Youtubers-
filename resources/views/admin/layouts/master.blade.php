@@ -73,6 +73,7 @@
                                 <ul class="nav child_menu">
                                     <li><a href="{{route('admin.courses')}}">دوره ها</a></li>
                                     <li><a href="{{route('admin.lessons')}}">دروس</a></li>
+                                    <li><a href="{{route('admin.indicators')}}">اندیکاتورها</a></li>
                                 </ul>
 
                             </li>

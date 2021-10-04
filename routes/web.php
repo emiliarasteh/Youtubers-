@@ -23,8 +23,10 @@ Route::get('/pages/show/{id}', [App\Http\Controllers\FrontPagesController::class
 
 Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/courses/show/{id}', [App\Http\Controllers\front\CoursesController::class, 'show'])->name('courses.show');
-
     Route::get('/lessons/show/{id}', [App\Http\Controllers\front\LessonsController::class, 'show'])->name('lessons.show');
+
+
+    Route::get('/indicators', [App\Http\Controllers\front\IndicatorsController::class, 'index'])->name('indicator.index');
 
 
     Route::get('/lessons/video-loader/{playlist}', [App\Http\Controllers\LessonsController::class, 'video'])->name('lessons.video');
@@ -59,6 +61,15 @@ Route::middleware(['auth', 'verified'])->group(function() {
         Route::get('/pages/edit/{id}', [App\Http\Controllers\PageController::class, 'edit'])->name('admin.pages.edit');
         Route::put('/pages/update/{id}', [App\Http\Controllers\PageController::class, 'update'])->name('admin.pages.update');
         Route::get('/pages/delete/{id}', [App\Http\Controllers\PageController::class, 'destroy'])->name('admin.pages.destroy');
+
+        Route::get('/indicators/index', [App\Http\Controllers\IndicatorsController::class, 'index'])->name('admin.indicators');
+        Route::get('/indicators/create', [App\Http\Controllers\IndicatorsController::class, 'create'])->name('admin.indicators.create');
+        Route::post('/indicators/store', [App\Http\Controllers\IndicatorsController::class, 'store'])->name('admin.indicators.store');
+        Route::get('/indicators/edit/{id}', [App\Http\Controllers\IndicatorsController::class, 'edit'])->name('admin.indicators.edit');
+        Route::put('/indicators/update/{id}', [App\Http\Controllers\IndicatorsController::class, 'update'])->name('admin.indicators.update');
+        Route::get('/indicators/delete/{id}', [App\Http\Controllers\IndicatorsController::class, 'destroy'])->name('admin.indicators.destroy');
+        Route::get('/indicators/file_download/{fileName}', [App\Http\Controllers\IndicatorsController::class, 'file_download'])->name('admin.indicators.file_download');
+
 
 
 

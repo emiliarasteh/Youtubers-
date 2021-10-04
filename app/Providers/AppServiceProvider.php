@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Core\DataService;
 use App\Core\Youtube;
 use App\Models\Course;
+use App\Models\Indicator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
@@ -39,7 +40,6 @@ class AppServiceProvider extends ServiceProvider
             $courses = Course::orderBy('id', 'desc')->limit(16)->get();
 
             $view->with('courses', $courses);
-
 
 
         });

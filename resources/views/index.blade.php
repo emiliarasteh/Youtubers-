@@ -185,6 +185,7 @@
                                         <!-- Sports Video Slides -->
                                             <div class="sport-video-slides owl-carousel mb-50">
                                             @foreach($playlist_videos['items'] as $video)
+                                                @if(array_key_exists('medium',$video['snippet']['thumbnails']))
                                                 <!-- Single Blog Post -->
                                                     <div class="single-post-area">
                                                         <!-- Post Thumbnail -->
@@ -213,7 +214,7 @@
                                                             {{--                                                            </div>--}}
                                                         </div>
                                                     </div>
-
+@endif
                                                 @endforeach
                                             </div>
 

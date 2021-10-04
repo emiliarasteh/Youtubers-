@@ -122,6 +122,19 @@
 
                                 <li><a href="{{route('contact')}}">تماس با ما</a></li>
 
+                                <li><a href="{{route('indicator.index')}}">اندیکاتورها</a></li>
+
+
+{{--                                        @foreach($indicators as $indicator)--}}
+{{--                                            <ul class="single-mega cn-col-4">--}}
+{{--                                                <li>--}}
+{{--                                                    <a href="{{route('indicators.show', $indicator->id)}}"> {{$indicator->title}} </a>--}}
+{{--                                                </li>--}}
+{{--                                            </ul>--}}
+{{--                                        @endforeach--}}
+
+
+
                                 <!-- <li><a href="archive-list.html">Archives</a></li>
                                  <li><a href="#">Pages</a>
                                      <ul class="dropdown">
@@ -139,16 +152,23 @@
                                     <div class="megamenu">
 
                                         @foreach($courses as $course)
-
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="{{route('courses.show', $course->id)}}"> {{$course->title}} </a></li>
-                                            </ul>
 
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="{{route('courses.show', $course->id)}}"> {{$course->title}} </a></li>
-                                            </ul>
+                                                <li>
+                                                    <a href="{{route('courses.show', $course->id)}}"> {{$course->title}} </a>
+                                                </li>
 
+
+                                                {{--                                            <ul class="single-mega cn-col-4">--}}
+                                                {{--                                                <li><a href="{{route('courses.show', $course->id)}}"> {{$course->title}} </a></li>--}}
+                                                {{--                                            </ul>--}}
+
+                                                {{--                                            <ul class="single-mega cn-col-4">--}}
+                                                {{--                                                <li><a href="{{route('courses.show', $course->id)}}"> {{$course->title}} </a></li>--}}
+                                                {{--                                            </ul>--}}
+                                            </ul>
                                         @endforeach
+
 
                                     </div>
                                 </li>
@@ -179,7 +199,8 @@
                 <div class="footer-widget mb-70">
                     <!-- Logo -->
                     <a class="widget-title" href="{{route('about')}}" class="foo-logo d-block mb-4"><img
-                            rel="icon" src="/assets/vizew-master/img/core-img/img.png" alt=""  width="50" height="50">درباره ما</a>
+                            rel="icon" src="/assets/vizew-master/img/core-img/img.png" alt="" width="50" height="50">درباره
+                        ما</a>
 
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
