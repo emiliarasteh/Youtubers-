@@ -16,18 +16,18 @@
                     <div class="contact-form-area mt-50">
                         <form action="#" method="post">
                             <div class="form-group">
-                                <label for="name">Name*</label>
+                                <label for="name">*نام</label>
                                 <input type="text" class="form-control" id="name">
                             </div>
                             <div class="form-group">
-                                <label for="email">Email*</label>
+                                <label for="email">*ایمیل</label>
                                 <input type="email" class="form-control" id="email">
                             </div>
                             <div class="form-group">
-                                <label for="message">Message*</label>
+                                <label for="message">*پیام</label>
                                 <textarea name="message" class="form-control" id="message" cols="30" rows="10"></textarea>
                             </div>
-                            <button class="btn vizew-btn mt-30" type="submit">Send Now</button>
+                            <button class="btn vizew-btn mt-30" type="submit">ارسال</button>
                         </form>
                     </div>
                 </div>
@@ -45,8 +45,8 @@
                             <!-- Newsletter Form -->
                             <div class="newsletter-form">
                                 <form action="#" method="post">
-                                    <input type="email" name="nl-email" class="form-control mb-15" id="emailnl" placeholder="Enter your email">
-                                    <button type="submit" class="btn vizew-btn w-100">Subscribe</button>
+                                    <input type="email" name="nl-email" class="form-control mb-15" id="emailnl" placeholder="ایمیل خود را وارد کنید">
+                                    <button type="submit" class="btn vizew-btn w-100">تایید</button>
                                 </form>
                             </div>
                         </div>

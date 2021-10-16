@@ -13,19 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 
+Route::get('/pages', [App\Http\Controllers\FrontPagesController::class, 'index'])->name('pages');
+Route::get('/pages/show/{id}', [App\Http\Controllers\FrontPagesController::class, 'show'])->name('pages.show');
 
 
-
-Route::middleware(['auth'])->group(function() {
+Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/courses/show/{id}', [App\Http\Controllers\front\CoursesController::class, 'show'])->name('courses.show');
-
     Route::get('/lessons/show/{id}', [App\Http\Controllers\front\LessonsController::class, 'show'])->name('lessons.show');
+
+
+    Route::get('/indicators', [App\Http\Controllers\front\IndicatorsController::class, 'index'])->name('indicator.index');
 
 
     Route::get('/lessons/video-loader/{playlist}', [App\Http\Controllers\LessonsController::class, 'video'])->name('lessons.video');
@@ -50,6 +51,26 @@ Route::middleware(['auth'])->group(function() {
 //        ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️ 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗
         Route::get('/users/index', [App\Http\Controllers\UserController::class, 'index'])->name('admin.users');
         Route::get('/setting/index', [App\Http\Controllers\SettingController::class, 'index'])->name('admin.setting');
+        Route::put('/setting/update/{id}', [App\Http\Controllers\SettingController::class, 'update'])->name('admin.setting.update');
+
+
+
+        Route::get('/pages/index', [App\Http\Controllers\PageController::class, 'index'])->name('admin.pages');
+        Route::get('/pages/create', [App\Http\Controllers\PageController::class, 'create'])->name('admin.pages.create');
+        Route::post('/pages/store', [App\Http\Controllers\PageController::class, 'store'])->name('admin.pages.store');
+        Route::get('/pages/edit/{id}', [App\Http\Controllers\PageController::class, 'edit'])->name('admin.pages.edit');
+        Route::put('/pages/update/{id}', [App\Http\Controllers\PageController::class, 'update'])->name('admin.pages.update');
+        Route::get('/pages/delete/{id}', [App\Http\Controllers\PageController::class, 'destroy'])->name('admin.pages.destroy');
+
+        Route::get('/indicators/index', [App\Http\Controllers\IndicatorsController::class, 'index'])->name('admin.indicators');
+        Route::get('/indicators/create', [App\Http\Controllers\IndicatorsController::class, 'create'])->name('admin.indicators.create');
+        Route::post('/indicators/store', [App\Http\Controllers\IndicatorsController::class, 'store'])->name('admin.indicators.store');
+        Route::get('/indicators/edit/{id}', [App\Http\Controllers\IndicatorsController::class, 'edit'])->name('admin.indicators.edit');
+        Route::put('/indicators/update/{id}', [App\Http\Controllers\IndicatorsController::class, 'update'])->name('admin.indicators.update');
+        Route::get('/indicators/delete/{id}', [App\Http\Controllers\IndicatorsController::class, 'destroy'])->name('admin.indicators.destroy');
+        Route::get('/indicators/file_download/{fileName}', [App\Http\Controllers\IndicatorsController::class, 'file_download'])->name('admin.indicators.file_download');
+
+
 
 
 
@@ -61,6 +82,6 @@ Route::middleware(['auth'])->group(function() {
 
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

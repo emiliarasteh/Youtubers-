@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Setting;
+use App\Models\Page;
 use Illuminate\Http\Request;
 
-class SettingController extends Controller
+class FrontPagesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class SettingController extends Controller
      */
     public function index()
     {
-        $setting = Setting::paginate(6);
-        return view ('admin.setting.index', compact('setting'));
+        $pages = Page::orderBy('id','desc')->paginate(15);
+        return view ('others.pages', compact('pages'));
     }
 
     /**
@@ -36,7 +36,6 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -47,7 +46,8 @@ class SettingController extends Controller
      */
     public function show($id)
     {
-        //
+        $pages = Page::find($id);
+        return view('others.show', compact('pages'));
     }
 
     /**
@@ -70,10 +70,8 @@ class SettingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Setting::where('id','=',$id)->update(['value' => $request->value ]);
-        return redirect('setting/index');
+        //
     }
-
 
     /**
      * Remove the specified resource from storage.

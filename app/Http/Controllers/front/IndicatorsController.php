@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\front;
 
-use App\Models\Setting;
+use App\Http\Controllers\Controller;
+use App\Models\Indicator;
 use Illuminate\Http\Request;
 
-class SettingController extends Controller
+class IndicatorsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class SettingController extends Controller
      */
     public function index()
     {
-        $setting = Setting::paginate(6);
-        return view ('admin.setting.index', compact('setting'));
+        $indicators = Indicator::all();
+        return view ('indicators', compact('indicators'));
     }
 
     /**
@@ -47,7 +48,7 @@ class SettingController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -70,10 +71,8 @@ class SettingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Setting::where('id','=',$id)->update(['value' => $request->value ]);
-        return redirect('setting/index');
+        //
     }
-
 
     /**
      * Remove the specified resource from storage.

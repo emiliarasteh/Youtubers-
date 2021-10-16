@@ -73,12 +73,14 @@
                                 <ul class="nav child_menu">
                                     <li><a href="{{route('admin.courses')}}">دوره ها</a></li>
                                     <li><a href="{{route('admin.lessons')}}">دروس</a></li>
+                                    <li><a href="{{route('admin.indicators')}}">اندیکاتورها</a></li>
                                 </ul>
 
                             </li>
 
                            <li><a href="{{route('admin.users')}}"> <i class="fa fa-user"></i>کاربران</a></li>
-                           <li><a href="{{route('admin.setting')}}"> <i class="fa fa-user"></i>تنظیمات</a></li>
+                           <li><a href="{{route('admin.setting')}}"> <i class="fa fa-cog"></i>تنظیمات</a></li>
+                           <li><a href="{{route('admin.pages')}}"> <i class="fa fa-file" aria-hidden="true"></i>صفحات</a></li>
 
 
                        </ul>
