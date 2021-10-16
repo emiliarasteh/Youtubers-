@@ -28,16 +28,19 @@ abstract class Base
     protected function cacheData($key)
     {
         if(!Cache::has($key)){
-            Cache::remember($key, 3600 * 24, function () {
-                return $this->getData();
-            });
+            $response = $this->getData();
+            if($response->successful()){
+                Cache::remember($key, 3600 * 24, function () use ($response) {
+                    return $response->json();
+                });
+            }
         }
         return Cache::get($key);
     }
 
-    protected function getData()
+    protected function getData(): \Illuminate\Http\Client\Response
     {
-        return Http::get(($this->base_url) . $this->url . "&channelId={$this->channel_id}&key={$this->key}")->json();
+        return Http::get(($this->base_url) . $this->url . "&channelId={$this->channel_id}&key={$this->key}");
     }
 
 }

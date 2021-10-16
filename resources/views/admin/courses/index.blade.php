@@ -35,15 +35,14 @@
                         <td>{{$value->duration}}</td>
                         <td>
                             <div class="row">
-                                <div class="col-sm-3">
+
                                     <button type="button" class="btn btn-round btn-info btn-sm" data-toggle="modal"
                                             data-target=".bs-example-modal-lg{{$value->id}}">Edit
                                     </button>
-                                </div>
-                                <div class="col-sm-3">
+
                                     <a href="{{route('admin.destroy', $value->id)}}" class="btn btn-round btn-danger btn-sm">Delete</a>
 
-                                </div>
+
                             </div>
 
                         </td>
