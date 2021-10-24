@@ -12,7 +12,7 @@
     <title>آموزش فارکس</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="/assets/vizew-master/img/core-img/img.png">
+    <link rel="icon" href="/assets/vizew-master/img/core-img/myicon.jpg">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/vizew-master/style.css">
@@ -37,7 +37,7 @@
     <div class="top-header-area">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-3">
                     <!-- Breaking News Widget -->
                     <div class="breaking-news-area d-flex align-items-center">
                         <div class="news-title">
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-9">
                     <div class="top-meta-data d-flex align-items-center justify-content-end">
                         <!-- Top Social Info -->
                         <div class="top-social-info">
@@ -73,16 +73,25 @@
                         <!-- Login -->
 
                         @if (auth()->guest())
-                            <a href="{{route('login')}}" class="login-btn"><i class="fa fa-user" aria-hidden="true"></i></a>
+                            <a href="{{route('login')}}" class="login-btn"><i class="fa fa-user" aria-hidden="true"></i>
+                            </a>
                         @else
-                            <a class="login-btn" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
+                            <div class="text-center align-items-center ml-1">
+                                <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i
-                                    class="fa fa-sign-out" aria-hidden="true"></i></a>
+                                        class="fa fa-sign-out" aria-hidden="true"></i>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
+                                </a>
+                                <br>
+
+                                {{\Illuminate\Support\Facades\Auth::user()->name}}
+                                سلام
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+
                         @endif
 
                     </div>
@@ -100,7 +109,7 @@
                 <nav class="classy-navbar justify-content-between" id="vizewNav">
 
                     <!-- Nav brand -->
-                    <a href="index.html" class="nav-brand"><img src="/assets/vizew-master/img/core-img/img.png"
+                    <a href="index.html" class="nav-brand"><img src="/assets/vizew-master/img/core-img/myicon.png"
                                                                 width="70" height="70" alt=""></a>
 
                     <!-- Navbar Toggler -->
@@ -118,24 +127,24 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
+                                <li class="{{ (request()->is('contact')) ? 'active' : 'contact' }}">
+                                    <a href="{{route('contact')}}">تماس با ما</a></li>
+
+                                <li class="{{ (request()->is('indicators')) ? 'active' : 'indicators' }}">
+                                    <a href="{{route('indicator.index')}}">اندیکاتورها</a></li>
 
 
-                                <li><a href="{{route('contact')}}">تماس با ما</a></li>
-
-                                <li><a href="{{route('indicator.index')}}">اندیکاتورها</a></li>
-
-
-{{--                                        @foreach($indicators as $indicator)--}}
-{{--                                            <ul class="single-mega cn-col-4">--}}
-{{--                                                <li>--}}
-{{--                                                    <a href="{{route('indicators.show', $indicator->id)}}"> {{$indicator->title}} </a>--}}
-{{--                                                </li>--}}
-{{--                                            </ul>--}}
-{{--                                        @endforeach--}}
+                            {{--                                        @foreach($indicators as $indicator)--}}
+                            {{--                                            <ul class="single-mega cn-col-4">--}}
+                            {{--                                                <li>--}}
+                            {{--                                                    <a href="{{route('indicators.show', $indicator->id)}}"> {{$indicator->title}} </a>--}}
+                            {{--                                                </li>--}}
+                            {{--                                            </ul>--}}
+                            {{--                                        @endforeach--}}
 
 
 
-                                <!-- <li><a href="archive-list.html">Archives</a></li>
+                            <!-- <li><a href="archive-list.html">Archives</a></li>
                                  <li><a href="#">Pages</a>
                                      <ul class="dropdown">
                                          <li><a href="index.html">- Home</a></li>
@@ -149,32 +158,26 @@
                                      </ul>
                                  </li>-->
                                 <li><a href="#">دوره ها</a>
-                                    <div class="megamenu">
-
+                                    <div class="dropdown">
                                         @foreach($courses as $course)
-                                            <ul class="single-mega cn-col-4">
-
+                                            <ul class="col-sm-12 text-center">
                                                 <li>
-                                                    <a href="{{route('courses.show', $course->id)}}"> {{$course->title}} </a>
+                                                    <a href="{{route('courses.show', $course->id)}}"> {{$course->title}}</a>
                                                 </li>
-
-
-                                                {{--                                            <ul class="single-mega cn-col-4">--}}
-                                                {{--                                                <li><a href="{{route('courses.show', $course->id)}}"> {{$course->title}} </a></li>--}}
-                                                {{--                                            </ul>--}}
-
-                                                {{--                                            <ul class="single-mega cn-col-4">--}}
-                                                {{--                                                <li><a href="{{route('courses.show', $course->id)}}"> {{$course->title}} </a></li>--}}
-                                                {{--                                            </ul>--}}
                                             </ul>
                                         @endforeach
-
-
                                     </div>
                                 </li>
-                                <li class="active"><a href="{{route('pages')}}">مطالب</a></li>
-                                <li class="active"><a href="{{route('about')}}">درباره ما</a></li>
-                                <li class="active"><a href="{{route('home')}}">خانه</a></li>
+
+
+                                <li class="{{ (request()->is('pages')) ? 'active' : 'pages' }}">
+                                    <a href="{{route('pages')}}">مطالب</a></li>
+
+                                <li class="{{ (request()->is('about')) ? 'active' : 'about' }}">
+                                    <a href="{{route('about')}}">درباره ما</a></li>
+
+                                <li class="{{ (request()->is('home')) ? 'active' : 'home' }}">
+                                    <a href="{{route('home')}}">خانه</a></li>
 
                             </ul>
                         </div>
@@ -199,12 +202,11 @@
                 <div class="footer-widget mb-70">
                     <!-- Logo -->
                     <a class="widget-title" href="{{route('about')}}" class="foo-logo d-block mb-4"><img
-                            rel="icon" src="/assets/vizew-master/img/core-img/img.png" alt="" width="50" height="50">درباره
+                            rel="icon" src="/assets/vizew-master/img/core-img/myicon.png" alt="" width="50" height="50">درباره
                         ما</a>
 
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna</p>
+                    <p>توضیحات درباره ما</p>
                     <!-- Footer Newsletter Area -->
                     <div class="footer-nl-area">
                         <form action="#" method="post">
@@ -224,32 +226,28 @@
                     <div class="twitter-slides owl-carousel">
 
                         <!-- Single Twitter Slide -->
-                        <div class="single--twitter-slide">
-                            <!-- Single Twit -->
-                            <div class="single-twit">
-                                <p><i class="fa fa-twitter"></i> <span>@Leonard</span> I am so happy because I found
-                                    this magazine, and it just made Vizeweasier. Thanks for sharing</p>
-                            </div>
-                            <!-- Single Twit -->
-                            <div class="single-twit">
-                                <p><i class="fa fa-twitter"></i> <span>@Leonard</span> I am so happy because I found
-                                    this magazine, and it just made Vizeweasier. Thanks for sharing</p>
-                            </div>
-                        </div>
+                        @foreach($courses as $course)
 
-                        <!-- Single Twitter Slide -->
-                        <div class="single--twitter-slide">
-                            <!-- Single Twit -->
-                            <div class="single-twit">
-                                <p><i class="fa fa-twitter"></i> <span>@Colorlib</span> I am so happy because I found
-                                    this magazine, and it just made Vizeweasier. Thanks for sharing</p>
+                            <div class="col-12 col-md-4">
+                                <div class="single-post-area mb-10">
+                                    <!-- Post Thumbnail -->
+                                    <div class="post-thumbnail">
+                                        <a href="{{route('courses.show', $course->id)}}">
+                                            <img src="{{ asset($course->image) }}" alt="">
+                                        </a>
+                                        <div class="post-content">
+                                            <a href="{{route('courses.show', $course->id)}}" class="post-title">
+                                                {{ \Illuminate\Support\Str::of($course->title)->limit(47, ' (...)')}}
+                                            </a>
+                                            <a href="{{route('courses.show', $course->id)}}"
+                                               class="post-cata cata-md cata-primary">مشاهده</a>
+                                            <button type="button" class="btn btn-xs btn-success" data-toggle="modal"
+                                            data-target=".bs-example-modal-lg">خرید دوره</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- Single Twit -->
-                            <div class="single-twit">
-                                <p><i class="fa fa-twitter"></i> <span>@Colorlib</span> I am so happy because I found
-                                    this magazine, and it just made Vizeweasier. Thanks for sharing</p>
-                            </div>
-                        </div>
+                        @endforeach
 
                     </div>
                 </div>
@@ -263,14 +261,14 @@
                     <!-- Single Blog Post -->
                     <div class="single-blog-post d-flex">
                         <div class="post-thumbnail">
-                            <img src="/assets/vizew-master/img/bg-img/1.jpg" alt="">
+                            <img src="/assets/vizew-master/img/bg-img/1.png" alt="">
                         </div>
                         <div class="post-content">
-                            <a href="single-post.html" class="post-title">DC Shoes: gymkhana the</a>
+                            <a href="single-post.html" class="post-title">فارکس : تحلیل درس اول</a>
                             <div class="post-meta d-flex justify-content-between">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
+                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> ۱۴</a>
+                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> ۳۴</a>
+                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> ۸۴</a>
                             </div>
                         </div>
                     </div>
@@ -281,11 +279,11 @@
                             <img src="/assets/vizew-master/img/bg-img/2.jpg" alt="">
                         </div>
                         <div class="post-content">
-                            <a href="single-post.html" class="post-title">Sweet Yummy Chocolatea Tea</a>
+                            <a href="single-post.html" class="post-title">فارکس : تحلیل درس دوم</a>
                             <div class="post-meta d-flex justify-content-between">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
+                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>۱۴</a>
+                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> ۳۴</a>
+                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> ۸۴</a>
                             </div>
                         </div>
                     </div>
@@ -301,9 +299,9 @@
 
                     <!-- Contact Address -->
                     <div class="contact-address">
-                        <p>101 E 129th St, East Chicago, <br>IN 46312, US</p>
-                        <p>Phone: 001-1234-88888</p>
-                        <p>Email: info.colorlib@gmail.com</p>
+                        <p>آدرس</p>
+                        <p>شماره تلفن</p>
+                        <p>ایمیل</p>
                     </div>
                     <!-- Footer Social Area -->
                     <div class="footer-social-area">
@@ -319,33 +317,10 @@
     </div>
 
     <!-- Copywrite Area -->
-    <div class="copywrite-area">
-        <div class="container">
-            <div class="row align-items-center">
-                <!-- Copywrite Text -->
-                <div class="col-12 col-sm-6">
-                    <p class="copywrite-text">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                        All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                                                            aria-hidden="true"></i> by <a
-                            href="https://colorlib.com" target="_blank">Colorlib</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                </div>
-                <div class="col-12 col-sm-6">
-                    <nav class="footer-nav">
-                        <ul>
-                            <li><a href="#">Advertise</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Disclaimer</a></li>
-                            <li><a href="#">Privacy</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
+
+
+
+
 </footer>
 <!-- ##### Footer Area End ##### -->
 
@@ -362,6 +337,7 @@
 <script src="/assets/vizew-master/js/active.js"></script>
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 @if(session()->has('error'))
     <script>

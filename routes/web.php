@@ -23,7 +23,7 @@ Route::get('/pages/show/{id}', [App\Http\Controllers\FrontPagesController::class
 
 Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/courses/show/{id}', [App\Http\Controllers\front\CoursesController::class, 'show'])->name('courses.show');
-    Route::get('/lessons/show/{id}', [App\Http\Controllers\front\LessonsController::class, 'show'])->name('lessons.show');
+    Route::get('/lessons/show/{id}', [App\Http\Controllers\front\LessonsController::class, 'show'])->name('lessons.show')->middleware('buyLessonCheck');
 
 
     Route::get('/indicators', [App\Http\Controllers\front\IndicatorsController::class, 'index'])->name('indicator.index');

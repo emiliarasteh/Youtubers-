@@ -71,9 +71,10 @@
             @endforeach
             </tbody>
         </table>
+        {{ $setting->links() }}
     </div>
     </div>
-    {{ $setting->links() }}
+
 
 
 @endsection

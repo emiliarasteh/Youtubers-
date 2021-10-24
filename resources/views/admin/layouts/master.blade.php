@@ -80,7 +80,7 @@
 
                            <li><a href="{{route('admin.users')}}"> <i class="fa fa-user"></i>کاربران</a></li>
                            <li><a href="{{route('admin.setting')}}"> <i class="fa fa-cog"></i>تنظیمات</a></li>
-                           <li><a href="{{route('admin.pages')}}"> <i class="fa fa-file" aria-hidden="true"></i>صفحات</a></li>
+                           <li><a href="{{route('admin.pages')}}"> <i class="fa fa-file" aria-hidden="true"></i>تحلیل</a></li>
 
 
                        </ul>
@@ -166,7 +166,7 @@
                     <li class="nav-item dropdown open" style="padding-left: 15px;">
                         <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                            id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                            <img src="/assets/admintemplate/images/img.jpg" alt="">John Doe
+                            <img src="/assets/admintemplate/images/img.jpg" alt="">{{\Illuminate\Support\Facades\Auth::user()->name}}
                         </a>
                         <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="javascript:;"> Profile</a>

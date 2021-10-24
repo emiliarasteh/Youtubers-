@@ -329,7 +329,7 @@ img {
   -ms-grid-row-align: center;
   align-items: center; }
 .breakpoint-off .classynav ul li .dropdown {
-  width: 180px;
+  width: max-content;
   position: absolute;
   background-color: #ffffff;
   top: 120%;
@@ -379,7 +379,7 @@ img {
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  width: 100%;
+  width: 30%;
   left: 0;
   top: 120%;
   background-color: #ffffff;

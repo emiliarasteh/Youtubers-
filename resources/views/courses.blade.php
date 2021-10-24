@@ -20,47 +20,7 @@
 <!-- ##### Breadcrumb Area End ##### -->
 
 <!-- ##### Pager Area Start ##### -->
-<div class="vizew-pager-area">
-    <div class="vizew-pager-prev">
-        <p>PREVIOUS ARTICLE</p>
 
-        <!-- Single Feature Post -->
-        <div class="single-feature-post video-post bg-img pager-article" style="background-image: url(img/bg-img/15.jpg);">
-            <!-- Post Content -->
-            <div class="post-content">
-                <a href="#" class="post-cata cata-sm cata-success">Sports</a>
-                <a href="video-post.html" class="post-title">Searching for the 'angel' who held me on Westminster Bridge</a>
-                <div class="post-meta d-flex">
-                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 18</a>
-                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 32</a>
-                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 24</a>
-                </div>
-            </div>
-            <!-- Video Duration -->
-            <span class="video-duration">11.13</span>
-        </div>
-    </div>
-
-    <div class="vizew-pager-next">
-        <p>NEXT ARTICLE</p>
-
-        <!-- Single Feature Post -->
-        <div class="single-feature-post video-post bg-img pager-article" style="background-image: url(img/bg-img/14.jpg);">
-            <!-- Post Content -->
-            <div class="post-content">
-                <a href="#" class="post-cata cata-sm cata-business">Business</a>
-                <a href="video-post.html" class="post-title">Reunification of migrant toddlers, parents should be completed Thursday</a>
-                <div class="post-meta d-flex">
-                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>
-                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>
-                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>
-                </div>
-            </div>
-            <!-- Video Duration -->
-            <span class="video-duration">06.59</span>
-        </div>
-    </div>
-</div>
 <!-- ##### Pager Area End ##### -->
 
 <!-- ##### Post Details Area Start ##### -->
@@ -70,6 +30,7 @@
             <div class="col-12">
                 <div class="post-details-thumb mb-50">
                     <img src="{{asset($course->image)}}" style="width: 100%; height: 100%" alt="">
+                    <button type="button" class="btn btn-xs btn-success">خرید دوره</button>
                 </div>
             </div>
         </div>
@@ -90,19 +51,6 @@
                                 <a href={{route('lessons.show', $lesson->id)}} class="post-title"> {{$lesson->title}}</a>
                             </div>
                             @endforeach
-
-                            <div class="d-flex justify-content-between mb-30">
-                                <div class="post-meta d-flex align-items-center">
-                                    <a href="#" class="post-author">By Jane</a>
-                                    <i class="fa fa-circle" aria-hidden="true"></i>
-                                    <a href="#" class="post-date">Sep 08, 2018</a>
-                                </div>
-{{--                                <div class="post-meta d-flex">--}}
-{{--                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 32</a>--}}
-{{--                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 42</a>--}}
-{{--                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 7</a>--}}
-{{--                                </div>--}}
-                            </div>
                         </div>
 
                         {!! $course->description !!}

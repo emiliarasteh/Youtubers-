@@ -26,7 +26,7 @@
                     <div class="login-content">
                         <!-- Section Title -->
                         <div class="section-heading">
-                            <h4>Great to have you back!</h4>
+                            <h4>خوش آمدید</h4>
                             <div class="line"></div>
                         </div>
 
@@ -54,24 +54,23 @@
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox mr-sm-2">
                                     <input type="checkbox" class="custom-control-input" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                    <label class="custom-control-label" for="remember">
+                                        {{ __('مرا به خاطر بسپار') }}
                                     </label>
-
                                 </div>
                             </div>
-                            <button type="submit" class="btn vizew-btn w-100 mt-30">Login</button>
+                            <button type="submit" class="btn vizew-btn w-100 mt-30">ورود</button>
                             <div class="row">
                                 <div class="col-md-6">
                                     @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
+                                            {{ __('رمز عبور خود را فراموش کرده اید؟') }}
                                         </a>
                                     @endif
                                 </div>
                                 <div class="col-md-6">
                                     <a class="btn btn-link" href="{{ route('register') }}">
-                                        Don't You Have An Account?
+                                       ثبت نام
                                     </a>
                                 </div>
                             </div>

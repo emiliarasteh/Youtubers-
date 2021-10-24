@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\BuyLessonCheck;
 use App\Http\Middleware\CheckIsAdmin;
 use App\Http\Middleware\CorsCustom;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -65,6 +66,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'isAdmin' => CheckIsAdmin::class,
+        'buyLessonCheck' => BuyLessonCheck::class,
 //        'cors' => CorsCustom::class,
     ];
 }
