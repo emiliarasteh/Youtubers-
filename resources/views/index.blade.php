@@ -102,7 +102,10 @@
                             <!-- Post Content -->
 
                             <div class="post-content">
-                                <a href="{{route('courses.show', $course->id)}}" class="post-cata cata-sm cata-success">مشاهده</a>
+                                <a href="{{route('courses.show', $course->id)}}" class="post-cata cata-md cata-primary">مشاهده</a>
+                                <button type="button" class="btn btn-xs btn-success" data-toggle="modal"
+                                        data-target=".bs-example-modal-lg">خرید دوره
+                                </button>
                                 <a href="{{route('courses.show', $course->id)}}" class="post-title">
                                     {{ \Illuminate\Support\Str::of($course->description)->limit(47, ' (...)')}}
                                 </a>
@@ -111,6 +114,34 @@
                                 {{--                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 16</a>--}}
                                 {{--                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 15</a>--}}
                                 {{--                            </div>--}}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- modals -->
+                    <!-- Large modal -->
+                    <div class="modal fade bs-example-modal-lg" id="myModalLabel" tabindex="-1" role="dialog"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="myModalLabel">خرید دوره</h4>
+                                    <button type="button" class="close" data-dismiss="modal"><span
+                                            aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" id="myModalLabel">
+                                    <h4>Text in a modal</h4>
+                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus
+                                        sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+                                        scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non
+                                        metus auctor fringilla.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -186,35 +217,37 @@
                                             <div class="sport-video-slides owl-carousel mb-50">
                                             @foreach($playlist_videos['items'] as $video)
                                                 @if(array_key_exists('medium',$video['snippet']['thumbnails']))
-                                                <!-- Single Blog Post -->
-                                                    <div class="single-post-area">
-                                                        <!-- Post Thumbnail -->
-                                                        <div class="post-thumbnail">
-                                                            <a target="_blank" href="https://www.youtube.com/watch?v={{$video['snippet']['resourceId']['videoId']}}&list={{$video['snippet']['playlistId']}}">
-                                                                <img
-                                                                    src="{{$video['snippet']['thumbnails']['medium']['url']}}"
-                                                                    alt="">
-                                                            </a>
+                                                    <!-- Single Blog Post -->
+                                                        <div class="single-post-area">
+                                                            <!-- Post Thumbnail -->
+                                                            <div class="post-thumbnail">
+                                                                <a target="_blank"
+                                                                   href="https://www.youtube.com/watch?v={{$video['snippet']['resourceId']['videoId']}}&list={{$video['snippet']['playlistId']}}">
+                                                                    <img
+                                                                        src="{{$video['snippet']['thumbnails']['medium']['url']}}"
+                                                                        alt="">
+                                                                </a>
 
 
-                                                            <!-- Video Duration -->
-                                                            {{--                                                            <span class="video-duration">05.03</span>--}}
+                                                                <!-- Video Duration -->
+                                                                {{--                                                            <span class="video-duration">05.03</span>--}}
+                                                            </div>
+
+                                                            <!-- Post Content -->
+                                                            <div class="post-content">
+                                                                {{--                                                            <a href="#"--}}
+                                                                {{--                                                               class="post-cata cata-sm cata-success">Sports</a>--}}
+                                                                <a href="https://www.youtube.com/watch?v={{$video['snippet']['resourceId']['videoId']}}&list={{$video['snippet']['playlistId']}}"
+                                                                   class="post-title"
+                                                                   target="_blank">{{$video['snippet']['title']}}</a>
+                                                                {{--                                                            <div class="post-meta d-flex">--}}
+                                                                {{--                                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>--}}
+                                                                {{--                                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>--}}
+                                                                {{--                                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>--}}
+                                                                {{--                                                            </div>--}}
+                                                            </div>
                                                         </div>
-
-                                                        <!-- Post Content -->
-                                                        <div class="post-content">
-{{--                                                            <a href="#"--}}
-{{--                                                               class="post-cata cata-sm cata-success">Sports</a>--}}
-                                                            <a href="https://www.youtube.com/watch?v={{$video['snippet']['resourceId']['videoId']}}&list={{$video['snippet']['playlistId']}}"
-                                                               class="post-title" target="_blank">{{$video['snippet']['title']}}</a>
-                                                            {{--                                                            <div class="post-meta d-flex">--}}
-                                                            {{--                                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>--}}
-                                                            {{--                                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>--}}
-                                                            {{--                                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>--}}
-                                                            {{--                                                            </div>--}}
-                                                        </div>
-                                                    </div>
-@endif
+                                                    @endif
                                                 @endforeach
                                             </div>
 
@@ -356,7 +389,6 @@
                         <div class="single-widget add-widget mb-50">
                             <a href="#"><img src="/assets/vizew-master/img/bg-img/add.png" alt=""></a>
                         </div>
-
 
 
                     </div>
