@@ -27,7 +27,7 @@ class BuyLessonCheck
             $q->where('courses.id', $course_id);
         })->first();
 
-        if ($user !== null){
+        if ($user !== null || (!auth()->guest() && 1 === auth()->user()->is_admin)){
             return $next($request);
         }else{
            return redirect()->back()->with('error', 'شما این درس را خریداری نکرده اید');

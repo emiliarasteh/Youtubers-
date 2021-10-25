@@ -266,54 +266,27 @@
                         </div>
 
                         <!-- Featured Post Slides -->
+                        @foreach($courses as $course)
                         <div class="featured-post-slides owl-carousel mb-30">
                             <!-- Single Feature Post -->
                             <div class="single-feature-post video-post bg-img"
-                                 style="background-image: url(img/bg-img/14.jpg);">
+                                 style="background-image: url({{$course->image}});">
                                 <!-- Play Button -->
-                                <a href="video-post.html" class="btn play-btn"><i class="fa fa-play"
+                                <a href="{{route('courses.show', $course->id)}}" class="btn play-btn"><i class="fa fa-play"
                                                                                   aria-hidden="true"></i></a>
 
                                 <!-- Post Content -->
                                 <div class="post-content">
-                                    <a href="#" class="post-cata">Sports</a>
-                                    <a href="single-post.html" class="post-title">Reunification of migrant toddlers,
-                                        parents should be completed Thursday</a>
-                                    <div class="post-meta d-flex">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>
-                                    </div>
+                                    <a href="{{route('courses.show', $course->id)}}" class="post-title">
+                                        {{$course->title}}
+                                    </a>
+
                                 </div>
 
-                                <!-- Video Duration -->
-                                <span class="video-duration">05.03</span>
                             </div>
 
-                            <!-- Single Feature Post -->
-                            <div class="single-feature-post video-post bg-img"
-                                 style="background-image: url(img/bg-img/7.jpg);">
-                                <!-- Play Button -->
-                                <a href="video-post.html" class="btn play-btn"><i class="fa fa-play"
-                                                                                  aria-hidden="true"></i></a>
-
-                                <!-- Post Content -->
-                                <div class="post-content">
-                                    <a href="#" class="post-cata">Sports</a>
-                                    <a href="single-post.html" class="post-title">Reunification of migrant toddlers,
-                                        parents should be completed Thursday</a>
-                                    <div class="post-meta d-flex">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>
-                                    </div>
-                                </div>
-
-                                <!-- Video Duration -->
-                                <span class="video-duration">05.03</span>
-                            </div>
                         </div>
-
+@endforeach
                     </div>
                 </div>
 

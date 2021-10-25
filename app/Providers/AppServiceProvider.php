@@ -34,14 +34,12 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(DataService::class, Youtube::class);
         Paginator::useBootstrap();
 
-        View::composer('layouts.master', function($view) {
-
-//            $course = Course::orderBy()->limit(16)->get();
+        View::composer('*', function($view) {
             $courses = Course::orderBy('id', 'desc')->limit(16)->get();
-
             $view->with('courses', $courses);
 
 
         });
+
     }
 }

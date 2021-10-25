@@ -27,7 +27,6 @@ class HomeController extends Controller
     public function __construct(DataService $dataService)
     {
         $this->dataService = $dataService;
-//        $this->middleware('auth');
     }
 
     /**

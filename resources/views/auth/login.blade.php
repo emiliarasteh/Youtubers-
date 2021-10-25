@@ -68,7 +68,7 @@
                                         </a>
                                     @endif
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 text-right">
                                     <a class="btn btn-link" href="{{ route('register') }}">
                                        ثبت نام
                                     </a>

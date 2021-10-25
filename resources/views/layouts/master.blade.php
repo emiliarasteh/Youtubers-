@@ -17,7 +17,18 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/vizew-master/style.css">
     @yield('header')
-
+    <style>
+        body{
+            background-color: whitesmoke!important;
+        }
+        h1, h2, h3, h4, h5, h6, p, small, a, label{
+            color: black!important;
+        }
+        .form-control{
+            background-color: white;
+        }
+    </style>
+    <script type="text/javascript">!function(){function t(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,localStorage.getItem("rayToken")?t.src="https://app.raychat.io/scripts/js/"+o+"?rid="+localStorage.getItem("rayToken")+"&href="+window.location.href:t.src="https://app.raychat.io/scripts/js/"+o+"?href="+window.location.href;var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}var e=document,a=window,o="90d048cc-281d-4728-ab8b-44d3fbbfc4f9";"complete"==e.readyState?t():a.attachEvent?a.attachEvent("onload",t):a.addEventListener("load",t,!1)}();</script>
 </head>
 
 <body>
@@ -45,9 +56,9 @@
                         </div>
                         <div id="breakingNewsTicker" class="ticker">
                             <ul>
-                                <li><a href="single-post.html">فارکس</a></li>
-                                <li><a href="single-post.html">تریدینگ</a></li>
-                                <li><a href="single-post.html">آموزش بورس</a></li>
+                                @foreach($courses as $course)
+                                    <li><a href="{{route('courses.show', $course->id)}}">{{$course->title}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -64,11 +75,11 @@
                         </div>
                         <!-- Top Search Area -->
                         <div class="top-search-area">
-                            <form action="index.html" method="post">
-                                <input type="search" name="top-search" id="topSearch" placeholder="جستجو...">
-                                <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i>
-                                </button>
-                            </form>
+{{--                            <form action="index.html" method="post">--}}
+{{--                                <input type="search" name="top-search" id="topSearch" placeholder="جستجو...">--}}
+{{--                                <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i>--}}
+{{--                                </button>--}}
+{{--                            </form>--}}
                         </div>
                         <!-- Login -->
 
@@ -109,7 +120,7 @@
                 <nav class="classy-navbar justify-content-between" id="vizewNav">
 
                     <!-- Nav brand -->
-                    <a href="index.html" class="nav-brand"><img src="/assets/vizew-master/img/core-img/myicon.png"
+                    <a href="/" class="nav-brand"><img src="/assets/vizew-master/img/core-img/myicon.png"
                                                                 width="70" height="70" alt=""></a>
 
                     <!-- Navbar Toggler -->
@@ -171,7 +182,7 @@
 
 
                                 <li class="{{ (request()->is('pages')) ? 'active' : 'pages' }}">
-                                    <a href="{{route('pages')}}">مطالب</a></li>
+                                    <a href="{{route('pages')}}">تحلیل</a></li>
 
                                 <li class="{{ (request()->is('about')) ? 'active' : 'about' }}">
                                     <a href="{{route('about')}}">درباره ما</a></li>
@@ -191,117 +202,144 @@
 <!-- ##### Header Area End ##### -->
 <!-- ##### Hero Area Start ##### -->
 @yield('content')
+<div class="modal fade sell-modal-modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">توجه!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-right">
+                کاربرگرامی!
+                لطفا برای خرید دوره ایمیلی را که با آن در سایت ثبت نام کرده اید به همراه نام دوره
+                و شماره تماس خود، را به قسمت پشتیبانی ارسال کنید.
+                کارشناسان ما در اسرع وقت با شما تماس خواهند گرفت
+                <br>
+                با تشکر
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- ##### Vizew Psot Area End ##### -->
 
 <!-- ##### Footer Area Start ##### -->
 <footer class="footer-area">
     <div class="container">
-        <div class="row">
+        <div class="row text-center">
             <!-- Footer Widget Area -->
             <div class="col-12 col-sm-6 col-xl-3">
-                <div class="footer-widget mb-70">
+                <div class="footer-widget ">
                     <!-- Logo -->
-                    <a class="widget-title" href="{{route('about')}}" class="foo-logo d-block mb-4"><img
-                            rel="icon" src="/assets/vizew-master/img/core-img/myicon.png" alt="" width="50" height="50">درباره
-                        ما</a>
+                    <a class="widget-title" href="{{route('about')}}" class="foo-logo d-block mb-4 "><img
+                            rel="icon" src="/assets/vizew-master/img/core-img/myicon.png" alt="" width="50" height="50">
+                        </a>
 
+                    @php
+                    $about = \App\Models\Setting::where('key', 'explain1')->first();
+                    @endphp
+                    <p class="text-right" style="color: white!important;">
 
-                    <p>توضیحات درباره ما</p>
-                    <!-- Footer Newsletter Area -->
-                    <div class="footer-nl-area">
-                        <form action="#" method="post">
-                            <input type="email" name="nl-email" class="form-control" id="nlEmail"
-                                   placeholder="ایمیل خود را وارد کنید">
-                            <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer Widget Area -->
-            <div class="col-12 col-sm-6 col-xl-3">
-                <div class="footer-widget mb-70">
-                    <h6 class="widget-title">دروس پرفروش</h6>
-                    <!-- Twitter Slides -->
-                    <div class="twitter-slides owl-carousel">
-
-                        <!-- Single Twitter Slide -->
-                        @foreach($courses as $course)
-
-                            <div class="col-12 col-md-4">
-                                <div class="single-post-area mb-10">
-                                    <!-- Post Thumbnail -->
-                                    <div class="post-thumbnail">
-                                        <a href="{{route('courses.show', $course->id)}}">
-                                            <img src="{{ asset($course->image) }}" alt="">
-                                        </a>
-                                        <div class="post-content">
-                                            <a href="{{route('courses.show', $course->id)}}" class="post-title">
-                                                {{ \Illuminate\Support\Str::of($course->title)->limit(47, ' (...)')}}
-                                            </a>
-                                            <a href="{{route('courses.show', $course->id)}}"
-                                               class="post-cata cata-md cata-primary">مشاهده</a>
-                                            <button type="button" class="btn btn-xs btn-success" data-toggle="modal"
-                                            data-target=".bs-example-modal-lg">خرید دوره</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer Widget Area -->
-            <div class="col-12 col-sm-6 col-xl-3">
-                <div class="footer-widget mb-70">
-                    <h6 class="widget-title">جدیدترین دروس</h6>
-
-                    <!-- Single Blog Post -->
-                    <div class="single-blog-post d-flex">
-                        <div class="post-thumbnail">
-                            <img src="/assets/vizew-master/img/bg-img/1.png" alt="">
-                        </div>
-                        <div class="post-content">
-                            <a href="single-post.html" class="post-title">فارکس : تحلیل درس اول</a>
-                            <div class="post-meta d-flex justify-content-between">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> ۱۴</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> ۳۴</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> ۸۴</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="single-blog-post d-flex">
-                        <div class="post-thumbnail">
-                            <img src="/assets/vizew-master/img/bg-img/2.jpg" alt="">
-                        </div>
-                        <div class="post-content">
-                            <a href="single-post.html" class="post-title">فارکس : تحلیل درس دوم</a>
-                            <div class="post-meta d-flex justify-content-between">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>۱۴</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> ۳۴</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> ۸۴</a>
-                            </div>
-                        </div>
-                    </div>
+                        @if($about !== null)
+                            {{$about->value}}
+                        @endif
+                    </p>
 
                 </div>
             </div>
 
             <!-- Footer Widget Area -->
+{{--            <div class="col-12 col-sm-6 col-xl-3">--}}
+{{--                <div class="footer-widget mb-70">--}}
+{{--                    <h6 class="widget-title">دروس پرفروش</h6>--}}
+{{--                    <!-- Twitter Slides -->--}}
+{{--                    <div class="twitter-slides owl-carousel">--}}
+
+{{--                        <!-- Single Twitter Slide -->--}}
+{{--                        @php--}}
+{{--                        $counter = 0--}}
+{{--                        @endphp--}}
+{{--                        @foreach($courses as $course)--}}
+
+{{--                            <div class="col-12 col-md-4">--}}
+{{--                                <div class="single-post-area mb-10">--}}
+{{--                                    <!-- Post Thumbnail -->--}}
+{{--                                    <div class="post-thumbnail">--}}
+{{--                                        <a href="{{route('courses.show', $course->id)}}">--}}
+{{--                                            <img src="{{ asset($course->image) }}" alt="">--}}
+{{--                                        </a>--}}
+{{--                                        <div class="post-content">--}}
+{{--                                            <a href="{{route('courses.show', $course->id)}}" class="post-title">--}}
+{{--                                                {{ \Illuminate\Support\Str::of($course->title)->limit(47, ' (...)')}}--}}
+{{--                                            </a>--}}
+{{--                                            <a href="{{route('courses.show', $course->id)}}"--}}
+{{--                                               class="post-cata cata-md cata-primary">مشاهده</a>--}}
+{{--                                            <button type="button" class="btn btn-sm btn-success sell-modal" data-toggle="modal"--}}
+{{--                                            data-target=".sell-modal-modal">خرید دوره</button>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+
+{{--                        @endforeach--}}
+
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+            <!-- Footer Widget Area -->
+{{--            <div class="col-12 col-sm-6 col-xl-3">--}}
+{{--                <div class="footer-widget mb-70">--}}
+{{--                    <h6 class="widget-title">جدیدترین دروس</h6>--}}
+
+{{--                    <!-- Single Blog Post -->--}}
+{{--                    <div class="single-blog-post d-flex">--}}
+{{--                        <div class="post-thumbnail">--}}
+{{--                            <img src="/assets/vizew-master/img/bg-img/1.png" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="post-content">--}}
+{{--                            <a href="single-post.html" class="post-title">فارکس : تحلیل درس اول</a>--}}
+{{--                            <div class="post-meta d-flex justify-content-between">--}}
+{{--                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> ۱۴</a>--}}
+{{--                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> ۳۴</a>--}}
+{{--                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> ۸۴</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+{{--                    <!-- Single Blog Post -->--}}
+{{--                    <div class="single-blog-post d-flex">--}}
+{{--                        <div class="post-thumbnail">--}}
+{{--                            <img src="/assets/vizew-master/img/bg-img/2.jpg" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="post-content">--}}
+{{--                            <a href="single-post.html" class="post-title">فارکس : تحلیل درس دوم</a>--}}
+{{--                            <div class="post-meta d-flex justify-content-between">--}}
+{{--                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>۱۴</a>--}}
+{{--                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> ۳۴</a>--}}
+{{--                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> ۸۴</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+{{--                </div>--}}
+{{--            </div>--}}
+
+            <!-- Footer Widget Area -->
             <div class="col-12 col-sm-6 col-xl-3">
                 <div class="footer-widget mb-70">
 
-                    <a class="widget-title" href="{{route('contact')}}" class="foo-logo d-block mb-4">تماس با ما</a>
+                    <a class="widget-title" href="{{route('contact')}}" class="foo-logo d-block mb-4" style="color: white!important;">تماس با ما</a>
 
                     <!-- Contact Address -->
                     <div class="contact-address">
-                        <p>آدرس</p>
-                        <p>شماره تلفن</p>
-                        <p>ایمیل</p>
+                        <p style="color: white!important;">آدرس</p>
+                        <p style="color: white!important;">شماره تلفن</p>
+                        <p style="color: white!important;">ایمیل</p>
                     </div>
                     <!-- Footer Social Area -->
                     <div class="footer-social-area">
@@ -363,6 +401,10 @@
 @endif
 
 @yield('footer')
+
+{{--<script>--}}
+{{--    $('.sell-modal').modal('toggle')--}}
+{{--</script>--}}
 
 </body>
 
