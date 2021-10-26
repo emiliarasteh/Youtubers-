@@ -104,7 +104,7 @@
                             <div class="post-content">
                                 <a href="{{route('courses.show', $course->id)}}" class="post-cata cata-md cata-primary">مشاهده</a>
                                 <button type="button" class="btn btn-xs btn-success" data-toggle="modal"
-                                        data-target=".bs-example-modal-lg">خرید دوره
+                                        data-target=".sell-modal-modal">خرید دوره
                                 </button>
                                 <a href="{{route('courses.show', $course->id)}}" class="post-title">
                                     {{ \Illuminate\Support\Str::of($course->description)->limit(47, ' (...)')}}
@@ -267,26 +267,27 @@
 
                         <!-- Featured Post Slides -->
                         @foreach($courses as $course)
-                        <div class="featured-post-slides owl-carousel mb-30">
-                            <!-- Single Feature Post -->
-                            <div class="single-feature-post video-post bg-img"
-                                 style="background-image: url({{$course->image}});">
-                                <!-- Play Button -->
-                                <a href="{{route('courses.show', $course->id)}}" class="btn play-btn"><i class="fa fa-play"
-                                                                                  aria-hidden="true"></i></a>
+                            <div class="featured-post-slides owl-carousel mb-30">
+                                <!-- Single Feature Post -->
+                                <div class="single-feature-post video-post bg-img"
+                                     style="background-image: url({{$course->image}});">
+                                    <!-- Play Button -->
+                                    <a href="{{route('courses.show', $course->id)}}" class="btn play-btn"><i
+                                            class="fa fa-play"
+                                            aria-hidden="true"></i></a>
 
-                                <!-- Post Content -->
-                                <div class="post-content">
-                                    <a href="{{route('courses.show', $course->id)}}" class="post-title">
-                                        {{$course->title}}
-                                    </a>
+                                    <!-- Post Content -->
+                                    <div class="post-content">
+                                        <a href="{{route('courses.show', $course->id)}}" class="post-title">
+                                            {{$course->title}}
+                                        </a>
+
+                                    </div>
 
                                 </div>
 
                             </div>
-
-                        </div>
-@endforeach
+                        @endforeach
                     </div>
                 </div>
 

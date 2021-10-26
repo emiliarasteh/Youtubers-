@@ -12,7 +12,7 @@
     <title>آموزش فارکس</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="/assets/vizew-master/img/core-img/myicon.jpg">
+    <link rel="icon" href="/assets/vizew-master/img/core-img/myicon.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/vizew-master/style.css">
@@ -138,8 +138,8 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li class="{{ (request()->is('contact')) ? 'active' : 'contact' }}">
-                                    <a href="{{route('contact')}}">تماس با ما</a></li>
+{{--                                <li class="{{ (request()->is('contact')) ? 'active' : 'contact' }}">--}}
+{{--                                    <a href="{{route('contact')}}">تماس با ما</a></li>--}}
 
                                 <li class="{{ (request()->is('indicators')) ? 'active' : 'indicators' }}">
                                     <a href="{{route('indicator.index')}}">اندیکاتورها</a></li>
@@ -333,13 +333,13 @@
             <div class="col-12 col-sm-6 col-xl-3">
                 <div class="footer-widget mb-70">
 
-                    <a class="widget-title" href="{{route('contact')}}" class="foo-logo d-block mb-4" style="color: white!important;">تماس با ما</a>
+{{--                    <a class="widget-title" href="{{route('contact')}}" class="foo-logo d-block mb-4" style="color: white!important;">تماس با ما</a>--}}
 
                     <!-- Contact Address -->
                     <div class="contact-address">
-                        <p style="color: white!important;">آدرس</p>
-                        <p style="color: white!important;">شماره تلفن</p>
-                        <p style="color: white!important;">ایمیل</p>
+                        <p {{getSetting('address')}} style="color: white!important;">آدرس</p>
+                        <p {{getSetting('phone_number')}} style="color: white!important;">شماره تلفن</p>
+                        <p {{getSetting('email')}} style="color: white!important;">ایمیل</p>
                     </div>
                     <!-- Footer Social Area -->
                     <div class="footer-social-area">

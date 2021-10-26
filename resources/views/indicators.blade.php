@@ -13,20 +13,27 @@
 @section('content')
 
     <!-- ##### Breadcrumb Area Start ##### -->
+
     <div class="vizew-breadcrumb">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home" aria-hidden="true"></i>
-                                    Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Archives</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Reunification of migrant toddlers
-                            </li>
+                            <li class="breadcrumb-item"><a href="{{route('home')}}"><i class="fa fa-home" aria-hidden="true"></i> خانه</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">اندیکاتورها</li>
                         </ol>
                     </nav>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <!-- Section Heading -->
+            <div class="section-heading">
+                <h4>اندیکاتورها</h4>
+                <div class="line"></div>
             </div>
         </div>
     </div>

@@ -2,11 +2,26 @@
 @section('content')
     <section class="trending-posts-area">
         <div class="container">
+
+            <div class="vizew-breadcrumb">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{route('home')}}"><i class="fa fa-home" aria-hidden="true"></i> خانه</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">تحلیل</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-12">
                     <!-- Section Heading -->
                     <div class="section-heading">
-                        <h4>مطالب</h4>
+                        <h4>تحلیل</h4>
                         <div class="line"></div>
                     </div>
                 </div>
