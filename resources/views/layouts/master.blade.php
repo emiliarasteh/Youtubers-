@@ -247,7 +247,7 @@
                 <div class="footer-widget ">
                     <!-- Logo -->
                     <a class="widget-title" href="{{route('about')}}" class="foo-logo d-block mb-4 "><img
-                            rel="icon" src="/assets/logo.png" alt="" width="50" height="50">
+                            rel="icon" src="/assets/logo.png" alt="" width="100" height="100">
                         </a>
 
                     @php
