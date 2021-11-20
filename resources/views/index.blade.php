@@ -165,7 +165,7 @@
                     <div class="all-posts-area">
                         <!-- Section Heading -->
                         <div class="section-heading style-2">
-                            <h4>Featured Videos</h4>
+                            <h4>ویژه ها</h4>
                             <div class="line"></div>
                         </div>
 
@@ -316,6 +316,7 @@
                             <div class="single-post-area mb-30">
                                 <!-- Post Thumbnail -->
                                 <div class="post-thumbnail">
+{{--                                    {{dd($last_videos_down['items'][0]['snippet']['thumbnails']['medium']['url'])}}--}}
                                     <img
                                         src="{{$last_videos_down['items'][0]['snippet']['thumbnails']['medium']['url']}}"
                                         alt="">
@@ -327,8 +328,15 @@
                                 <!-- Post Content -->
                                 <div class="post-content">
                                     {{--                                    <a href="#" class="post-cata cata-sm cata-success">Sports</a>--}}
-                                    <a href="https://www.youtube.com/watch?v={{$last_videos_down['items'][0]['id']['videoId']}}"
-                                       class="post-title">{{$last_videos_down['items'][0]['snippet']['title']}}</a>
+                                    @foreach($last_videos_down['items'] as $item)
+                                        @if(array_key_exists('videoId', $item['id']))
+                                            <a href="https://www.youtube.com/watch?v={{$item['id']['videoId']}}"
+                                               class="post-title">{{$last_videos_down['items'][0]['snippet']['title']}}</a>
+{{--                                        {{dd('df')}}--}}
+{{--                                            @break--}}
+                                        @endif
+                                    @endforeach
+
                                     {{--                                    <div class="post-meta d-flex">--}}
                                     {{--                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>--}}
                                     {{--                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>--}}

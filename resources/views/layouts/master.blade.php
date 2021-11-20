@@ -12,12 +12,22 @@
     <title>آموزش فارکس</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="/assets/vizew-master/img/core-img/myicon.png">
+    <link rel="icon" href="/assets/logo.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/vizew-master/style.css">
     @yield('header')
     <style>
+        .vizew-nav-tab .nav-link.active{
+            background-color: #8d8d8d!important;
+        }
+        .vizew-nav-tab{
+            background-color: whitesmoke!important;
+        }
+        #scrollUp{
+            right: unset!important;
+            left: 50px!important;
+        }
         body{
             background-color: whitesmoke!important;
         }
@@ -120,7 +130,7 @@
                 <nav class="classy-navbar justify-content-between" id="vizewNav">
 
                     <!-- Nav brand -->
-                    <a href="/" class="nav-brand"><img src="/assets/vizew-master/img/core-img/myicon.png"
+                    <a href="/" class="nav-brand"><img src="/assets/logo.png"
                                                                 width="70" height="70" alt=""></a>
 
                     <!-- Navbar Toggler -->
@@ -232,11 +242,11 @@
     <div class="container">
         <div class="row text-center">
             <!-- Footer Widget Area -->
-            <div class="col-12 col-sm-6 col-xl-3">
+            <div class="col-12 col-sm-6 col-xl-6">
                 <div class="footer-widget ">
                     <!-- Logo -->
                     <a class="widget-title" href="{{route('about')}}" class="foo-logo d-block mb-4 "><img
-                            rel="icon" src="/assets/vizew-master/img/core-img/myicon.png" alt="" width="50" height="50">
+                            rel="icon" src="/assets/logo.png" alt="" width="50" height="50">
                         </a>
 
                     @php
@@ -330,7 +340,7 @@
 {{--            </div>--}}
 
             <!-- Footer Widget Area -->
-            <div class="col-12 col-sm-6 col-xl-3">
+            <div class="col-12 col-sm-6 col-xl-6">
                 <div class="footer-widget mb-70">
 
 {{--                    <a class="widget-title" href="{{route('contact')}}" class="foo-logo d-block mb-4" style="color: white!important;">تماس با ما</a>--}}
