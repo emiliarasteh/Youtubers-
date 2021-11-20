@@ -25,6 +25,7 @@
             background-color: whitesmoke!important;
         }
         #scrollUp{
+            background-color: #C14E89;
             right: unset!important;
             left: 50px!important;
         }
