@@ -47,8 +47,6 @@ Route::middleware(['auth', 'verified'])->group(function() {
         Route::get('/lessons/delete/{id}', [App\Http\Controllers\LessonsController::class, 'destroy'])->name('admin.lessons.destroy');
 
 
-//        💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋 💋
-//        ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️ 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗 💗
         Route::get('/users/index', [App\Http\Controllers\UserController::class, 'index'])->name('admin.users');
         Route::get('/setting/index', [App\Http\Controllers\SettingController::class, 'index'])->name('admin.setting');
         Route::put('/setting/update/{id}', [App\Http\Controllers\SettingController::class, 'update'])->name('admin.setting.update');

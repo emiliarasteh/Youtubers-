@@ -53,7 +53,7 @@ class IndicatorsController extends Controller
             'price' => 'required|numeric',
         ]);
 
-        $fileName = time() . '.' . $request->file('file')->extension();
+        $fileName = time() . '.' . $request->file('file')->getClientOriginalExtension();
 
         $request->file->move(public_path('assets/indicators'), $fileName);
 

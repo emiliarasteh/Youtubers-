@@ -17,3 +17,5 @@ yarn-error.log
 /public/assets/videos/
 /storage/uploads/
 /storage/secrets/
+!/public/assets/indicators/
+/public/assets/indicators/

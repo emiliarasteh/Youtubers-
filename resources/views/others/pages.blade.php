@@ -40,7 +40,7 @@
                                     <img src="{{ asset($page->image) }}" alt="">
                                 </a>
                                 <!-- Video Duration -->
-                                <span class="video-duration">05.03</span>
+{{--                                <span class="video-duration">05.03</span>--}}
                             </div>
 
                             <!-- Post Content -->

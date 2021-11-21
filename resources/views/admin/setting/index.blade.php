@@ -48,7 +48,7 @@
                                             <label class="col-form-label col-md-3 col-sm-3 ">value </label>
                                             <div class="col-md-9 col-sm-9 ">
                                                 <textarea id="{{$value->value}}" name="value" type="text"
-                                                          class="form-control"> {{$value->value}}</textarea>
+                                                          class="form-control editor1"> {{$value->value}}</textarea>
                                             </div>
                                         </div>
                                         <div class="ln_solid"></div>
@@ -77,4 +77,20 @@
 
 
 
+@endsection
+
+@section('footer')
+    <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replaceAll( 'editor1' );
+    </script>
+    @foreach($setting as $value)
+        <script>
+            $( '.bs-example-modal-lg{{$value->id}}' ).modal( {
+                focus: false,
+
+                show: false
+            } );
+        </script>
+    @endforeach
 @endsection

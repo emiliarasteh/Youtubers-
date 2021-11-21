@@ -16,7 +16,7 @@
 
     <div class="vizew-breadcrumb">
         <div class="container">
-            <div class="row">
+            <div class="row" style="margin: 0!important;">
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin: 0!important;">
         <div class="col-12">
             <!-- Section Heading -->
             <div class="section-heading">
@@ -91,14 +91,15 @@
     <section>
         @foreach($indicators as $indicator)
             <div class="col-sm-6 mb-30 offset-md-3">
-                <div class="card" style="border-color: #303334">
-                    <div class="card-body" style="background-color: #303334">
+                <div class="card" >
+                    <div class="card-body" >
                         <h5 class="card-title text-center">{{$indicator->title}}</h5>
                         <p class="card-text text-center">{{$indicator->description}} </p>
-                        <a href="{{route('admin.indicators.file_download', $indicator->file)}}" class="btn btn-sm btn-primary">دانلود</a>
+                        <a href="{{route('admin.indicators.file_download', $indicator->file)}}" class="btn btn-sm btn-primary"><i class="fas fa-download"></i>  دانلود     </a>
                     </div>
                 </div>
             </div>
+            <hr>
         @endforeach
     </section>
 

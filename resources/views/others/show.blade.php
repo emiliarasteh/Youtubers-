@@ -8,9 +8,11 @@
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home" aria-hidden="true"></i>
+                                    Home</a></li>
                             <li class="breadcrumb-item"><a href="#">Archives</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Reunification of migrant toddlers</li>
+                            <li class="breadcrumb-item active" aria-current="page">Reunification of migrant toddlers
+                            </li>
                         </ol>
                     </nav>
                 </div>
@@ -21,45 +23,29 @@
 
     <!-- ##### Pager Area Start ##### -->
     <div class="vizew-pager-area">
-        <div class="vizew-pager-prev">
-            <p>PREVIOUS ARTICLE</p>
+{{--        <div class="vizew-pager-prev">--}}
+{{--            <p>PREVIOUS ARTICLE</p>--}}
 
-            <!-- Single Feature Post -->
-            <div class="single-feature-post video-post bg-img pager-article" style="background-image: url(img/bg-img/15.jpg);">
-                <!-- Post Content -->
-                <div class="post-content">
-                    <a href="#" class="post-cata cata-sm cata-success">Sports</a>
-                    <a href="video-post.html" class="post-title">Searching for the 'angel' who held me on Westminster Bridge</a>
-                    <div class="post-meta d-flex">
-                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 18</a>
-                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 32</a>
-                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 24</a>
-                    </div>
-                </div>
-                <!-- Video Duration -->
-                <span class="video-duration">11.13</span>
-            </div>
-        </div>
+{{--            <!-- Single Feature Post -->--}}
+{{--            <div class="single-feature-post video-post bg-img pager-article"--}}
+{{--                 style="background-image: url(img/bg-img/15.jpg);">--}}
+{{--                <!-- Post Content -->--}}
+{{--                <div class="post-content">--}}
+{{--                    <a href="#" class="post-cata cata-sm cata-success">Sports</a>--}}
+{{--                    <a href="video-post.html" class="post-title">Searching for the 'angel' who held me on Westminster--}}
+{{--                        Bridge</a>--}}
+{{--                    <div class="post-meta d-flex">--}}
+{{--                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 18</a>--}}
+{{--                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 32</a>--}}
+{{--                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 24</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <!-- Video Duration -->--}}
+{{--                <span class="video-duration">11.13</span>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
-        <div class="vizew-pager-next">
-            <p>NEXT ARTICLE</p>
 
-            <!-- Single Feature Post -->
-            <div class="single-feature-post video-post bg-img pager-article" style="background-image: url(img/bg-img/14.jpg);">
-                <!-- Post Content -->
-                <div class="post-content">
-                    <a href="#" class="post-cata cata-sm cata-business">Business</a>
-                    <a href="video-post.html" class="post-title">Reunification of migrant toddlers, parents should be completed Thursday</a>
-                    <div class="post-meta d-flex">
-                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>
-                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>
-                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>
-                    </div>
-                </div>
-                <!-- Video Duration -->
-                <span class="video-duration">06.59</span>
-            </div>
-        </div>
     </div>
     <!-- ##### Pager Area End ##### -->
 
@@ -85,30 +71,25 @@
                             <div class="post-content mt-0">
                                 {{--                            <a  href="{{route('lessons.show')}}" class="post-cata cata-sm cata-danger">ورود</a>--}}
                                 {{--                            <a  href="{{route('lessons.show')}}" class="post-title mb-2">Reunification of migrant toddlers, parents should be completed Thursday</a>--}}
-                                @foreach($pages as $page)
-                                    <div class="post-content">
-                                        <a href={{route('pages.show', $pages->id)}} class="post-title"> {{$pages->title}}</a>
-                                    </div>
-                                @endforeach
+                                <div class="post-content text-center">
+                                    <a href={{route('pages.show', $pages->id)}} class="post-title"> {{$pages->title}}</a>
+                                </div>
 
-                                <div class="d-flex justify-content-between mb-30">
-                                    <div class="post-meta d-flex align-items-center">
+                                <div class="d-flex justify-content-between mb-30 text-center">
+                                    <div class="post-meta d-flex align-items-center pull-right float-right">
                                         <a href="#" class="post-author">By Jane</a>
                                         <i class="fa fa-circle" aria-hidden="true"></i>
                                         <a href="#" class="post-date">Sep 08, 2018</a>
                                     </div>
-                                    {{--                                <div class="post-meta d-flex">--}}
-                                    {{--                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 32</a>--}}
-                                    {{--                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 42</a>--}}
-                                    {{--                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 7</a>--}}
-                                    {{--                                </div>--}}
+
                                 </div>
                             </div>
+                            <div class="text-center">
+                                {!! $pages->description !!}
+                            </div>
 
-                        {!! $pages->description !!}
 
-
-                        <!-- Related Post Area -->
+                            <!-- Related Post Area -->
                             <div class="related-post-area mt-5">
                                 <!-- Section Title -->
                             </div>

@@ -361,6 +361,6 @@
         return false;
     })
 </script>
-
+@yield('footer')
 </body>
 </html>

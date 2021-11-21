@@ -6,6 +6,7 @@ use App\Core\DataService;
 use App\Core\Youtube;
 use App\Models\Course;
 use App\Models\Indicator;
+use App\Models\Setting;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
@@ -36,8 +37,14 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('*', function($view) {
             $courses = Course::orderBy('id', 'desc')->limit(16)->get();
-            $view->with('courses', $courses);
+            $email = Setting::where('key', 'email')->first()->value;
+            $phone = Setting::where('key', 'phone_number')->first()->value;
+            $address = Setting::where('key', 'address')->first()->value;
 
+            $view->with('courses', $courses);
+            $view->with('phone', $phone);
+            $view->with('email', $email);
+            $view->with('address', $address);
 
         });
 

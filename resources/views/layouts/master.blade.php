@@ -13,11 +13,17 @@
 
     <!-- Favicon -->
     <link rel="icon" href="/assets/logo.png">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/vizew-master/style.css">
     @yield('header')
     <style>
+        .breakpoint-on .classy-navbar .classy-menu{
+            background-color: #DB4437!important;
+        }
+        .header-area .vizew-main-menu .classy-navbar .classynav ul li a{
+            background-color: #DB4437!important;
+        }
         .vizew-nav-tab .nav-link.active{
             background-color: #8d8d8d!important;
         }
@@ -79,11 +85,11 @@
                     <div class="top-meta-data d-flex align-items-center justify-content-end">
                         <!-- Top Social Info -->
                         <div class="top-social-info">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+{{--                            <a href="#"><i class="fa fa-facebook"></i></a>--}}
+{{--                            <a href="#"><i class="fa fa-twitter"></i></a>--}}
+{{--                            <a href="#"><i class="fa fa-pinterest"></i></a>--}}
+                            <a href="https://www.instagram.com/trader.takeprofitsam"><i class="fa fa-instagram"></i></a>
+                            <a href="https://youtube.com/c/takeprofitsam"><i class="fa fa-youtube-play"></i></a>
                         </div>
                         <!-- Top Search Area -->
                         <div class="top-search-area">
@@ -349,17 +355,14 @@
 
                     <!-- Contact Address -->
                     <div class="contact-address">
-                        <p {{getSetting('address')}} style="color: white!important;">آدرس</p>
-                        <p {{getSetting('phone_number')}} style="color: white!important;">شماره تلفن</p>
-                        <p {{getSetting('email')}} style="color: white!important;">ایمیل</p>
+                        <p {{getSetting('address')}} style="color: white!important;">{{$address}}</p>
+                        <p {{getSetting('phone_number')}} style="color: white!important;">{{$phone}}</p>
+                        <p {{getSetting('email')}} style="color: white!important;">{{$email}}</p>
                     </div>
                     <!-- Footer Social Area -->
                     <div class="footer-social-area">
-                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-                        <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/trader.takeprofitsam" class="instagram"><i class="fa fa-instagram"></i></a>
+                        <a href="https://youtube.com/c/takeprofitsam" ><i class="fa fa-youtube-play"></i></a>
                     </div>
                 </div>
             </div>
