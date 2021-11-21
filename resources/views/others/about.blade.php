@@ -50,7 +50,7 @@
                         <p>{!! getSetting('explain1')!!}</p>
 
                         <!-- Heading 1 -->
-                        <h1>{{getSetting('Topic2')}}</h1>
+                        <h4>{{getSetting('Topic2')}}</h4>
                         <p>{!! getSetting('explain2')!!}</p>
 
                         <!-- Heading 2 -->
@@ -66,11 +66,11 @@
                         <p>{!! getSetting('explain5')!!}</p>
 
                         <!-- Heading 5 -->
-                        <h5>{{getSetting('Topic6')}}</h5>
+                        <h4>{{getSetting('Topic6')}}</h4>
                         <p>{!! getSetting('explain6')!!}</p>
 
                         <!-- Heading 6 -->
-                        <h6>{{getSetting('Topic7')}}</h6>
+                        <h4>{{getSetting('Topic7')}}</h4>
                         <p>{!! getSetting('explain7')!!}</p>
                     </div>
 
