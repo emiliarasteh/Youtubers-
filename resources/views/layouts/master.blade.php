@@ -257,14 +257,9 @@
                             rel="icon" src="/assets/logo.png" alt="" width="100" height="100">
                         </a>
 
-                    @php
-                    $about = \App\Models\Setting::where('key', 'explain1')->first();
-                    @endphp
-                    <p class="text-right" style="color: white!important;">
 
-                        @if($about !== null)
-                            {{$about->value}}
-                        @endif
+                    <p class="text-right" style="color: white!important;">
+                        {{getSetting('explain1', 'yes')}}
                     </p>
 
                 </div>
