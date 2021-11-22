@@ -76,7 +76,7 @@
                                                 <div class="col-md-9 col-sm-9 ">
                                                     <input value="{{$value->image}}" name="image" type="file"
                                                            class="form-control">
-                                                    <img src="/{{$value->image}}" alt="Image"
+                                                    <img src="/{{$value->image}}" alt="Image" width="300" height="300"
                                                          class="img-responsive mt-2">
 
 
