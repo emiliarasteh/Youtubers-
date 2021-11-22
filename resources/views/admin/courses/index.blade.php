@@ -24,7 +24,7 @@
                 </thead>
                 <tbody>
 
-                @foreach($courses as $value)
+                @foreach($Bcourses as $value)
                     <tr>
                         <th scope="row">{{$value->id}}</th>
                         <td> <img src="/{{$value->image}}" alt="Image"
@@ -149,7 +149,7 @@
 
     </div>
     </div>
-    {{ $courses->links() }}
+    {{ $Bcourses->links() }}
 
 
 
