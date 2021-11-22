@@ -259,7 +259,7 @@
 
 
                     <p class="text-right" style="color: white!important;">
-                        {!! getSetting('explain1', 'yes') !!}
+                        {!! getSetting('footer_about') !!}
                     </p>
 
                 </div>
