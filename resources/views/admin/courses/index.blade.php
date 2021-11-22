@@ -93,8 +93,8 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-md-3 col-sm-3 ">Description</label>
                                                 <div class="col-md-9 col-sm-9 ">
-                                                    <input value="{{$value->description}}" name="description"
-                                                           type="text" class="form-control" maxlength="250">
+                                                    <textarea name="description"
+                                                              type="text" class="form-control" maxlength="250">{{$value->description}}</textarea>
                                                 </div>
                                             </div>
 
