@@ -47,8 +47,8 @@
                                         <div class="form-group row">
                                             <label class="col-form-label col-md-3 col-sm-3 ">value </label>
                                             <div class="col-md-9 col-sm-9 ">
-                                                <textarea id="{{$value->value}}" name="value" type="text"
-                                                          class="form-control editor1"> {{$value->value}}</textarea>
+                                                <textarea id="{{$value->id}}" name="value" type="text"
+                                                          class="form-control editor1"> {!! $value->value !!}</textarea>
                                             </div>
                                         </div>
                                         <div class="ln_solid"></div>
