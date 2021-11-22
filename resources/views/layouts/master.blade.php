@@ -355,9 +355,9 @@
 
                     <!-- Contact Address -->
                     <div class="contact-address">
-                        <p {{getSetting('address')}} style="color: white!important;">{{$address}}</p>
-                        <p {{getSetting('phone_number')}} style="color: white!important;">{{$phone}}</p>
-                        <p {{getSetting('email')}} style="color: white!important;">{{$email}}</p>
+                        <p  style="color: white!important;">{{getSetting('address')}}</p>
+                        <p  style="color: white!important;">{{getSetting('phone_number')}}</p>
+                        <p  style="color: white!important;">{{getSetting('email')}}</p>
                     </div>
                     <!-- Footer Social Area -->
                     <div class="footer-social-area">
