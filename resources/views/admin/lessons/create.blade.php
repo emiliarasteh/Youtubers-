@@ -31,7 +31,7 @@
             <div class="form-group row">
                 <label class="control-label col-md-3 col-sm-3 ">Description</label>
                 <div class="col-md-9 col-sm-9 ">
-                    <textarea name="description" class="form-control" rows="3" maxlength="250">{{old('description')}}</textarea>
+                    <textarea name="description" class="form-control editor1" rows="3" maxlength="250">{{old('description')}}</textarea>
                 </div>
             </div>
 

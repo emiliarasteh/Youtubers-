@@ -107,7 +107,7 @@
                                         data-target=".sell-modal-modal">خرید دوره
                                 </button>
                                 <a href="{{route('courses.show', $course->id)}}" class="post-title">
-                                    {{ \Illuminate\Support\Str::of($course->description)->limit(47, ' (...)')}}
+                                    {{ \Illuminate\Support\Str::of(strip_tags($course->description))->limit(47, ' (...)')}}
                                 </a>
                                 {{--                            <div class="post-meta d-flex">--}}
                                 {{--                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 22</a>--}}

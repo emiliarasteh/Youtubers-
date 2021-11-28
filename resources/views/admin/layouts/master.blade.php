@@ -361,6 +361,11 @@
         return false;
     })
 </script>
+<script src="/assets/ckeditor/ckeditor.js"></script>
+<script src="/assets/color/plugin.js"></script>
+<script>
+    CKEDITOR.replaceAll( 'editor1' );
+</script>
 @yield('footer')
 </body>
 </html>

@@ -96,8 +96,8 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-md-3 col-sm-3 ">Description</label>
                                                 <div class="col-md-9 col-sm-9 ">
-                                                    <input value="{{$indicator->description}}" name="description"
-                                                           type="text" class="form-control" maxlength="250">
+                                                    <textarea name="description"
+                                                           type="text" class="form-control editor1" maxlength="250">{!!$indicator->description!!}</textarea>
                                                 </div>
                                             </div>
 
@@ -134,13 +134,13 @@
 
 
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
+{{--                            <div class="modal-footer">--}}
+{{--                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
+{{--                                <button type="button" class="btn btn-primary">Save changes</button>--}}
+{{--                            </div>--}}
 
                         </div>
-
+            </table>
         </div>
     </div>
 
@@ -157,4 +157,15 @@
 
 
 
+@endsection
+@section('footer')
+    @foreach($indicators as $value)
+        <script>
+            $( '.bs-example-modal-lg{{$value->id}}' ).modal( {
+                focus: false,
+
+                show: false
+            } );
+        </script>
+    @endforeach
 @endsection

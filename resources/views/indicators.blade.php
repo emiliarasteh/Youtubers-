@@ -94,7 +94,7 @@
                 <div class="card" >
                     <div class="card-body" >
                         <h5 class="card-title text-center">{{$indicator->title}}</h5>
-                        <p class="card-text text-center">{{$indicator->description}} </p>
+                        <p class="card-text text-center">{!! $indicator->description !!} </p>
                         <a href="{{route('admin.indicators.file_download', $indicator->file)}}" class="btn btn-sm btn-primary"><i class="fas fa-download"></i>  دانلود     </a>
                     </div>
                 </div>

@@ -246,9 +246,9 @@
 <!-- ##### Vizew Psot Area End ##### -->
 
 <!-- ##### Footer Area Start ##### -->
-<footer class="footer-area">
+<footer class="footer footer-area">
     <div class="container">
-        <div class="row text-center">
+        <div class="row text-center align-items-center">
             <!-- Footer Widget Area -->
             <div class="col-12 col-sm-6 col-xl-6">
                 <div class="footer-widget ">
@@ -343,13 +343,13 @@
 {{--            </div>--}}
 
             <!-- Footer Widget Area -->
-            <div class="col-12 col-sm-6 col-xl-6">
-                <div class="footer-widget mb-70">
+            <div class="col-12 col-sm-6 col-xl-6 mb-5">
+                <div class="footer-widget ">
 
 {{--                    <a class="widget-title" href="{{route('contact')}}" class="foo-logo d-block mb-4" style="color: white!important;">تماس با ما</a>--}}
 
                     <!-- Contact Address -->
-                    <div class="contact-address">
+                    <div class="contact-address ">
                         <p  style="color: white!important;">{{getSetting('address')}}</p>
                         <p  style="color: white!important;">{{getSetting('phone_number')}}</p>
                         <p  style="color: white!important;">{{getSetting('email')}}</p>

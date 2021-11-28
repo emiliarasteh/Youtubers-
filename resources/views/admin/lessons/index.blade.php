@@ -129,8 +129,8 @@
                                         <div class="form-group row">
                                             <label class="col-form-label col-md-3 col-sm-3 ">Description</label>
                                             <div class="col-md-9 col-sm-9 ">
-                                                <input value="{{$value->description}}" name="description"
-                                                       type="text" class="form-control" maxlength="250">
+                                                <textarea name="description"
+                                                       type="text" class="form-control editor1" maxlength="250">{!!$value->description!!}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -204,4 +204,17 @@
 
 
 
+@endsection
+
+@section('footer')
+
+    @foreach($lessons as $value)
+        <script>
+            $( '.bs-example-modal-lg{{$value->id}}' ).modal( {
+                focus: false,
+
+                show: false
+            } );
+        </script>
+    @endforeach
 @endsection

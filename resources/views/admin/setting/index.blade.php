@@ -80,10 +80,7 @@
 @endsection
 
 @section('footer')
-    <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replaceAll( 'editor1' );
-    </script>
+
     @foreach($setting as $value)
         <script>
             $( '.bs-example-modal-lg{{$value->id}}' ).modal( {

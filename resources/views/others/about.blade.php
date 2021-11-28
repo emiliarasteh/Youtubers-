@@ -46,11 +46,11 @@
                     <!-- Typography Content -->
                     <div class="typography-content mb-50">
                         <!-- Title -->
-                        <h4 class="mb-3">{{getSetting('Topic1')}}</h4>
+                        <p class="mb-3">{!! getSetting('Topic1', 'yes') !!}</p>
                         <p>{!! getSetting('explain1', 'yes')!!}</p>
 
                         <!-- Heading 1 -->
-                        <h4>{{getSetting('Topic2')}}</h4>
+                        <p>{!! getSetting('Topic2', 'yes') !!}</p>
                         <p>{!! getSetting('explain2', 'yes')!!}</p>
 
                         <!-- Heading 2 -->
@@ -62,15 +62,15 @@
 {{--                        <p>{!! getSetting('explain4')!!}</p>--}}
 
                         <!-- Heading 4 -->
-                        <h4>{{getSetting('Topic5')}}</h4>
+                        <p>{!! getSetting('Topic5', 'yes')!!}</p>
                         <p>{!! getSetting('explain5', 'yes')!!}</p>
 
                         <!-- Heading 5 -->
-                        <h4>{{getSetting('Topic6')}}</h4>
+                        <p>{!! getSetting('Topic6', 'yes')!!}</p>
                         <p>{!! getSetting('explain6', 'yes')!!}</p>
 
                         <!-- Heading 6 -->
-                        <h4>{{getSetting('Topic7')}}</h4>
+                        <p>{!! getSetting('Topic7', 'yes')!!}</p>
                         <p>{!! getSetting('explain7', 'yes')!!}</p>
                     </div>
 
