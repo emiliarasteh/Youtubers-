@@ -9,7 +9,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('home')}}"><i class="fa fa-home" aria-hidden="true"></i> خانه</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">دوره ها</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{$course->title}}</li>
                         </ol>
                     </nav>
                 </div>
@@ -20,7 +20,7 @@
         <div class="col-12">
             <!-- Section Heading -->
             <div class="section-heading">
-                <h4>دوره ها</h4>
+                <h4>{{$course->title}}</h4>
                 <div class="line"></div>
             </div>
         </div>
@@ -34,20 +34,20 @@
     <!-- ##### Post Details Area Start ##### -->
     <section class="post-details-area mb-80">
         <div class="container">
-            <div class="row">
+            <div class="row mb-5">
                 <div class="col-12">
                     <div class="post-details-thumb mb-50">
                         <img src="{{asset($course->image)}}" style="width: 100%; height: 100%" alt="">
-                        <button type="button" class="btn btn-xs btn-success" data-toggle="modal"
+                        <button type="button" class="btn btn-xs btn-success mt-2" data-toggle="modal"
                                 data-target=".sell-modal-modal">خرید دوره
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mt-5">
                 <!-- Post Details Content Area -->
-                <div class="col-12 col-lg-8 col-xl-7">
+                <div class="col-12 col-lg-12 col-xl-12">
                     <div class="post-details-content">
                         <!-- Blog Content -->
                         <div class="blog-content">
