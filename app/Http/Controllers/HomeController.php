@@ -29,6 +29,11 @@ class HomeController extends Controller
         $this->dataService = $dataService;
     }
 
+    public function certum()
+    {
+        return response()->download(public_path('certum.txt'));
+    }
+
     /**
      * Show the application dashboard.
      *

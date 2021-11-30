@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/.well-known/pki-validation/certum.txt', [App\Http\Controllers\HomeController::class, 'certum']);
+
+
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 //Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
