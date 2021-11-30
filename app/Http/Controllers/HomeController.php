@@ -31,7 +31,8 @@ class HomeController extends Controller
 
     public function certum()
     {
-        return response()->download(public_path('certum.txt'));
+//        return response()->download(public_path('certum.txt'));
+        return '70c2661770da0d67a1d8fda0736e68b65512539f8d487935554636962a3c2fb5-certum.pl';
     }
 
     /**
